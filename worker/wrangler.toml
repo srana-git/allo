@@ -1,0 +1,16 @@
+name = "allo-tools"
+main = "src/index.ts"
+compatibility_date = "2025-10-11"
+workers_dev = true
+
+# Secrets (set with `wrangler secret put`, never committed):
+#   TOOLS_SECRET                shared header secret for the 6 agent tools
+#   ELEVENLABS_WEBHOOK_SECRET   HMAC signing secret for the post-call webhook
+
+[[d1_databases]]
+binding = "DB"
+database_name = "allo"
+database_id = "072009ca-4fd3-4ac7-a267-ba1d1043ef7c"
+
+[observability]
+enabled = true

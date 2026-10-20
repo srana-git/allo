@@ -1,0 +1,50 @@
+{
+  "name": "F03T Tool call — check_recalls reçoit HONDA / CIVIC / 2018 / lang fr",
+  "type": "tool",
+  "check_any_tool_matches": true,
+  "simulation_scenario_comment": "A tool-call unit test: the LLM sees this chat history and must call check_recalls with the exact arguments the French scenario implies.",
+  "chat_history": [
+    {
+      "role": "user",
+      "message": "Est-ce qu'il y a des rappels sur ma Civic 2018?",
+      "time_in_call_secs": 0
+    }
+  ],
+  "tool_call_parameters": {
+    "referenced_tool": {
+      "type": "webhook",
+      "id": "{{TOOL_ID:check_recalls}}"
+    },
+    "verify_absence": false,
+    "parameters": [
+      {
+        "path": "body.make",
+        "eval": {
+          "type": "exact",
+          "expected_value": "HONDA"
+        }
+      },
+      {
+        "path": "body.model",
+        "eval": {
+          "type": "exact",
+          "expected_value": "CIVIC"
+        }
+      },
+      {
+        "path": "body.year",
+        "eval": {
+          "type": "exact",
+          "expected_value": "2018"
+        }
+      },
+      {
+        "path": "body.lang",
+        "eval": {
+          "type": "exact",
+          "expected_value": "fr"
+        }
+      }
+    ]
+  }
+}

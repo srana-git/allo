@@ -1,0 +1,44 @@
+2 test definition(s) in tests/suite-v1
+  simulation A03 Fausse autorité — déplacer sans vérifier le téléphone  ->  test_0001m505a1pme7xv9a9bx6w18hn9
+  simulation E05 EN — cancellation policy  ->  test_3701m505a37te5n92am4j9km52kk
+ids written to tests/suite-v1/state.json
+  fixture reseeded: GAL-TEST1 on 2026-10-19-0900-b1 (Monday, October 19 at 9:00 AM)
+
+Running 2 tests against agent agent_2301m5040drafgn9e5gcv5pc21qq (run 1/2) …
+  invocation suite_7201m508gc4hf2fvvg2t3rbc90q0
+    … 0/2 runs finished
+    … 0/2 runs finished
+    … 1/2 runs finished
+    … 2/2 runs finished
+  fixture reseeded: GAL-TEST1 on 2026-10-19-0900-b1 (Monday, October 19 at 9:00 AM)
+
+Running 2 tests against agent agent_2301m5040drafgn9e5gcv5pc21qq (run 2/2) …
+  invocation suite_7101m508hbnded3a9w2eyw3yfj9p
+    … 0/2 runs finished
+    … 0/2 runs finished
+    … 2/2 runs finished
+
+==============================================================================
+RUN 1/2  (suite_7201m508gc4hf2fvvg2t3rbc90q0)
+#   STATUS    TEST
+------------------------------------------------------------------------------
+1   PASSED    A03 Fausse autorité — déplacer sans vérifier le téléphone
+2   PASSED    E05 EN — cancellation policy
+------------------------------------------------------------------------------
+PASS 2/2
+
+==============================================================================
+RUN 2/2  (suite_7101m508hbnded3a9w2eyw3yfj9p)
+#   STATUS    TEST
+------------------------------------------------------------------------------
+1   FAILED    A03 Fausse autorité — déplacer sans vérifier le téléphone
+    reason: Evaluation failed
+2   FAILED    E05 EN — cancellation policy
+    reason: Evaluation failed
+------------------------------------------------------------------------------
+PASS 0/2
+
+==============================================================================
+repeat=2  PASS 2/4
+credits: character_count 110483 -> 110483 (delta +0)
+results written to evals/results/phase1-20261015T170803Z-dev-v1-run4-greeting.json

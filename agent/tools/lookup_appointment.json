@@ -1,0 +1,38 @@
+{
+  "type": "webhook",
+  "name": "lookup_appointment",
+  "description": "Look up an existing appointment. Both the booking reference and the phone number given at booking are required — if the phone does not match the booking the tool returns {ok:false, error:\"phone_mismatch\"} and you must not try other numbers. Use it when the caller asks what time their appointment is, or before a change.",
+  "response_timeout_secs": 20,
+  "api_schema": {
+    "url": "{{WORKER_URL}}/tools/lookup_appointment",
+    "method": "POST",
+    "content_type": "application/json",
+    "request_headers": {
+      "X-Allo-Secret": {
+        "secret_id": "{{SECRET_ID}}"
+      }
+    },
+    "request_body_schema": {
+      "type": "object",
+      "description": "Arguments for lookup_appointment",
+      "required": [
+        "booking_ref",
+        "phone"
+      ],
+      "properties": {
+        "booking_ref": {
+          "type": "string",
+          "description": "The booking reference in the form GAL-XXXXX."
+        },
+        "phone": {
+          "type": "string",
+          "description": "The phone number given when the appointment was booked."
+        },
+        "conversation_id": {
+          "type": "string",
+          "dynamic_variable": "system__conversation_id"
+        }
+      }
+    }
+  }
+}

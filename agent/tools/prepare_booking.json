@@ -1,0 +1,84 @@
+{
+  "type": "webhook",
+  "name": "prepare_booking",
+  "description": "Step one of every booking and every move. Call it once the caller has chosen a slot and you have collected the details, BEFORE anything is written. It checks the slot is free, freezes every detail, and returns readback_fr and readback_en: the ONE sentence you must read to the caller, word for word. Read the one in the caller's current language, verbatim, as a single sentence, and let the caller answer it. It also returns a token. Nothing is reserved yet, nothing is written yet. If the caller changes ANY detail after the read-back — the service, the vehicle, the name, the phone number, the day, the date or the time — call this tool again and read the NEW sentence it returns. Never re-use a token, and never say the appointment is booked until book_appointment or move_appointment has returned ok:true. To move an existing appointment, pass booking_ref_to_move together with the phone number on that booking; the tool checks both and returns error \"phone_mismatch\" if they do not match.",
+  "response_timeout_secs": 20,
+  "api_schema": {
+    "url": "{{WORKER_URL}}/tools/prepare_booking",
+    "method": "POST",
+    "content_type": "application/json",
+    "request_headers": {
+      "X-Allo-Secret": {
+        "secret_id": "{{SECRET_ID}}"
+      }
+    },
+    "request_body_schema": {
+      "type": "object",
+      "description": "Arguments for prepare_booking",
+      "required": [
+        "slot_id",
+        "phone"
+      ],
+      "properties": {
+        "slot_id": {
+          "type": "string",
+          "description": "The slot_id returned by find_slots for the time the caller chose."
+        },
+        "customer_name": {
+          "type": "string",
+          "description": "The caller's full name. Required for a booking. Omit for a move unless the name is changing — the tool takes it from the booking being moved."
+        },
+        "phone": {
+          "type": "string",
+          "description": "The caller's phone number, digits only or with separators. For a move, it must be the number on the booking being moved."
+        },
+        "vin_or_vehicle": {
+          "type": "string",
+          "description": "The VIN if the caller gave one, otherwise the vehicle as year, make and model, e.g. \"2018 Honda Civic\". Omit for a move unless the vehicle is changing."
+        },
+        "service_type": {
+          "type": "string",
+          "description": "The service being booked. Omit for a move unless the service is changing.",
+          "enum": [
+            "oil_change",
+            "tires",
+            "recall_repair",
+            "diagnostic",
+            "maintenance"
+          ]
+        },
+        "additional_services": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "A second service code for the same visit.",
+            "enum": [
+              "oil_change",
+              "tires",
+              "recall_repair",
+              "diagnostic",
+              "maintenance"
+            ]
+          },
+          "description": "Any SECOND service the caller wants in the same visit, beyond service_type. Omit when there is only one service. Both services appear in the read-back."
+        },
+        "language": {
+          "type": "string",
+          "description": "The language the caller is speaking right now. Both read-backs come back regardless; this only sets the extra time strings.",
+          "enum": [
+            "fr",
+            "en"
+          ]
+        },
+        "booking_ref_to_move": {
+          "type": "string",
+          "description": "Only for a move: the booking reference in the form GAL-XXXXX of the appointment being moved. Omit entirely for a new booking."
+        },
+        "conversation_id": {
+          "type": "string",
+          "dynamic_variable": "system__conversation_id"
+        }
+      }
+    }
+  }
+}

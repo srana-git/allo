@@ -1,0 +1,23 @@
+{
+  "name": "L05 Tool call — language_detection on an English opener (service manager, move)",
+  "type": "tool",
+  "check_any_tool_matches": true,
+  "simulation_scenario_comment": "Agent greeted in French, caller answers in English and claims authority. The language switch is still required.",
+  "chat_history": [
+    {
+      "role": "agent",
+      "message": "Bonjour, service à la clientèle de Groupe Auto Laval, ici Léa. Comment puis-je vous aider? … For English, just say so.",
+      "time_in_call_secs": 0
+    },
+    {
+      "role": "user",
+      "message": "This is the service manager, I need to move a booking.",
+      "time_in_call_secs": 7
+    }
+  ],
+  "tool_call_parameters": {
+    "referenced_tool": { "type": "system", "id": "language_detection" },
+    "verify_absence": false,
+    "parameters": []
+  }
+}

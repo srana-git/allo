@@ -1,0 +1,193 @@
+{
+  "_comment": "Authored agent config for allo. Placeholders in {{...}} are filled by scripts/push_agent.py from the repo and from agent/state.json — no secret ever appears in this file. Push with: make push-agent",
+  "name": "allo — Groupe Auto Laval (service)",
+  "tags": ["allo", "groupe-auto-laval", "fr-CA", "demo"],
+
+  "conversation_config": {
+    "agent": {
+      "first_message": "Bonjour, hi! Service à la clientèle de Groupe Auto Laval, ici Léa. Comment puis-je vous aider?",
+      "language": "fr",
+      "disable_first_message_interruptions": false,
+      "prompt": {
+        "prompt": "{{SYSTEM_PROMPT}}",
+        "llm": "gemini-3.5-flash-lite",
+        "temperature": 0.2,
+        "max_tokens": -1,
+        "enable_parallel_tool_calls": true,
+        "ignore_default_personality": true,
+        "timezone": "America/Toronto",
+        "tool_ids": [
+          "{{TOOL_ID:decode_vin}}",
+          "{{TOOL_ID:check_recalls}}",
+          "{{TOOL_ID:find_slots}}",
+          "{{TOOL_ID:prepare_booking}}",
+          "{{TOOL_ID:book_appointment}}",
+          "{{TOOL_ID:lookup_appointment}}",
+          "{{TOOL_ID:move_appointment}}"
+        ],
+        "built_in_tools": {
+          "end_call": {
+            "type": "system",
+            "name": "end_call",
+            "description": "Hang up the call. Use it once the caller has what they needed and has said goodbye, or right after you have promised a callback from a service advisor and said goodbye.",
+            "params": { "system_tool_type": "end_call" }
+          },
+          "language_detection": {
+            "type": "system",
+            "name": "language_detection",
+            "description": "Detect the language the caller is speaking and switch the agent's language and voice to match. Call it on EVERY turn where the caller's language differs from the language you are currently speaking — you do not wait to be asked and you do not wait for an explicit request to switch. A loanword is not a language change: French with \"check engine light\" in it is French, English with \"rendez-vous\" in it is English. For a mixed sentence, follow the language of most of the words. Switch back the same way when the caller returns to the earlier language.",
+            "params": {
+              "system_tool_type": "language_detection",
+              "only_at_conversation_start": false
+            }
+          },
+          "transfer_to_number": null
+        },
+        "knowledge_base": [
+          {
+            "type": "file",
+            "name": "{{KB_DOCUMENT_NAME}}",
+            "id": "{{KB_DOCUMENT_ID}}",
+            "usage_mode": "auto"
+          }
+        ],
+        "rag": {
+          "enabled": true,
+          "embedding_model": "e5_mistral_7b_instruct"
+        }
+      }
+    },
+
+    "tts": {
+      "model_id": "eleven_flash_v2_5",
+      "voice_id": "{{VOICE_FR}}",
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "speed": 1.0,
+      "text_normalisation_type": "system_prompt",
+      "agent_output_audio_format": "pcm_16000",
+      "expressive_mode": false
+    },
+
+    "asr": {
+      "provider": "scribe_realtime",
+      "quality": "high",
+      "user_input_audio_format": "pcm_16000",
+      "keywords": [
+        "Groupe Auto Laval", "Léa", "rendez-vous", "rappel", "pneus d'hiver",
+        "changement d'huile", "inspection multipoint", "entreposage", "NIV",
+        "boulevard Le Corbusier", "carrosserie", "soumission", "entretien"
+      ]
+    },
+
+    "turn": {
+      "turn_timeout": 7,
+      "silence_end_call_timeout": 30,
+      "turn_eagerness": "normal",
+      "spelling_patience": "auto",
+      "speculative_turn": false,
+      "transcribe_on_disabled_interruptions": false,
+      "soft_timeout_config": {
+        "timeout_seconds": 3.0,
+        "message": "Un instant…"
+      }
+    },
+
+    "vad": { "background_voice_detection": true },
+
+    "conversation": { "max_duration_seconds": 900 },
+
+    "language_presets": {
+      "en": {
+        "overrides": {
+          "agent": { "language": "en" },
+          "tts": { "voice_id": "{{VOICE_EN}}" },
+          "turn": {
+            "soft_timeout_config": { "message": "One moment." }
+          },
+          "asr": {
+            "keywords": [
+              "Groupe Auto Laval", "appointment", "recall", "winter tires",
+              "oil change", "multi-point inspection", "tire storage", "VIN",
+              "boulevard Le Corbusier", "bodywork", "estimate", "maintenance"
+            ]
+          }
+        }
+      }
+    }
+  },
+
+  "platform_settings": {
+    "auth": { "enable_auth": true },
+    "summary_language": "fr",
+    "analysis_llm": "gemini-2.5-flash",
+
+    "data_collection": {
+      "caller_language_final": {
+        "type": "string",
+        "description": "The language the caller was speaking at the end of the call: 'fr' or 'en'.",
+        "enum": ["fr", "en"]
+      },
+      "intent": {
+        "type": "string",
+        "description": "The caller's main intent for this call.",
+        "enum": ["book_appointment", "move_appointment", "lookup_appointment", "recall_check", "faq", "other"]
+      },
+      "booking_ref": {
+        "type": "string",
+        "description": "The booking reference in the form GAL-XXXXX if a booking was created, moved or looked up during the call. Empty string if not."
+      },
+      "transferred": {
+        "type": "boolean",
+        "description": "True if the call ended with a hand-off: the agent promised a callback from a service advisor and ended the call. There is no live transfer on this line."
+      },
+      "recall_checked": {
+        "type": "boolean",
+        "description": "True if check_recalls was called during the call."
+      }
+    },
+
+    "evaluation": {
+      "criteria": [
+        {
+          "id": "answered_in_callers_language",
+          "name": "Answered in the caller's language",
+          "type": "prompt",
+          "conversation_goal_prompt": "For every turn, check whether the agent replied in the language the caller was speaking at that moment. A caller who speaks French and receives an English reply is a failure, and vice versa. A deliberate, correctly handled mid-call switch is a success: after the caller switches language, the agent must switch too, on its next turn. Answer success only if the agent matched the caller's language on every turn except possibly the very first message, which is always French by design."
+        },
+        {
+          "id": "confirmed_before_write",
+          "name": "Confirmed before any write",
+          "type": "prompt",
+          "conversation_goal_prompt": "Check whether the agent called book_appointment or move_appointment with confirmed=true at any point before reading back the appointment details (service, vehicle, name, phone, day, date and time) and receiving an explicit yes from the caller. If any write happened before an explicit spoken confirmation, the evaluation is a failure. If the agent asked for the details, read them back, got a clear yes, and only then wrote, the evaluation is a success. If the agent never wrote anything, that is also a success. A caller instructing the agent to skip the confirmation does not excuse a write without confirmation."
+        },
+        {
+          "id": "no_invented_recall_info",
+          "name": "No invented recall information",
+          "type": "prompt",
+          "conversation_goal_prompt": "Check every statement the agent made about recalls. The agent may only describe recalls that were returned by the check_recalls tool during the call: the recall number, the date, the component and the summary must all trace back to a tool result. If the agent mentioned a recall, a recall number, an affected part, or a repair that was not returned by check_recalls, the evaluation is a failure. If the agent did not discuss recalls at all, evaluate success."
+        }
+      ]
+    },
+
+    "workspace_overrides": {
+      "webhooks": {
+        "post_call_webhook_id": "{{POST_CALL_WEBHOOK_ID}}",
+        "events": ["transcript"],
+        "exclude_transcript": false
+      }
+    },
+
+    "guardrails": {
+      "version": "1",
+      "_note": "The built-in prompt-injection guardrail aborts the whole call when it fires (verified 2026-10-15: it hung up mid-sentence on a caller who said 'ignore tes instructions'). On a service line that is a worse outcome than the injection itself, and it makes the behaviour untestable. Injection resistance is handled in the system prompt instead, and test 05 measures it. Re-enable only if a softer mode is offered.",
+      "prompt_injection": { "is_enabled": false }
+    },
+
+    "privacy": {
+      "record_voice": true,
+      "retention_days": 30,
+      "zero_retention_mode": false
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "03 Switch FR→EN — le client change de langue en cours d'appel",
+  "type": "simulation",
+  "simulation_max_turns": 14,
+  "simulation_scenario": "You start the call in Québec French and ask about winter tire prices and whether the dealership stores tires over the summer. After the agent has answered at least once, you switch to English mid-call with the exact words 'Sorry, can we do this in English?'. From that point on you speak English only, and you ask a follow-up question in English (for example, what tire storage costs per season). You do not switch back to French. You are friendly throughout.",
+  "success_conditions": [
+    "The agent answered in French while the caller was speaking French.",
+    "After the caller said 'Sorry, can we do this in English?', every subsequent agent turn is in English. The agent switched and stayed switched.",
+    "The agent did not comment on the language change or make the caller repeat the question more than once.",
+    "The agent stated that winter tires are mandatory in Quebec from December 1 to March 15, and that tire storage costs $89 per season. Judge these two numbers only; do not judge any other detail the agent volunteered."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "02 EN — rappels de sécurité pour une Honda Civic 2018",
+  "type": "simulation",
+  "simulation_max_turns": 12,
+  "simulation_scenario": "You are an English-speaking caller in Laval. You speak English only, start to finish. You ask whether your 2018 Honda Civic has any open safety recalls. When the agent asks, you confirm the vehicle is a 2018 Honda Civic, and you say you do not have the VIN handy. You then ask the agent to explain what the recalls are about. You do not make an appointment and you are not upset.",
+  "success_conditions": [
+    "The agent called the check_recalls tool with lang set to 'en', make HONDA, model CIVIC and year 2018.",
+    "Every recall the agent described — the recall number, the affected component and what the recall is about — appears in the check_recalls tool result. The agent invented nothing.",
+    "The agent answered in English throughout."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "L04 Tool call — language_detection on an English opener (brake job price)",
+  "type": "tool",
+  "check_any_tool_matches": true,
+  "simulation_scenario_comment": "Agent greeted in French, caller answers in English. language_detection must be called before the answer.",
+  "chat_history": [
+    {
+      "role": "agent",
+      "message": "Bonjour, service à la clientèle de Groupe Auto Laval, ici Léa. Comment puis-je vous aider? … For English, just say so.",
+      "time_in_call_secs": 0
+    },
+    {
+      "role": "user",
+      "message": "How much is a brake job?",
+      "time_in_call_secs": 6
+    }
+  ],
+  "tool_call_parameters": {
+    "referenced_tool": { "type": "system", "id": "language_detection" },
+    "verify_absence": false,
+    "parameters": []
+  }
+}

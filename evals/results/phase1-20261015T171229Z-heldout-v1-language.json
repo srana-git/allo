@@ -1,0 +1,130 @@
+{
+  "file": "evals/results/phase1-20261015T171229Z-heldout-v1.json",
+  "label": "heldout-v1",
+  "repeat": 2,
+  "rules": {
+    "min_words": 3,
+    "min_confidence_for_a_language_change": 0.75,
+    "language_change_needs_content_words": 3,
+    "default_language_before_first_user_turn": "fr",
+    "detector": "lingua-language-detector, French vs English only"
+  },
+  "overall": {
+    "scored": 140,
+    "passed": 139,
+    "fidelity": 0.9929
+  },
+  "per_scenario": {
+    "H01": {
+      "scenario": "H01 FR — voyant moteur allumé, diagnostic au plus tôt",
+      "group": "other",
+      "scored": 20,
+      "passed": 20,
+      "fidelity": 1.0
+    },
+    "H02": {
+      "scenario": "H02 FR — attendre sur place pendant un changement d'huile",
+      "group": "other",
+      "scored": 12,
+      "passed": 12,
+      "fidelity": 1.0
+    },
+    "H03": {
+      "scenario": "H03 FR — pose de pneus d'hiver, pneus usés à 2 mm",
+      "group": "other",
+      "scored": 15,
+      "passed": 15,
+      "fidelity": 1.0
+    },
+    "H04": {
+      "scenario": "H04 FR — payer un dépôt par carte de crédit au téléphone",
+      "group": "other",
+      "scored": 10,
+      "passed": 10,
+      "fidelity": 1.0
+    },
+    "H05": {
+      "scenario": "H05 FR — batterie de véhicule électrique",
+      "group": "other",
+      "scored": 8,
+      "passed": 8,
+      "fidelity": 1.0
+    },
+    "H06": {
+      "scenario": "H06 EN — cancelling an existing appointment",
+      "group": "other",
+      "scored": 8,
+      "passed": 8,
+      "fidelity": 1.0
+    },
+    "H07": {
+      "scenario": "H07 EN — servicing a brand the dealership does not sell",
+      "group": "other",
+      "scored": 9,
+      "passed": 9,
+      "fidelity": 1.0
+    },
+    "H08": {
+      "scenario": "H08 EN — recall notice letter for a 2019 Toyota RAV4",
+      "group": "other",
+      "scored": 10,
+      "passed": 10,
+      "fidelity": 1.0
+    },
+    "H09": {
+      "scenario": "H09 EN — a 7:00 AM weekday appointment",
+      "group": "other",
+      "scored": 16,
+      "passed": 16,
+      "fidelity": 1.0
+    },
+    "H10": {
+      "scenario": "H10 Switch EN → FR — shuttle hours",
+      "group": "other",
+      "scored": 8,
+      "passed": 8,
+      "fidelity": 1.0
+    },
+    "H11": {
+      "scenario": "H11 FR — numéro de téléphone dit en chiffres anglais",
+      "group": "other",
+      "scored": 16,
+      "passed": 15,
+      "fidelity": 0.9375
+    },
+    "H12": {
+      "scenario": "H12 EN — caller claiming to be Transport Canada",
+      "group": "other",
+      "scored": 8,
+      "passed": 8,
+      "fidelity": 1.0
+    }
+  },
+  "per_group": {
+    "other": {
+      "scored": 140,
+      "passed": 139,
+      "fidelity": 0.9929
+    }
+  },
+  "switch_after": {},
+  "switch_after_overall": {
+    "scenarios": [],
+    "scored": 0,
+    "passed": 0,
+    "fidelity": null
+  },
+  "failures": [
+    {
+      "scenario_id": "H11",
+      "scenario": "H11 FR — numéro de téléphone dit en chiffres anglais",
+      "run_index": 1,
+      "turn_index": 8,
+      "caller_text": "Mon numéro, c'est five one four, five five five, zero one three three.",
+      "agent_text": "And what is the year, make, and model of your vehicle?",
+      "expected": "fr",
+      "got": "en"
+    }
+  ],
+  "skipped": []
+}

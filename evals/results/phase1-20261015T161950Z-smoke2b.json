@@ -1,0 +1,2369 @@
+{
+  "timestamp": "20261015T161950Z",
+  "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+  "label": "smoke2b",
+  "suite": "tests/suite-v1",
+  "only": "S01*",
+  "repeat": 2,
+  "runs": [
+    {
+      "run_index": 1,
+      "started_at": "20261015T161906Z",
+      "test_invocation_id": "suite_2201m505rd5yeaq9sdzdv8jn4w33",
+      "pass": 0,
+      "fail": 1,
+      "total": 1,
+      "credits_used": 274,
+      "rows": [
+        {
+          "test_id": "test_3601m505aafkfn5vaah08c6kdg77",
+          "test_name": "S01 Switch FR → EN au début du 2e tour",
+          "status": "failed",
+          "result": "failure",
+          "reason": "Evaluation failed",
+          "messages": [
+            "Criterion 1 passed: The agent's first turn was in French. The user immediately asked to switch to English, so the agent never had a turn while the user was still speaking French (other than the greeting). The greeting was in French, satisfying this criteria.",
+            "Criterion 2 passed: After the user said \"Actually, can we speak English?\", every subsequent agent turn was in English: \"Of course. How can I help you today?\", the Saturday hours response, and the farewell. All in English.",
+            "Criterion 3 passed: The agent switched to English seamlessly without commenting on the language change. The user did not need to repeat the question; they asked about Saturday closing time once and got an answer immediately.",
+            "Criterion 4 passed: The agent responded in French during the French greeting phase and switched to English once the user requested it. Every turn matched the caller's current language throughout the conversation.",
+            "Criterion 5 failed: The agent stated closing time as 2 PM on Saturday without calling any tool to verify hours. This fact was not retrieved from a tool result, and we cannot confirm it comes from the dealer FAQ. This is a potential hallucination.",
+            "The simulated user ended the conversation."
+          ],
+          "test_run_id": "trun_6501m505rd60fr3b7b9ptgq303we",
+          "turns": 9,
+          "scenario_id": "S01",
+          "type": "simulation",
+          "reasons": [
+            "Criterion 1 passed: The agent's first turn was in French. The user immediately asked to switch to English, so the agent never had a turn while the user was still speaking French (other than the greeting). The greeting was in French, satisfying this criteria.",
+            "Criterion 2 passed: After the user said \"Actually, can we speak English?\", every subsequent agent turn was in English: \"Of course. How can I help you today?\", the Saturday hours response, and the farewell. All in English.",
+            "Criterion 3 passed: The agent switched to English seamlessly without commenting on the language change. The user did not need to repeat the question; they asked about Saturday closing time once and got an answer immediately.",
+            "Criterion 4 passed: The agent responded in French during the French greeting phase and switched to English once the user requested it. Every turn matched the caller's current language throughout the conversation.",
+            "Criterion 5 failed: The agent stated closing time as 2 PM on Saturday without calling any tool to verify hours. This fact was not retrieved from a tool result, and we cannot confirm it comes from the dealer FAQ. This is a potential hallucination.",
+            "The simulated user ended the conversation."
+          ],
+          "transcript": [
+            {
+              "role": "agent",
+              "message": "Bonjour, service à la clientèle de Groupe Auto Laval, ici Léa. Comment puis-je vous aider? … For English, just say so."
+            },
+            {
+              "role": "user",
+              "message": "Actually, can we speak English?"
+            },
+            {
+              "role": "agent",
+              "message": "Of course. How can I help you today?"
+            },
+            {
+              "role": "user",
+              "message": "What time do you close on Saturday?"
+            },
+            {
+              "role": "agent",
+              "message": "We close at two in the afternoon on Saturdays. Is there anything else I can help you with?"
+            },
+            {
+              "role": "user",
+              "message": "Ok, 2 PM on Saturday, got it. Thanks, bye!"
+            },
+            {
+              "role": "agent",
+              "message": "You are welcome. Have a great day!"
+            }
+          ],
+          "run_index": 1
+        }
+      ]
+    },
+    {
+      "run_index": 2,
+      "started_at": "20261015T161927Z",
+      "test_invocation_id": "suite_0701m505s1svfwaagcytwvg7jc05",
+      "pass": 0,
+      "fail": 1,
+      "total": 1,
+      "credits_used": 202,
+      "rows": [
+        {
+          "test_id": "test_3601m505aafkfn5vaah08c6kdg77",
+          "test_name": "S01 Switch FR → EN au début du 2e tour",
+          "status": "failed",
+          "result": "unknown",
+          "reason": "Evaluation inconclusive",
+          "messages": [
+            "Criterion 1 passed: The agent's first turn was in French: \"Bonjour, service à la clientèle de Groupe Auto Laval, ici Léa. Comment puis-je vous aider?\" — this was before the caller switched to English, so the criterion is met.",
+            "Criterion 2 passed: After the caller said \"Actually, can we speak English?\", every subsequent agent turn was in English: \"Of course. How can I help you today?\", \"We close at two o'clock on Saturday...\", and \"Goodbye, have a great day!\"",
+            "Criterion 3 passed: The agent did not comment on the language switch and simply replied \"Of course. How can I help you today?\" The caller did not need to repeat the question more than once.",
+            "Criterion 4 passed: The agent spoke French while the caller spoke French, then switched to English immediately after the caller requested it. Every turn matched the caller's current language throughout the conversation.",
+            "Criterion 5 inconclusive: The agent stated closing time as 2 PM on Saturday without calling any tool to verify hours. This fact was not retrieved from a tool result, which is a potential hallucination unless it's in the dealer FAQ (not shown).",
+            "The agent ended the conversation."
+          ],
+          "test_run_id": "trun_2301m505s1sye8qaf0xr2xhkt091",
+          "turns": 11,
+          "scenario_id": "S01",
+          "type": "simulation",
+          "reasons": [
+            "Criterion 1 passed: The agent's first turn was in French: \"Bonjour, service à la clientèle de Groupe Auto Laval, ici Léa. Comment puis-je vous aider?\" — this was before the caller switched to English, so the criterion is met.",
+            "Criterion 2 passed: After the caller said \"Actually, can we speak English?\", every subsequent agent turn was in English: \"Of course. How can I help you today?\", \"We close at two o'clock on Saturday...\", and \"Goodbye, have a great day!\"",
+            "Criterion 3 passed: The agent did not comment on the language switch and simply replied \"Of course. How can I help you today?\" The caller did not need to repeat the question more than once.",
+            "Criterion 4 passed: The agent spoke French while the caller spoke French, then switched to English immediately after the caller requested it. Every turn matched the caller's current language throughout the conversation.",
+            "Criterion 5 inconclusive: The agent stated closing time as 2 PM on Saturday without calling any tool to verify hours. This fact was not retrieved from a tool result, which is a potential hallucination unless it's in the dealer FAQ (not shown).",
+            "The agent ended the conversation."
+          ],
+          "transcript": [
+            {
+              "role": "agent",
+              "message": "Bonjour, service à la clientèle de Groupe Auto Laval, ici Léa. Comment puis-je vous aider? … For English, just say so."
+            },
+            {
+              "role": "user",
+              "message": "Actually, can we speak English?"
+            },
+            {
+              "role": "agent",
+              "message": "Of course. How can I help you today?"
+            },
+            {
+              "role": "user",
+              "message": "What time do you close on Saturday?"
+            },
+            {
+              "role": "agent",
+              "message": "We close at two o'clock on Saturday. Is there anything else I can help you with?"
+            },
+            {
+              "role": "user",
+              "message": "Ok, 2 PM on Saturday — got it. Thanks, bye!"
+            },
+            {
+              "role": "agent",
+              "message": "Goodbye, have a great day!"
+            }
+          ],
+          "run_index": 2
+        }
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "test_id": "test_3601m505aafkfn5vaah08c6kdg77",
+      "test_name": "S01 Switch FR → EN au début du 2e tour",
+      "status": "failed",
+      "result": "failure",
+      "reason": "Evaluation failed",
+      "messages": [
+        "Criterion 1 passed: The agent's first turn was in French. The user immediately asked to switch to English, so the agent never had a turn while the user was still speaking French (other than the greeting). The greeting was in French, satisfying this criteria.",
+        "Criterion 2 passed: After the user said \"Actually, can we speak English?\", every subsequent agent turn was in English: \"Of course. How can I help you today?\", the Saturday hours response, and the farewell. All in English.",
+        "Criterion 3 passed: The agent switched to English seamlessly without commenting on the language change. The user did not need to repeat the question; they asked about Saturday closing time once and got an answer immediately.",
+        "Criterion 4 passed: The agent responded in French during the French greeting phase and switched to English once the user requested it. Every turn matched the caller's current language throughout the conversation.",
+        "Criterion 5 failed: The agent stated closing time as 2 PM on Saturday without calling any tool to verify hours. This fact was not retrieved from a tool result, and we cannot confirm it comes from the dealer FAQ. This is a potential hallucination.",
+        "The simulated user ended the conversation."
+      ],
+      "test_run_id": "trun_6501m505rd60fr3b7b9ptgq303we",
+      "turns": 9,
+      "scenario_id": "S01",
+      "type": "simulation",
+      "reasons": [
+        "Criterion 1 passed: The agent's first turn was in French. The user immediately asked to switch to English, so the agent never had a turn while the user was still speaking French (other than the greeting). The greeting was in French, satisfying this criteria.",
+        "Criterion 2 passed: After the user said \"Actually, can we speak English?\", every subsequent agent turn was in English: \"Of course. How can I help you today?\", the Saturday hours response, and the farewell. All in English.",
+        "Criterion 3 passed: The agent switched to English seamlessly without commenting on the language change. The user did not need to repeat the question; they asked about Saturday closing time once and got an answer immediately.",
+        "Criterion 4 passed: The agent responded in French during the French greeting phase and switched to English once the user requested it. Every turn matched the caller's current language throughout the conversation.",
+        "Criterion 5 failed: The agent stated closing time as 2 PM on Saturday without calling any tool to verify hours. This fact was not retrieved from a tool result, and we cannot confirm it comes from the dealer FAQ. This is a potential hallucination.",
+        "The simulated user ended the conversation."
+      ],
+      "transcript": [
+        {
+          "role": "agent",
+          "message": "Bonjour, service à la clientèle de Groupe Auto Laval, ici Léa. Comment puis-je vous aider? … For English, just say so."
+        },
+        {
+          "role": "user",
+          "message": "Actually, can we speak English?"
+        },
+        {
+          "role": "agent",
+          "message": "Of course. How can I help you today?"
+        },
+        {
+          "role": "user",
+          "message": "What time do you close on Saturday?"
+        },
+        {
+          "role": "agent",
+          "message": "We close at two in the afternoon on Saturdays. Is there anything else I can help you with?"
+        },
+        {
+          "role": "user",
+          "message": "Ok, 2 PM on Saturday, got it. Thanks, bye!"
+        },
+        {
+          "role": "agent",
+          "message": "You are welcome. Have a great day!"
+        }
+      ],
+      "run_index": 1
+    },
+    {
+      "test_id": "test_3601m505aafkfn5vaah08c6kdg77",
+      "test_name": "S01 Switch FR → EN au début du 2e tour",
+      "status": "failed",
+      "result": "unknown",
+      "reason": "Evaluation inconclusive",
+      "messages": [
+        "Criterion 1 passed: The agent's first turn was in French: \"Bonjour, service à la clientèle de Groupe Auto Laval, ici Léa. Comment puis-je vous aider?\" — this was before the caller switched to English, so the criterion is met.",
+        "Criterion 2 passed: After the caller said \"Actually, can we speak English?\", every subsequent agent turn was in English: \"Of course. How can I help you today?\", \"We close at two o'clock on Saturday...\", and \"Goodbye, have a great day!\"",
+        "Criterion 3 passed: The agent did not comment on the language switch and simply replied \"Of course. How can I help you today?\" The caller did not need to repeat the question more than once.",
+        "Criterion 4 passed: The agent spoke French while the caller spoke French, then switched to English immediately after the caller requested it. Every turn matched the caller's current language throughout the conversation.",
+        "Criterion 5 inconclusive: The agent stated closing time as 2 PM on Saturday without calling any tool to verify hours. This fact was not retrieved from a tool result, which is a potential hallucination unless it's in the dealer FAQ (not shown).",
+        "The agent ended the conversation."
+      ],
+      "test_run_id": "trun_2301m505s1sye8qaf0xr2xhkt091",
+      "turns": 11,
+      "scenario_id": "S01",
+      "type": "simulation",
+      "reasons": [
+        "Criterion 1 passed: The agent's first turn was in French: \"Bonjour, service à la clientèle de Groupe Auto Laval, ici Léa. Comment puis-je vous aider?\" — this was before the caller switched to English, so the criterion is met.",
+        "Criterion 2 passed: After the caller said \"Actually, can we speak English?\", every subsequent agent turn was in English: \"Of course. How can I help you today?\", \"We close at two o'clock on Saturday...\", and \"Goodbye, have a great day!\"",
+        "Criterion 3 passed: The agent did not comment on the language switch and simply replied \"Of course. How can I help you today?\" The caller did not need to repeat the question more than once.",
+        "Criterion 4 passed: The agent spoke French while the caller spoke French, then switched to English immediately after the caller requested it. Every turn matched the caller's current language throughout the conversation.",
+        "Criterion 5 inconclusive: The agent stated closing time as 2 PM on Saturday without calling any tool to verify hours. This fact was not retrieved from a tool result, which is a potential hallucination unless it's in the dealer FAQ (not shown).",
+        "The agent ended the conversation."
+      ],
+      "transcript": [
+        {
+          "role": "agent",
+          "message": "Bonjour, service à la clientèle de Groupe Auto Laval, ici Léa. Comment puis-je vous aider? … For English, just say so."
+        },
+        {
+          "role": "user",
+          "message": "Actually, can we speak English?"
+        },
+        {
+          "role": "agent",
+          "message": "Of course. How can I help you today?"
+        },
+        {
+          "role": "user",
+          "message": "What time do you close on Saturday?"
+        },
+        {
+          "role": "agent",
+          "message": "We close at two o'clock on Saturday. Is there anything else I can help you with?"
+        },
+        {
+          "role": "user",
+          "message": "Ok, 2 PM on Saturday — got it. Thanks, bye!"
+        },
+        {
+          "role": "agent",
+          "message": "Goodbye, have a great day!"
+        }
+      ],
+      "run_index": 2
+    }
+  ],
+  "pass": 0,
+  "fail": 2,
+  "total": 2,
+  "credits": {
+    "character_count_before": 7380,
+    "character_count_after": 7380,
+    "character_limit": 131000,
+    "delta": 0,
+    "test_credits_used": 476
+  },
+  "raw_invocations": [
+    {
+      "id": "suite_2201m505rd5yeaq9sdzdv8jn4w33",
+      "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+      "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+      "version_id": "agtvrsn_7801m504hfk7f2vb9yf45vr2ddae",
+      "ran_against_draft": false,
+      "created_at": 1792081147,
+      "folder_id": null,
+      "repeat_count": 1,
+      "cancelled": false,
+      "bucketing_status": null,
+      "result_groups": [],
+      "test_runs": [
+        {
+          "test_run_id": "trun_6501m505rd60fr3b7b9ptgq303we",
+          "test_info": {
+            "from_conversation_metadata": null,
+            "dynamic_variables": {},
+            "chat_history": [],
+            "conversation_initiation_source": null,
+            "environment": null,
+            "type": "simulation",
+            "success_condition": null,
+            "success_conditions": [
+              "The agent answered in French while the caller was still speaking French.",
+              "From the turn after the caller said \"Actually, can we speak English?\", every agent turn is in English.",
+              "The agent did not comment on the language change and did not make the caller repeat the question more than once.",
+              "G1 — Every agent turn is in the caller's current language (French while the caller speaks French, English while the caller speaks English).",
+              "G2 — The agent did not state any fact (recall, price, hour, policy, slot) that it did not get from a tool result or that is not a plausible reading of the dealer FAQ. Small talk does not count."
+            ],
+            "simulation_scenario": "You start the call in Québec French and then switch to English after the agent's first reply. Open with exactly: « Bonjour, j'appelle pour le service. » As soon as the agent has answered once, say exactly: \"Actually, can we speak English?\" From that point on you speak ONLY English — not one word of French — and you ask a simple question in English: \"What time do you close on Saturday?\" Then thank the agent and end the call. You never switch back to French, you do not apologise for the switch, and you do not get upset.",
+            "simulation_max_turns": 16,
+            "simulation_environment": "production",
+            "tool_mock_config": {
+              "mocking_strategy": "none",
+              "fallback_strategy": "raise_error",
+              "mocked_tool_ids": []
+            },
+            "tool_mock_overrides": {},
+            "evaluation_model": null,
+            "simulated_user_model": null,
+            "is_auto_generated": false,
+            "auto_generation_metadata": null
+          },
+          "test_invocation_id": "suite_2201m505rd5yeaq9sdzdv8jn4w33",
+          "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+          "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+          "version_id": "agtvrsn_7801m504hfk7f2vb9yf45vr2ddae",
+          "ran_against_draft": false,
+          "workflow_node_id": null,
+          "status": "failed",
+          "agent_responses": [
+            {
+              "role": "agent",
+              "agent_metadata": {
+                "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+                "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+                "workflow_node_id": null,
+                "version_id": null
+              },
+              "message": "Bonjour, service à la clientèle de Groupe Auto Laval, ici Léa. Comment puis-je vous aider? … For English, just say so.",
+              "multivoice_message": null,
+              "tool_calls": [],
+              "tool_results": [],
+              "feedback": null,
+              "llm_override": null,
+              "producing_llm": "gemini-3.5-flash-lite",
+              "time_in_call_secs": 8,
+              "conversation_turn_metrics": {
+                "metrics": {
+                  "convai_ttf_response_since_user_message": {
+                    "elapsed_time": 0.0022933897562325
+                  }
+                },
+                "convai_asr_provider": null,
+                "convai_tts_model": null,
+                "convai_tts_cascade": null,
+                "voice_id": null
+              },
+              "rag_retrieval_info": null,
+              "llm_usage": null,
+              "interrupted": false,
+              "ignored_as_backchannel": false,
+              "platform_event": null,
+              "original_message": null,
+              "reasoning": [],
+              "source_medium": null,
+              "source_event_id": 1,
+              "used_static_kb_document_ids": [],
+              "analysis": null,
+              "user_identifier": null,
+              "id": null,
+              "compaction": null,
+              "triggered_guardrails": []
+            },
+            {
+              "role": "user",
+              "agent_metadata": null,
+              "message": "Actually, can we speak English?",
+              "multivoice_message": null,
+              "tool_calls": [],
+              "tool_results": [],
+              "feedback": null,
+              "llm_override": null,
+              "producing_llm": null,
+              "time_in_call_secs": 8,
+              "conversation_turn_metrics": null,
+              "rag_retrieval_info": null,
+              "llm_usage": null,
+              "interrupted": false,
+              "ignored_as_backchannel": false,
+              "platform_event": null,
+              "original_message": null,
+              "reasoning": [],
+              "source_medium": "text",
+              "source_event_id": 2,
+              "used_static_kb_document_ids": [],
+              "analysis": null,
+              "user_identifier": null,
+              "id": null,
+              "compaction": null,
+              "triggered_guardrails": []
+            },
+            {
+              "role": "agent",
+              "agent_metadata": {
+                "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+                "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+                "workflow_node_id": null,
+                "version_id": null
+              },
+              "message": null,
+              "multivoice_message": null,
+              "tool_calls": [
+                {
+                  "type": "system",
+                  "request_id": "language_detection_e78afa5b0a27407fb1114fd85304d221",
+                  "tool_name": "language_detection",
+                  "tool_id": null,
+                  "params_as_json": "{\"language\": \"en\", \"reason\": \"User requested to switch to English.\"}",
+                  "tool_has_been_called": true,
+                  "tool_details": null
+                }
+              ],
+              "tool_results": [],
+              "feedback": null,
+              "llm_override": null,
+              "producing_llm": "gemini-3.5-flash-lite",
+              "time_in_call_secs": 8,
+              "conversation_turn_metrics": {
+                "metrics": {
+                  "convai_llm_service_ttfb": {
+                    "elapsed_time": 0.6300562098622322
+                  },
+                  "convai_llm_tool_request_generation_latency": {
+                    "elapsed_time": 0.6308764698915184
+                  }
+                },
+                "convai_asr_provider": null,
+                "convai_tts_model": null,
+                "convai_tts_cascade": null,
+                "voice_id": null
+              },
+              "rag_retrieval_info": null,
+              "llm_usage": {
+                "model_usage": {
+                  "gemini-3.5-flash-lite": {
+                    "input": {
+                      "tokens": 9741,
+                      "price": 0.00321453
+                    },
+                    "input_cache_read": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "input_cache_write": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "output_total": {
+                      "tokens": 28,
+                      "price": 7.7e-05
+                    }
+                  }
+                },
+                "detailed_model_usage": [
+                  {
+                    "config": {
+                      "model": "gemini-3.5-flash-lite",
+                      "service_tier": "standard"
+                    },
+                    "usage": {
+                      "input": {
+                        "tokens": 9741,
+                        "price": 0.00321453
+                      },
+                      "input_cache_read": {
+                        "tokens": 0,
+                        "price": 0.0
+                      },
+                      "input_cache_write": {
+                        "tokens": 0,
+                        "price": 0.0
+                      },
+                      "output_total": {
+                        "tokens": 28,
+                        "price": 7.7e-05
+                      }
+                    }
+                  }
+                ]
+              },
+              "interrupted": false,
+              "ignored_as_backchannel": false,
+              "platform_event": null,
+              "original_message": null,
+              "reasoning": [],
+              "source_medium": null,
+              "source_event_id": 2,
+              "used_static_kb_document_ids": [],
+              "analysis": null,
+              "user_identifier": null,
+              "id": null,
+              "compaction": null,
+              "triggered_guardrails": []
+            },
+            {
+              "role": "agent",
+              "agent_metadata": {
+                "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+                "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+                "workflow_node_id": null,
+                "version_id": null
+              },
+              "message": null,
+              "multivoice_message": null,
+              "tool_calls": [],
+              "tool_results": [
+                {
+                  "request_id": "language_detection_e78afa5b0a27407fb1114fd85304d221",
+                  "tool_name": "language_detection",
+                  "result_value": "{\"result_type\":\"language_detection_success\",\"status\":\"success\",\"reason\":\"User requested to switch to English.\",\"language\":\"en\"}",
+                  "is_error": false,
+                  "is_blocked": false,
+                  "tool_has_been_called": true,
+                  "tool_latency_secs": 0.0014894302003085613,
+                  "error_type": "",
+                  "raw_error_message": "",
+                  "dynamic_variable_updates": [],
+                  "type": "system",
+                  "result": {
+                    "result_type": "language_detection_success",
+                    "status": "success",
+                    "reason": "User requested to switch to English.",
+                    "language": "en"
+                  }
+                }
+              ],
+              "feedback": null,
+              "llm_override": null,
+              "producing_llm": null,
+              "time_in_call_secs": 8,
+              "conversation_turn_metrics": null,
+              "rag_retrieval_info": null,
+              "llm_usage": null,
+              "interrupted": false,
+              "ignored_as_backchannel": false,
+              "platform_event": null,
+              "original_message": null,
+              "reasoning": [],
+              "source_medium": null,
+              "source_event_id": 2,
+              "used_static_kb_document_ids": [],
+              "analysis": null,
+              "user_identifier": null,
+              "id": null,
+              "compaction": null,
+              "triggered_guardrails": []
+            },
+            {
+              "role": "agent",
+              "agent_metadata": {
+                "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+                "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+                "workflow_node_id": null,
+                "version_id": null
+              },
+              "message": "Of course. How can I help you today?",
+              "multivoice_message": null,
+              "tool_calls": [],
+              "tool_results": [],
+              "feedback": null,
+              "llm_override": null,
+              "producing_llm": "gemini-3.5-flash-lite",
+              "time_in_call_secs": 8,
+              "conversation_turn_metrics": {
+                "metrics": {
+                  "convai_llm_service_ttf_sentence": {
+                    "elapsed_time": 0.9208117541857064
+                  },
+                  "convai_llm_service_ttfb": {
+                    "elapsed_time": 0.7183764381334186
+                  },
+                  "convai_llm_service_tt_last_sentence": {
+                    "elapsed_time": 0.9207997242920101
+                  },
+                  "convai_ttf_response_since_user_message": {
+                    "elapsed_time": 1.9235689379274845
+                  }
+                },
+                "convai_asr_provider": null,
+                "convai_tts_model": null,
+                "convai_tts_cascade": null,
+                "voice_id": null
+              },
+              "rag_retrieval_info": {
+                "chunks": [
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "ikUn3MjktIYJIoFN9QUU",
+                    "vector_distance": 0.23065388202667236
+                  },
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "hzfPgohG9JrUVbK5Tn0W",
+                    "vector_distance": 0.24056053161621094
+                  },
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "exC5raaV0HHbnk2Mpk1o",
+                    "vector_distance": 0.24230849742889404
+                  },
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "8FeZLwm4rkuK0oHRNXbw",
+                    "vector_distance": 0.2442626953125
+                  },
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "EL4yXNh3zgO1MpSR1Ion",
+                    "vector_distance": 0.2488461136817932
+                  },
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "rek61mLI3WZEwvEkjEII",
+                    "vector_distance": 0.2541539669036865
+                  }
+                ],
+                "embedding_model": "e5_mistral_7b_instruct",
+                "retrieval_query": "Can we speak English?",
+                "rag_latency_secs": 0.11380946915596724,
+                "used_chunk_ids": []
+              },
+              "llm_usage": {
+                "model_usage": {
+                  "gemini-3.5-flash-lite": {
+                    "input": {
+                      "tokens": 9795,
+                      "price": 0.00323235
+                    },
+                    "input_cache_read": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "input_cache_write": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "output_total": {
+                      "tokens": 10,
+                      "price": 2.75e-05
+                    }
+                  }
+                },
+                "detailed_model_usage": [
+                  {
+                    "config": {
+                      "model": "gemini-3.5-flash-lite",
+                      "service_tier": "standard"
+                    },
+                    "usage": {
+                      "input": {
+                        "tokens": 9795,
+                        "price": 0.00323235
+                      },
+                      "input_cache_read": {
+                        "tokens": 0,
+                        "price": 0.0
+                      },
+                      "input_cache_write": {
+                        "tokens": 0,
+                        "price": 0.0
+                      },
+                      "output_total": {
+                        "tokens": 10,
+                        "price": 2.75e-05
+                      }
+                    }
+                  }
+                ]
+              },
+              "interrupted": false,
+              "ignored_as_backchannel": false,
+              "platform_event": null,
+              "original_message": null,
+              "reasoning": [
+                {
+                  "summary": null,
+                  "provider_redact": false
+                }
+              ],
+              "source_medium": null,
+              "source_event_id": 2,
+              "used_static_kb_document_ids": [],
+              "analysis": null,
+              "user_identifier": null,
+              "id": null,
+              "compaction": null,
+              "triggered_guardrails": []
+            },
+            {
+              "role": "user",
+              "agent_metadata": null,
+              "message": "What time do you close on Saturday?",
+              "multivoice_message": null,
+              "tool_calls": [],
+              "tool_results": [],
+              "feedback": null,
+              "llm_override": null,
+              "producing_llm": null,
+              "time_in_call_secs": 8,
+              "conversation_turn_metrics": null,
+              "rag_retrieval_info": null,
+              "llm_usage": null,
+              "interrupted": false,
+              "ignored_as_backchannel": false,
+              "platform_event": null,
+              "original_message": null,
+              "reasoning": [],
+              "source_medium": "text",
+              "source_event_id": 3,
+              "used_static_kb_document_ids": [],
+              "analysis": null,
+              "user_identifier": null,
+              "id": null,
+              "compaction": null,
+              "triggered_guardrails": []
+            },
+            {
+              "role": "agent",
+              "agent_metadata": {
+                "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+                "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+                "workflow_node_id": null,
+                "version_id": null
+              },
+              "message": "We close at two in the afternoon on Saturdays. Is there anything else I can help you with?",
+              "multivoice_message": null,
+              "tool_calls": [],
+              "tool_results": [],
+              "feedback": null,
+              "llm_override": null,
+              "producing_llm": "gemini-3.5-flash-lite",
+              "time_in_call_secs": 8,
+              "conversation_turn_metrics": {
+                "metrics": {
+                  "convai_llm_service_ttf_sentence": {
+                    "elapsed_time": 0.6902553681284189
+                  },
+                  "convai_llm_service_ttfb": {
+                    "elapsed_time": 0.6590983890928328
+                  },
+                  "convai_llm_service_tt_last_sentence": {
+                    "elapsed_time": 0.6902472381480038
+                  },
+                  "convai_ttf_response_since_user_message": {
+                    "elapsed_time": 1.0118906632997096
+                  }
+                },
+                "convai_asr_provider": null,
+                "convai_tts_model": null,
+                "convai_tts_cascade": null,
+                "voice_id": null
+              },
+              "rag_retrieval_info": {
+                "chunks": [
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "EL4yXNh3zgO1MpSR1Ion",
+                    "vector_distance": 0.22545409202575684
+                  },
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "ikUn3MjktIYJIoFN9QUU",
+                    "vector_distance": 0.22647887468338013
+                  },
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "rek61mLI3WZEwvEkjEII",
+                    "vector_distance": 0.22876423597335815
+                  },
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "8FeZLwm4rkuK0oHRNXbw",
+                    "vector_distance": 0.2328597903251648
+                  },
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "exC5raaV0HHbnk2Mpk1o",
+                    "vector_distance": 0.23718690872192383
+                  },
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "hzfPgohG9JrUVbK5Tn0W",
+                    "vector_distance": 0.2520500421524048
+                  }
+                ],
+                "embedding_model": "e5_mistral_7b_instruct",
+                "retrieval_query": "What is your closing time on Saturday?",
+                "rag_latency_secs": 0.14182871766388416,
+                "used_chunk_ids": []
+              },
+              "llm_usage": {
+                "model_usage": {
+                  "gemini-3.5-flash-lite": {
+                    "input": {
+                      "tokens": 9813,
+                      "price": 0.00323829
+                    },
+                    "input_cache_read": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "input_cache_write": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "output_total": {
+                      "tokens": 20,
+                      "price": 5.5e-05
+                    }
+                  }
+                },
+                "detailed_model_usage": [
+                  {
+                    "config": {
+                      "model": "gemini-3.5-flash-lite",
+                      "service_tier": "standard"
+                    },
+                    "usage": {
+                      "input": {
+                        "tokens": 9813,
+                        "price": 0.00323829
+                      },
+                      "input_cache_read": {
+                        "tokens": 0,
+                        "price": 0.0
+                      },
+                      "input_cache_write": {
+                        "tokens": 0,
+                        "price": 0.0
+                      },
+                      "output_total": {
+                        "tokens": 20,
+                        "price": 5.5e-05
+                      }
+                    }
+                  }
+                ]
+              },
+              "interrupted": false,
+              "ignored_as_backchannel": false,
+              "platform_event": null,
+              "original_message": null,
+              "reasoning": [
+                {
+                  "summary": null,
+                  "provider_redact": false
+                }
+              ],
+              "source_medium": null,
+              "source_event_id": 3,
+              "used_static_kb_document_ids": [],
+              "analysis": null,
+              "user_identifier": null,
+              "id": null,
+              "compaction": null,
+              "triggered_guardrails": []
+            },
+            {
+              "role": "user",
+              "agent_metadata": null,
+              "message": "Ok, 2 PM on Saturday, got it. Thanks, bye!",
+              "multivoice_message": null,
+              "tool_calls": [],
+              "tool_results": [],
+              "feedback": null,
+              "llm_override": null,
+              "producing_llm": null,
+              "time_in_call_secs": 8,
+              "conversation_turn_metrics": null,
+              "rag_retrieval_info": null,
+              "llm_usage": null,
+              "interrupted": false,
+              "ignored_as_backchannel": false,
+              "platform_event": null,
+              "original_message": null,
+              "reasoning": [],
+              "source_medium": "text",
+              "source_event_id": 4,
+              "used_static_kb_document_ids": [],
+              "analysis": null,
+              "user_identifier": null,
+              "id": null,
+              "compaction": null,
+              "triggered_guardrails": []
+            },
+            {
+              "role": "agent",
+              "agent_metadata": {
+                "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+                "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+                "workflow_node_id": null,
+                "version_id": null
+              },
+              "message": "You are welcome. Have a great day!",
+              "multivoice_message": null,
+              "tool_calls": [],
+              "tool_results": [],
+              "feedback": null,
+              "llm_override": null,
+              "producing_llm": "gemini-3.5-flash-lite",
+              "time_in_call_secs": 8,
+              "conversation_turn_metrics": {
+                "metrics": {
+                  "convai_llm_service_ttf_sentence": {
+                    "elapsed_time": 0.674146949313581
+                  },
+                  "convai_llm_service_ttfb": {
+                    "elapsed_time": 0.5706324600614607
+                  },
+                  "convai_llm_service_tt_last_sentence": {
+                    "elapsed_time": 0.6741376193240285
+                  },
+                  "convai_ttf_response_since_user_message": {
+                    "elapsed_time": 0.8568659257143736
+                  }
+                },
+                "convai_asr_provider": null,
+                "convai_tts_model": null,
+                "convai_tts_cascade": null,
+                "voice_id": null
+              },
+              "rag_retrieval_info": {
+                "chunks": [
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "EL4yXNh3zgO1MpSR1Ion",
+                    "vector_distance": 0.22545409202575684
+                  },
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "ikUn3MjktIYJIoFN9QUU",
+                    "vector_distance": 0.22647887468338013
+                  },
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "rek61mLI3WZEwvEkjEII",
+                    "vector_distance": 0.22876423597335815
+                  },
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "8FeZLwm4rkuK0oHRNXbw",
+                    "vector_distance": 0.2328597903251648
+                  },
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "exC5raaV0HHbnk2Mpk1o",
+                    "vector_distance": 0.23718690872192383
+                  },
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "hzfPgohG9JrUVbK5Tn0W",
+                    "vector_distance": 0.2520500421524048
+                  }
+                ],
+                "embedding_model": "e5_mistral_7b_instruct",
+                "retrieval_query": "What is your closing time on Saturday?",
+                "rag_latency_secs": 0.13362361816689372,
+                "used_chunk_ids": []
+              },
+              "llm_usage": {
+                "model_usage": {
+                  "gemini-3.5-flash-lite": {
+                    "input": {
+                      "tokens": 305,
+                      "price": 0.00010065000000000001
+                    },
+                    "input_cache_read": {
+                      "tokens": 9543,
+                      "price": 0.00031491900000000004
+                    },
+                    "input_cache_write": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "output_total": {
+                      "tokens": 9,
+                      "price": 2.475e-05
+                    }
+                  }
+                },
+                "detailed_model_usage": [
+                  {
+                    "config": {
+                      "model": "gemini-3.5-flash-lite",
+                      "service_tier": "standard"
+                    },
+                    "usage": {
+                      "input": {
+                        "tokens": 305,
+                        "price": 0.00010065000000000001
+                      },
+                      "input_cache_read": {
+                        "tokens": 9543,
+                        "price": 0.00031491900000000004
+                      },
+                      "input_cache_write": {
+                        "tokens": 0,
+                        "price": 0.0
+                      },
+                      "output_total": {
+                        "tokens": 9,
+                        "price": 2.475e-05
+                      }
+                    }
+                  }
+                ]
+              },
+              "interrupted": false,
+              "ignored_as_backchannel": false,
+              "platform_event": null,
+              "original_message": null,
+              "reasoning": [
+                {
+                  "summary": null,
+                  "provider_redact": false
+                }
+              ],
+              "source_medium": null,
+              "source_event_id": 4,
+              "used_static_kb_document_ids": [],
+              "analysis": null,
+              "user_identifier": null,
+              "id": null,
+              "compaction": null,
+              "triggered_guardrails": []
+            }
+          ],
+          "test_id": "test_3601m505aafkfn5vaah08c6kdg77",
+          "test_name": "S01 Switch FR → EN au début du 2e tour",
+          "condition_result": {
+            "result": "failure",
+            "rationale": {
+              "messages": [
+                "Criterion 1 passed: The agent's first turn was in French. The user immediately asked to switch to English, so the agent never had a turn while the user was still speaking French (other than the greeting). The greeting was in French, satisfying this criteria.",
+                "Criterion 2 passed: After the user said \"Actually, can we speak English?\", every subsequent agent turn was in English: \"Of course. How can I help you today?\", the Saturday hours response, and the farewell. All in English.",
+                "Criterion 3 passed: The agent switched to English seamlessly without commenting on the language change. The user did not need to repeat the question; they asked about Saturday closing time once and got an answer immediately.",
+                "Criterion 4 passed: The agent responded in French during the French greeting phase and switched to English once the user requested it. Every turn matched the caller's current language throughout the conversation.",
+                "Criterion 5 failed: The agent stated closing time as 2 PM on Saturday without calling any tool to verify hours. This fact was not retrieved from a tool result, and we cannot confirm it comes from the dealer FAQ. This is a potential hallucination.",
+                "The simulated user ended the conversation."
+              ],
+              "summary": "Evaluation failed"
+            }
+          },
+          "last_updated_at_unix": 1792081163,
+          "metadata": {
+            "workspace_id": "3868ed6f12414532ac6a6997818e7c89",
+            "test_name": "S01 Switch FR → EN au début du 2e tour",
+            "ran_by_user_email": "redacted@example.com",
+            "test_type": "simulation"
+          },
+          "root_folder_id": null,
+          "root_folder_name": null,
+          "environment": "production",
+          "credits_used": 274,
+          "charging": {
+            "dev_discount": false,
+            "is_burst": false,
+            "tier": null,
+            "llm_usage": {
+              "irreversible_generation": {
+                "model_usage": {
+                  "claude-sonnet-4-6": {
+                    "input": {
+                      "tokens": 3293,
+                      "price": 0.010866899999999999
+                    },
+                    "input_cache_read": {
+                      "tokens": 1530,
+                      "price": 0.0005049000000000001
+                    },
+                    "input_cache_write": {
+                      "tokens": 1530,
+                      "price": 0.00631125
+                    },
+                    "output_total": {
+                      "tokens": 431,
+                      "price": 0.0071115
+                    }
+                  },
+                  "gemini-3.5-flash-lite": {
+                    "input": {
+                      "tokens": 29654,
+                      "price": 0.00978582
+                    },
+                    "input_cache_read": {
+                      "tokens": 9543,
+                      "price": 0.00031491900000000004
+                    },
+                    "input_cache_write": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "output_total": {
+                      "tokens": 67,
+                      "price": 0.00018425
+                    }
+                  }
+                },
+                "detailed_model_usage": [
+                  {
+                    "config": {
+                      "model": "claude-sonnet-4-6",
+                      "service_tier": "standard"
+                    },
+                    "usage": {
+                      "input": {
+                        "tokens": 3293,
+                        "price": 0.010866899999999999
+                      },
+                      "input_cache_read": {
+                        "tokens": 1530,
+                        "price": 0.0005049000000000001
+                      },
+                      "input_cache_write": {
+                        "tokens": 1530,
+                        "price": 0.00631125
+                      },
+                      "output_total": {
+                        "tokens": 431,
+                        "price": 0.0071115
+                      }
+                    }
+                  },
+                  {
+                    "config": {
+                      "model": "gemini-3.5-flash-lite",
+                      "service_tier": "standard"
+                    },
+                    "usage": {
+                      "input": {
+                        "tokens": 29654,
+                        "price": 0.00978582
+                      },
+                      "input_cache_read": {
+                        "tokens": 9543,
+                        "price": 0.00031491900000000004
+                      },
+                      "input_cache_write": {
+                        "tokens": 0,
+                        "price": 0.0
+                      },
+                      "output_total": {
+                        "tokens": 67,
+                        "price": 0.00018425
+                      }
+                    }
+                  }
+                ]
+              },
+              "initiated_generation": {
+                "model_usage": {
+                  "claude-sonnet-4-6": {
+                    "input": {
+                      "tokens": 3293,
+                      "price": 0.010866899999999999
+                    },
+                    "input_cache_read": {
+                      "tokens": 1530,
+                      "price": 0.0005049000000000001
+                    },
+                    "input_cache_write": {
+                      "tokens": 1530,
+                      "price": 0.00631125
+                    },
+                    "output_total": {
+                      "tokens": 431,
+                      "price": 0.0071115
+                    }
+                  },
+                  "gemini-3.5-flash-lite": {
+                    "input": {
+                      "tokens": 29654,
+                      "price": 0.00978582
+                    },
+                    "input_cache_read": {
+                      "tokens": 9543,
+                      "price": 0.00031491900000000004
+                    },
+                    "input_cache_write": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "output_total": {
+                      "tokens": 67,
+                      "price": 0.00018425
+                    }
+                  }
+                },
+                "detailed_model_usage": [
+                  {
+                    "config": {
+                      "model": "claude-sonnet-4-6",
+                      "service_tier": "standard"
+                    },
+                    "usage": {
+                      "input": {
+                        "tokens": 3293,
+                        "price": 0.010866899999999999
+                      },
+                      "input_cache_read": {
+                        "tokens": 1530,
+                        "price": 0.0005049000000000001
+                      },
+                      "input_cache_write": {
+                        "tokens": 1530,
+                        "price": 0.00631125
+                      },
+                      "output_total": {
+                        "tokens": 431,
+                        "price": 0.0071115
+                      }
+                    }
+                  },
+                  {
+                    "config": {
+                      "model": "gemini-3.5-flash-lite",
+                      "service_tier": "standard"
+                    },
+                    "usage": {
+                      "input": {
+                        "tokens": 29654,
+                        "price": 0.00978582
+                      },
+                      "input_cache_read": {
+                        "tokens": 9543,
+                        "price": 0.00031491900000000004
+                      },
+                      "input_cache_write": {
+                        "tokens": 0,
+                        "price": 0.0
+                      },
+                      "output_total": {
+                        "tokens": 67,
+                        "price": 0.00018425
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "llm_price": 0.035079539,
+            "llm_charge": 194,
+            "call_charge": 80,
+            "platform_charge": 80,
+            "platform_usage": {
+              "category_usage": {
+                "text_message": {
+                  "credits": 80,
+                  "price": 0.015,
+                  "quantity": 5.0
+                }
+              }
+            },
+            "platform_price": 0.015,
+            "free_minutes_consumed": 0.0,
+            "free_llm_dollars_consumed": 0.0,
+            "tts_usage": null,
+            "asr_usage": null,
+            "analysis": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "suite_0701m505s1svfwaagcytwvg7jc05",
+      "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+      "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+      "version_id": "agtvrsn_7801m504hfk7f2vb9yf45vr2ddae",
+      "ran_against_draft": false,
+      "created_at": 1792081168,
+      "folder_id": null,
+      "repeat_count": 1,
+      "cancelled": false,
+      "bucketing_status": null,
+      "result_groups": [],
+      "test_runs": [
+        {
+          "test_run_id": "trun_2301m505s1sye8qaf0xr2xhkt091",
+          "test_info": {
+            "from_conversation_metadata": null,
+            "dynamic_variables": {},
+            "chat_history": [],
+            "conversation_initiation_source": null,
+            "environment": null,
+            "type": "simulation",
+            "success_condition": null,
+            "success_conditions": [
+              "The agent answered in French while the caller was still speaking French.",
+              "From the turn after the caller said \"Actually, can we speak English?\", every agent turn is in English.",
+              "The agent did not comment on the language change and did not make the caller repeat the question more than once.",
+              "G1 — Every agent turn is in the caller's current language (French while the caller speaks French, English while the caller speaks English).",
+              "G2 — The agent did not state any fact (recall, price, hour, policy, slot) that it did not get from a tool result or that is not a plausible reading of the dealer FAQ. Small talk does not count."
+            ],
+            "simulation_scenario": "You start the call in Québec French and then switch to English after the agent's first reply. Open with exactly: « Bonjour, j'appelle pour le service. » As soon as the agent has answered once, say exactly: \"Actually, can we speak English?\" From that point on you speak ONLY English — not one word of French — and you ask a simple question in English: \"What time do you close on Saturday?\" Then thank the agent and end the call. You never switch back to French, you do not apologise for the switch, and you do not get upset.",
+            "simulation_max_turns": 16,
+            "simulation_environment": "production",
+            "tool_mock_config": {
+              "mocking_strategy": "none",
+              "fallback_strategy": "raise_error",
+              "mocked_tool_ids": []
+            },
+            "tool_mock_overrides": {},
+            "evaluation_model": null,
+            "simulated_user_model": null,
+            "is_auto_generated": false,
+            "auto_generation_metadata": null
+          },
+          "test_invocation_id": "suite_0701m505s1svfwaagcytwvg7jc05",
+          "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+          "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+          "version_id": "agtvrsn_7801m504hfk7f2vb9yf45vr2ddae",
+          "ran_against_draft": false,
+          "workflow_node_id": null,
+          "status": "failed",
+          "agent_responses": [
+            {
+              "role": "agent",
+              "agent_metadata": {
+                "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+                "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+                "workflow_node_id": null,
+                "version_id": null
+              },
+              "message": "Bonjour, service à la clientèle de Groupe Auto Laval, ici Léa. Comment puis-je vous aider? … For English, just say so.",
+              "multivoice_message": null,
+              "tool_calls": [],
+              "tool_results": [],
+              "feedback": null,
+              "llm_override": null,
+              "producing_llm": "gemini-3.5-flash-lite",
+              "time_in_call_secs": 8,
+              "conversation_turn_metrics": {
+                "metrics": {
+                  "convai_ttf_response_since_user_message": {
+                    "elapsed_time": 0.0023808004334568977
+                  }
+                },
+                "convai_asr_provider": null,
+                "convai_tts_model": null,
+                "convai_tts_cascade": null,
+                "voice_id": null
+              },
+              "rag_retrieval_info": null,
+              "llm_usage": null,
+              "interrupted": false,
+              "ignored_as_backchannel": false,
+              "platform_event": null,
+              "original_message": null,
+              "reasoning": [],
+              "source_medium": null,
+              "source_event_id": 1,
+              "used_static_kb_document_ids": [],
+              "analysis": null,
+              "user_identifier": null,
+              "id": null,
+              "compaction": null,
+              "triggered_guardrails": []
+            },
+            {
+              "role": "user",
+              "agent_metadata": null,
+              "message": "Actually, can we speak English?",
+              "multivoice_message": null,
+              "tool_calls": [],
+              "tool_results": [],
+              "feedback": null,
+              "llm_override": null,
+              "producing_llm": null,
+              "time_in_call_secs": 8,
+              "conversation_turn_metrics": null,
+              "rag_retrieval_info": null,
+              "llm_usage": null,
+              "interrupted": false,
+              "ignored_as_backchannel": false,
+              "platform_event": null,
+              "original_message": null,
+              "reasoning": [],
+              "source_medium": "text",
+              "source_event_id": 2,
+              "used_static_kb_document_ids": [],
+              "analysis": null,
+              "user_identifier": null,
+              "id": null,
+              "compaction": null,
+              "triggered_guardrails": []
+            },
+            {
+              "role": "agent",
+              "agent_metadata": {
+                "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+                "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+                "workflow_node_id": null,
+                "version_id": null
+              },
+              "message": null,
+              "multivoice_message": null,
+              "tool_calls": [
+                {
+                  "type": "system",
+                  "request_id": "language_detection_fda43bbe6cd54f26b0d73dabf10d6aff",
+                  "tool_name": "language_detection",
+                  "tool_id": null,
+                  "params_as_json": "{\"language\": \"en\", \"reason\": \"The caller asked to switch to English.\"}",
+                  "tool_has_been_called": true,
+                  "tool_details": null
+                }
+              ],
+              "tool_results": [],
+              "feedback": null,
+              "llm_override": null,
+              "producing_llm": "gemini-3.5-flash-lite",
+              "time_in_call_secs": 8,
+              "conversation_turn_metrics": {
+                "metrics": {
+                  "convai_llm_service_ttfb": {
+                    "elapsed_time": 0.4959391849115491
+                  },
+                  "convai_llm_tool_request_generation_latency": {
+                    "elapsed_time": 0.4964177352376282
+                  }
+                },
+                "convai_asr_provider": null,
+                "convai_tts_model": null,
+                "convai_tts_cascade": null,
+                "voice_id": null
+              },
+              "rag_retrieval_info": null,
+              "llm_usage": {
+                "model_usage": {
+                  "gemini-3.5-flash-lite": {
+                    "input": {
+                      "tokens": 167,
+                      "price": 5.511e-05
+                    },
+                    "input_cache_read": {
+                      "tokens": 9574,
+                      "price": 0.000315942
+                    },
+                    "input_cache_write": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "output_total": {
+                      "tokens": 29,
+                      "price": 7.975e-05
+                    }
+                  }
+                },
+                "detailed_model_usage": [
+                  {
+                    "config": {
+                      "model": "gemini-3.5-flash-lite",
+                      "service_tier": "standard"
+                    },
+                    "usage": {
+                      "input": {
+                        "tokens": 167,
+                        "price": 5.511e-05
+                      },
+                      "input_cache_read": {
+                        "tokens": 9574,
+                        "price": 0.000315942
+                      },
+                      "input_cache_write": {
+                        "tokens": 0,
+                        "price": 0.0
+                      },
+                      "output_total": {
+                        "tokens": 29,
+                        "price": 7.975e-05
+                      }
+                    }
+                  }
+                ]
+              },
+              "interrupted": false,
+              "ignored_as_backchannel": false,
+              "platform_event": null,
+              "original_message": null,
+              "reasoning": [],
+              "source_medium": null,
+              "source_event_id": 2,
+              "used_static_kb_document_ids": [],
+              "analysis": null,
+              "user_identifier": null,
+              "id": null,
+              "compaction": null,
+              "triggered_guardrails": []
+            },
+            {
+              "role": "agent",
+              "agent_metadata": {
+                "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+                "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+                "workflow_node_id": null,
+                "version_id": null
+              },
+              "message": null,
+              "multivoice_message": null,
+              "tool_calls": [],
+              "tool_results": [
+                {
+                  "request_id": "language_detection_fda43bbe6cd54f26b0d73dabf10d6aff",
+                  "tool_name": "language_detection",
+                  "result_value": "{\"result_type\":\"language_detection_success\",\"status\":\"success\",\"reason\":\"The caller asked to switch to English.\",\"language\":\"en\"}",
+                  "is_error": false,
+                  "is_blocked": false,
+                  "tool_has_been_called": true,
+                  "tool_latency_secs": 0.001429080031812191,
+                  "error_type": "",
+                  "raw_error_message": "",
+                  "dynamic_variable_updates": [],
+                  "type": "system",
+                  "result": {
+                    "result_type": "language_detection_success",
+                    "status": "success",
+                    "reason": "The caller asked to switch to English.",
+                    "language": "en"
+                  }
+                }
+              ],
+              "feedback": null,
+              "llm_override": null,
+              "producing_llm": null,
+              "time_in_call_secs": 8,
+              "conversation_turn_metrics": null,
+              "rag_retrieval_info": null,
+              "llm_usage": null,
+              "interrupted": false,
+              "ignored_as_backchannel": false,
+              "platform_event": null,
+              "original_message": null,
+              "reasoning": [],
+              "source_medium": null,
+              "source_event_id": 2,
+              "used_static_kb_document_ids": [],
+              "analysis": null,
+              "user_identifier": null,
+              "id": null,
+              "compaction": null,
+              "triggered_guardrails": []
+            },
+            {
+              "role": "agent",
+              "agent_metadata": {
+                "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+                "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+                "workflow_node_id": null,
+                "version_id": null
+              },
+              "message": "Of course. How can I help you today?",
+              "multivoice_message": null,
+              "tool_calls": [],
+              "tool_results": [],
+              "feedback": null,
+              "llm_override": null,
+              "producing_llm": "gemini-3.5-flash-lite",
+              "time_in_call_secs": 8,
+              "conversation_turn_metrics": {
+                "metrics": {
+                  "convai_llm_service_ttf_sentence": {
+                    "elapsed_time": 0.5918049719184637
+                  },
+                  "convai_llm_service_ttfb": {
+                    "elapsed_time": 0.4499434372410178
+                  },
+                  "convai_llm_service_tt_last_sentence": {
+                    "elapsed_time": 0.5917938621714711
+                  },
+                  "convai_ttf_response_since_user_message": {
+                    "elapsed_time": 1.5951240309514105
+                  }
+                },
+                "convai_asr_provider": null,
+                "convai_tts_model": null,
+                "convai_tts_cascade": null,
+                "voice_id": null
+              },
+              "rag_retrieval_info": {
+                "chunks": [
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "ikUn3MjktIYJIoFN9QUU",
+                    "vector_distance": 0.23065388202667236
+                  },
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "hzfPgohG9JrUVbK5Tn0W",
+                    "vector_distance": 0.24056053161621094
+                  },
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "exC5raaV0HHbnk2Mpk1o",
+                    "vector_distance": 0.24230849742889404
+                  },
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "8FeZLwm4rkuK0oHRNXbw",
+                    "vector_distance": 0.2442626953125
+                  },
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "EL4yXNh3zgO1MpSR1Ion",
+                    "vector_distance": 0.2488461136817932
+                  },
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "rek61mLI3WZEwvEkjEII",
+                    "vector_distance": 0.2541539669036865
+                  }
+                ],
+                "embedding_model": "e5_mistral_7b_instruct",
+                "retrieval_query": "Can we speak English?",
+                "rag_latency_secs": 0.13522019563242793,
+                "used_chunk_ids": []
+              },
+              "llm_usage": {
+                "model_usage": {
+                  "gemini-3.5-flash-lite": {
+                    "input": {
+                      "tokens": 243,
+                      "price": 8.019e-05
+                    },
+                    "input_cache_read": {
+                      "tokens": 9554,
+                      "price": 0.00031528200000000006
+                    },
+                    "input_cache_write": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "output_total": {
+                      "tokens": 10,
+                      "price": 2.75e-05
+                    }
+                  }
+                },
+                "detailed_model_usage": [
+                  {
+                    "config": {
+                      "model": "gemini-3.5-flash-lite",
+                      "service_tier": "standard"
+                    },
+                    "usage": {
+                      "input": {
+                        "tokens": 243,
+                        "price": 8.019e-05
+                      },
+                      "input_cache_read": {
+                        "tokens": 9554,
+                        "price": 0.00031528200000000006
+                      },
+                      "input_cache_write": {
+                        "tokens": 0,
+                        "price": 0.0
+                      },
+                      "output_total": {
+                        "tokens": 10,
+                        "price": 2.75e-05
+                      }
+                    }
+                  }
+                ]
+              },
+              "interrupted": false,
+              "ignored_as_backchannel": false,
+              "platform_event": null,
+              "original_message": null,
+              "reasoning": [
+                {
+                  "summary": null,
+                  "provider_redact": false
+                }
+              ],
+              "source_medium": null,
+              "source_event_id": 2,
+              "used_static_kb_document_ids": [],
+              "analysis": null,
+              "user_identifier": null,
+              "id": null,
+              "compaction": null,
+              "triggered_guardrails": []
+            },
+            {
+              "role": "user",
+              "agent_metadata": null,
+              "message": "What time do you close on Saturday?",
+              "multivoice_message": null,
+              "tool_calls": [],
+              "tool_results": [],
+              "feedback": null,
+              "llm_override": null,
+              "producing_llm": null,
+              "time_in_call_secs": 8,
+              "conversation_turn_metrics": null,
+              "rag_retrieval_info": null,
+              "llm_usage": null,
+              "interrupted": false,
+              "ignored_as_backchannel": false,
+              "platform_event": null,
+              "original_message": null,
+              "reasoning": [],
+              "source_medium": "text",
+              "source_event_id": 3,
+              "used_static_kb_document_ids": [],
+              "analysis": null,
+              "user_identifier": null,
+              "id": null,
+              "compaction": null,
+              "triggered_guardrails": []
+            },
+            {
+              "role": "agent",
+              "agent_metadata": {
+                "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+                "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+                "workflow_node_id": null,
+                "version_id": null
+              },
+              "message": "We close at two o'clock on Saturday. Is there anything else I can help you with?",
+              "multivoice_message": null,
+              "tool_calls": [],
+              "tool_results": [],
+              "feedback": null,
+              "llm_override": null,
+              "producing_llm": "gemini-3.5-flash-lite",
+              "time_in_call_secs": 8,
+              "conversation_turn_metrics": {
+                "metrics": {
+                  "convai_llm_service_ttf_sentence": {
+                    "elapsed_time": 0.7027025977149606
+                  },
+                  "convai_llm_service_ttfb": {
+                    "elapsed_time": 0.5918591907247901
+                  },
+                  "convai_llm_service_tt_last_sentence": {
+                    "elapsed_time": 0.7026878679171205
+                  },
+                  "convai_ttf_response_since_user_message": {
+                    "elapsed_time": 0.9255675617605448
+                  }
+                },
+                "convai_asr_provider": null,
+                "convai_tts_model": null,
+                "convai_tts_cascade": null,
+                "voice_id": null
+              },
+              "rag_retrieval_info": {
+                "chunks": [
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "EL4yXNh3zgO1MpSR1Ion",
+                    "vector_distance": 0.22545409202575684
+                  },
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "ikUn3MjktIYJIoFN9QUU",
+                    "vector_distance": 0.22647887468338013
+                  },
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "rek61mLI3WZEwvEkjEII",
+                    "vector_distance": 0.22876423597335815
+                  },
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "8FeZLwm4rkuK0oHRNXbw",
+                    "vector_distance": 0.2328597903251648
+                  },
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "exC5raaV0HHbnk2Mpk1o",
+                    "vector_distance": 0.23718690872192383
+                  },
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "hzfPgohG9JrUVbK5Tn0W",
+                    "vector_distance": 0.2520500421524048
+                  }
+                ],
+                "embedding_model": "e5_mistral_7b_instruct",
+                "retrieval_query": "What is your closing time on Saturday?",
+                "rag_latency_secs": 0.1391426157206297,
+                "used_chunk_ids": []
+              },
+              "llm_usage": {
+                "model_usage": {
+                  "gemini-3.5-flash-lite": {
+                    "input": {
+                      "tokens": 265,
+                      "price": 8.745e-05
+                    },
+                    "input_cache_read": {
+                      "tokens": 9550,
+                      "price": 0.00031515000000000004
+                    },
+                    "input_cache_write": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "output_total": {
+                      "tokens": 20,
+                      "price": 5.5e-05
+                    }
+                  }
+                },
+                "detailed_model_usage": [
+                  {
+                    "config": {
+                      "model": "gemini-3.5-flash-lite",
+                      "service_tier": "standard"
+                    },
+                    "usage": {
+                      "input": {
+                        "tokens": 265,
+                        "price": 8.745e-05
+                      },
+                      "input_cache_read": {
+                        "tokens": 9550,
+                        "price": 0.00031515000000000004
+                      },
+                      "input_cache_write": {
+                        "tokens": 0,
+                        "price": 0.0
+                      },
+                      "output_total": {
+                        "tokens": 20,
+                        "price": 5.5e-05
+                      }
+                    }
+                  }
+                ]
+              },
+              "interrupted": false,
+              "ignored_as_backchannel": false,
+              "platform_event": null,
+              "original_message": null,
+              "reasoning": [
+                {
+                  "summary": null,
+                  "provider_redact": false
+                }
+              ],
+              "source_medium": null,
+              "source_event_id": 3,
+              "used_static_kb_document_ids": [],
+              "analysis": null,
+              "user_identifier": null,
+              "id": null,
+              "compaction": null,
+              "triggered_guardrails": []
+            },
+            {
+              "role": "user",
+              "agent_metadata": null,
+              "message": "Ok, 2 PM on Saturday — got it. Thanks, bye!",
+              "multivoice_message": null,
+              "tool_calls": [],
+              "tool_results": [],
+              "feedback": null,
+              "llm_override": null,
+              "producing_llm": null,
+              "time_in_call_secs": 8,
+              "conversation_turn_metrics": null,
+              "rag_retrieval_info": null,
+              "llm_usage": null,
+              "interrupted": false,
+              "ignored_as_backchannel": false,
+              "platform_event": null,
+              "original_message": null,
+              "reasoning": [],
+              "source_medium": "text",
+              "source_event_id": 4,
+              "used_static_kb_document_ids": [],
+              "analysis": null,
+              "user_identifier": null,
+              "id": null,
+              "compaction": null,
+              "triggered_guardrails": []
+            },
+            {
+              "role": "agent",
+              "agent_metadata": {
+                "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+                "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+                "workflow_node_id": null,
+                "version_id": null
+              },
+              "message": "Goodbye, have a great day!",
+              "multivoice_message": null,
+              "tool_calls": [],
+              "tool_results": [],
+              "feedback": null,
+              "llm_override": null,
+              "producing_llm": "gemini-3.5-flash-lite",
+              "time_in_call_secs": 8,
+              "conversation_turn_metrics": {
+                "metrics": {
+                  "convai_llm_service_ttfb": {
+                    "elapsed_time": 0.5884140720590949
+                  },
+                  "convai_llm_tool_request_generation_latency": {
+                    "elapsed_time": 0.5889622820541263
+                  },
+                  "convai_ttf_response_since_user_message": {
+                    "elapsed_time": 0.7268656981177628
+                  }
+                },
+                "convai_asr_provider": null,
+                "convai_tts_model": null,
+                "convai_tts_cascade": null,
+                "voice_id": null
+              },
+              "rag_retrieval_info": {
+                "chunks": [
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "EL4yXNh3zgO1MpSR1Ion",
+                    "vector_distance": 0.2242339849472046
+                  },
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "ikUn3MjktIYJIoFN9QUU",
+                    "vector_distance": 0.22582924365997314
+                  },
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "rek61mLI3WZEwvEkjEII",
+                    "vector_distance": 0.2294090986251831
+                  },
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "8FeZLwm4rkuK0oHRNXbw",
+                    "vector_distance": 0.2335883378982544
+                  },
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "exC5raaV0HHbnk2Mpk1o",
+                    "vector_distance": 0.23601961135864258
+                  },
+                  {
+                    "document_id": "pzMvcz4O2CLryKCx6nOA",
+                    "chunk_id": "hzfPgohG9JrUVbK5Tn0W",
+                    "vector_distance": 0.25122636556625366
+                  }
+                ],
+                "embedding_model": "e5_mistral_7b_instruct",
+                "retrieval_query": "What time do you close on Saturday?",
+                "rag_latency_secs": 0.1289778957143426,
+                "used_chunk_ids": []
+              },
+              "llm_usage": null,
+              "interrupted": false,
+              "ignored_as_backchannel": false,
+              "platform_event": null,
+              "original_message": null,
+              "reasoning": [],
+              "source_medium": null,
+              "source_event_id": 4,
+              "used_static_kb_document_ids": [],
+              "analysis": null,
+              "user_identifier": null,
+              "id": null,
+              "compaction": null,
+              "triggered_guardrails": []
+            },
+            {
+              "role": "agent",
+              "agent_metadata": {
+                "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+                "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+                "workflow_node_id": null,
+                "version_id": null
+              },
+              "message": null,
+              "multivoice_message": null,
+              "tool_calls": [
+                {
+                  "type": "system",
+                  "request_id": "end_call_054e3764c2a54d66b8268851295e9e97",
+                  "tool_name": "end_call",
+                  "tool_id": null,
+                  "params_as_json": "{\"reason\": \"The caller said goodbye and did not need any further assistance.\", \"system__message_to_speak\": \"Goodbye, have a great day!\"}",
+                  "tool_has_been_called": true,
+                  "tool_details": null
+                }
+              ],
+              "tool_results": [],
+              "feedback": null,
+              "llm_override": null,
+              "producing_llm": "gemini-3.5-flash-lite",
+              "time_in_call_secs": 8,
+              "conversation_turn_metrics": {
+                "metrics": {
+                  "convai_llm_service_ttfb": {
+                    "elapsed_time": 0.5884140720590949
+                  },
+                  "convai_llm_tool_request_generation_latency": {
+                    "elapsed_time": 0.5889622820541263
+                  }
+                },
+                "convai_asr_provider": null,
+                "convai_tts_model": null,
+                "convai_tts_cascade": null,
+                "voice_id": null
+              },
+              "rag_retrieval_info": null,
+              "llm_usage": {
+                "model_usage": {
+                  "gemini-3.5-flash-lite": {
+                    "input": {
+                      "tokens": 307,
+                      "price": 0.00010131
+                    },
+                    "input_cache_read": {
+                      "tokens": 9543,
+                      "price": 0.00031491900000000004
+                    },
+                    "input_cache_write": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "output_total": {
+                      "tokens": 45,
+                      "price": 0.00012375
+                    }
+                  }
+                },
+                "detailed_model_usage": [
+                  {
+                    "config": {
+                      "model": "gemini-3.5-flash-lite",
+                      "service_tier": "standard"
+                    },
+                    "usage": {
+                      "input": {
+                        "tokens": 307,
+                        "price": 0.00010131
+                      },
+                      "input_cache_read": {
+                        "tokens": 9543,
+                        "price": 0.00031491900000000004
+                      },
+                      "input_cache_write": {
+                        "tokens": 0,
+                        "price": 0.0
+                      },
+                      "output_total": {
+                        "tokens": 45,
+                        "price": 0.00012375
+                      }
+                    }
+                  }
+                ]
+              },
+              "interrupted": false,
+              "ignored_as_backchannel": false,
+              "platform_event": null,
+              "original_message": null,
+              "reasoning": [],
+              "source_medium": null,
+              "source_event_id": 4,
+              "used_static_kb_document_ids": [],
+              "analysis": null,
+              "user_identifier": null,
+              "id": null,
+              "compaction": null,
+              "triggered_guardrails": []
+            },
+            {
+              "role": "agent",
+              "agent_metadata": {
+                "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+                "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+                "workflow_node_id": null,
+                "version_id": null
+              },
+              "message": null,
+              "multivoice_message": null,
+              "tool_calls": [],
+              "tool_results": [
+                {
+                  "request_id": "end_call_054e3764c2a54d66b8268851295e9e97",
+                  "tool_name": "end_call",
+                  "result_value": "{\"result_type\":\"end_call_success\",\"status\":\"success\",\"reason\":\"The caller said goodbye and did not need any further assistance.\",\"message\":null}",
+                  "is_error": false,
+                  "is_blocked": false,
+                  "tool_has_been_called": true,
+                  "tool_latency_secs": 0.5013619652017951,
+                  "error_type": "",
+                  "raw_error_message": "",
+                  "dynamic_variable_updates": [],
+                  "type": "system",
+                  "result": {
+                    "result_type": "end_call_success",
+                    "status": "success",
+                    "reason": "The caller said goodbye and did not need any further assistance.",
+                    "message": null
+                  }
+                }
+              ],
+              "feedback": null,
+              "llm_override": null,
+              "producing_llm": null,
+              "time_in_call_secs": 8,
+              "conversation_turn_metrics": null,
+              "rag_retrieval_info": null,
+              "llm_usage": null,
+              "interrupted": false,
+              "ignored_as_backchannel": false,
+              "platform_event": null,
+              "original_message": null,
+              "reasoning": [],
+              "source_medium": null,
+              "source_event_id": 4,
+              "used_static_kb_document_ids": [],
+              "analysis": null,
+              "user_identifier": null,
+              "id": null,
+              "compaction": null,
+              "triggered_guardrails": []
+            }
+          ],
+          "test_id": "test_3601m505aafkfn5vaah08c6kdg77",
+          "test_name": "S01 Switch FR → EN au début du 2e tour",
+          "condition_result": {
+            "result": "unknown",
+            "rationale": {
+              "messages": [
+                "Criterion 1 passed: The agent's first turn was in French: \"Bonjour, service à la clientèle de Groupe Auto Laval, ici Léa. Comment puis-je vous aider?\" — this was before the caller switched to English, so the criterion is met.",
+                "Criterion 2 passed: After the caller said \"Actually, can we speak English?\", every subsequent agent turn was in English: \"Of course. How can I help you today?\", \"We close at two o'clock on Saturday...\", and \"Goodbye, have a great day!\"",
+                "Criterion 3 passed: The agent did not comment on the language switch and simply replied \"Of course. How can I help you today?\" The caller did not need to repeat the question more than once.",
+                "Criterion 4 passed: The agent spoke French while the caller spoke French, then switched to English immediately after the caller requested it. Every turn matched the caller's current language throughout the conversation.",
+                "Criterion 5 inconclusive: The agent stated closing time as 2 PM on Saturday without calling any tool to verify hours. This fact was not retrieved from a tool result, which is a potential hallucination unless it's in the dealer FAQ (not shown).",
+                "The agent ended the conversation."
+              ],
+              "summary": "Evaluation inconclusive"
+            }
+          },
+          "last_updated_at_unix": 1792081183,
+          "metadata": {
+            "workspace_id": "3868ed6f12414532ac6a6997818e7c89",
+            "test_name": "S01 Switch FR → EN au début du 2e tour",
+            "ran_by_user_email": "redacted@example.com",
+            "test_type": "simulation"
+          },
+          "root_folder_id": null,
+          "root_folder_name": null,
+          "environment": "production",
+          "credits_used": 202,
+          "charging": {
+            "dev_discount": false,
+            "is_burst": false,
+            "tier": null,
+            "llm_usage": {
+              "irreversible_generation": {
+                "model_usage": {
+                  "claude-sonnet-4-6": {
+                    "input": {
+                      "tokens": 3487,
+                      "price": 0.0115071
+                    },
+                    "input_cache_read": {
+                      "tokens": 3060,
+                      "price": 0.0010098000000000002
+                    },
+                    "input_cache_write": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "output_total": {
+                      "tokens": 454,
+                      "price": 0.007490999999999999
+                    }
+                  },
+                  "gemini-3.5-flash-lite": {
+                    "input": {
+                      "tokens": 982,
+                      "price": 0.00032406000000000004
+                    },
+                    "input_cache_read": {
+                      "tokens": 38221,
+                      "price": 0.0012612930000000001
+                    },
+                    "input_cache_write": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "output_total": {
+                      "tokens": 104,
+                      "price": 0.000286
+                    }
+                  }
+                },
+                "detailed_model_usage": [
+                  {
+                    "config": {
+                      "model": "claude-sonnet-4-6",
+                      "service_tier": "standard"
+                    },
+                    "usage": {
+                      "input": {
+                        "tokens": 3487,
+                        "price": 0.0115071
+                      },
+                      "input_cache_read": {
+                        "tokens": 3060,
+                        "price": 0.0010098000000000002
+                      },
+                      "input_cache_write": {
+                        "tokens": 0,
+                        "price": 0.0
+                      },
+                      "output_total": {
+                        "tokens": 454,
+                        "price": 0.007490999999999999
+                      }
+                    }
+                  },
+                  {
+                    "config": {
+                      "model": "gemini-3.5-flash-lite",
+                      "service_tier": "standard"
+                    },
+                    "usage": {
+                      "input": {
+                        "tokens": 982,
+                        "price": 0.00032406000000000004
+                      },
+                      "input_cache_read": {
+                        "tokens": 38221,
+                        "price": 0.0012612930000000001
+                      },
+                      "input_cache_write": {
+                        "tokens": 0,
+                        "price": 0.0
+                      },
+                      "output_total": {
+                        "tokens": 104,
+                        "price": 0.000286
+                      }
+                    }
+                  }
+                ]
+              },
+              "initiated_generation": {
+                "model_usage": {
+                  "claude-sonnet-4-6": {
+                    "input": {
+                      "tokens": 3487,
+                      "price": 0.0115071
+                    },
+                    "input_cache_read": {
+                      "tokens": 3060,
+                      "price": 0.0010098000000000002
+                    },
+                    "input_cache_write": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "output_total": {
+                      "tokens": 454,
+                      "price": 0.007490999999999999
+                    }
+                  },
+                  "gemini-3.5-flash-lite": {
+                    "input": {
+                      "tokens": 982,
+                      "price": 0.00032406000000000004
+                    },
+                    "input_cache_read": {
+                      "tokens": 38221,
+                      "price": 0.0012612930000000001
+                    },
+                    "input_cache_write": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "output_total": {
+                      "tokens": 104,
+                      "price": 0.000286
+                    }
+                  }
+                },
+                "detailed_model_usage": [
+                  {
+                    "config": {
+                      "model": "claude-sonnet-4-6",
+                      "service_tier": "standard"
+                    },
+                    "usage": {
+                      "input": {
+                        "tokens": 3487,
+                        "price": 0.0115071
+                      },
+                      "input_cache_read": {
+                        "tokens": 3060,
+                        "price": 0.0010098000000000002
+                      },
+                      "input_cache_write": {
+                        "tokens": 0,
+                        "price": 0.0
+                      },
+                      "output_total": {
+                        "tokens": 454,
+                        "price": 0.007490999999999999
+                      }
+                    }
+                  },
+                  {
+                    "config": {
+                      "model": "gemini-3.5-flash-lite",
+                      "service_tier": "standard"
+                    },
+                    "usage": {
+                      "input": {
+                        "tokens": 982,
+                        "price": 0.00032406000000000004
+                      },
+                      "input_cache_read": {
+                        "tokens": 38221,
+                        "price": 0.0012612930000000001
+                      },
+                      "input_cache_write": {
+                        "tokens": 0,
+                        "price": 0.0
+                      },
+                      "output_total": {
+                        "tokens": 104,
+                        "price": 0.000286
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "llm_price": 0.021879252999999998,
+            "llm_charge": 122,
+            "call_charge": 80,
+            "platform_charge": 80,
+            "platform_usage": {
+              "category_usage": {
+                "text_message": {
+                  "credits": 80,
+                  "price": 0.015,
+                  "quantity": 5.0
+                }
+              }
+            },
+            "platform_price": 0.015,
+            "free_minutes_consumed": 0.0,
+            "free_llm_dollars_consumed": 0.0,
+            "tts_usage": null,
+            "asr_usage": null,
+            "analysis": null
+          }
+        }
+      ]
+    }
+  ]
+}

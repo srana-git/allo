@@ -1,0 +1,398 @@
+{
+  "timestamp": "20261015T165346Z",
+  "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+  "label": "lang-probe",
+  "suite": "tests/lang-trigger",
+  "only": null,
+  "repeat": 1,
+  "runs": [
+    {
+      "run_index": 1,
+      "started_at": "20261015T165335Z",
+      "test_invocation_id": "suite_3701m507qgvef6k8017tw72x2b62",
+      "pass": 0,
+      "fail": 1,
+      "total": 1,
+      "credits_used": 38,
+      "rows": [
+        {
+          "test_id": "test_4701m507qffxeg1vzf1k785kw3hw",
+          "test_name": "L01 Tool call — language_detection on an English opener (cancellation notice)",
+          "status": "failed",
+          "result": "failure",
+          "reason": "No tool with correct name called",
+          "messages": [
+            "No tool with name 'language_detection' was called"
+          ],
+          "test_run_id": "trun_9001m507qgvhf3pszdme58tapbc0",
+          "turns": 1,
+          "scenario_id": "L01",
+          "type": "tool",
+          "reasons": [
+            "No tool with name 'language_detection' was called"
+          ],
+          "transcript": [
+            {
+              "role": "agent",
+              "message": "Il faut annuler au moins vingt-quatre heures avant votre rendez-vous pour que ce soit gratuit.  Moins de vingt-quatre heures avant, ou en cas d'absence sans avis,  il y a des frais de soixante-quinze dollars."
+            }
+          ],
+          "run_index": 1
+        }
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "test_id": "test_4701m507qffxeg1vzf1k785kw3hw",
+      "test_name": "L01 Tool call — language_detection on an English opener (cancellation notice)",
+      "status": "failed",
+      "result": "failure",
+      "reason": "No tool with correct name called",
+      "messages": [
+        "No tool with name 'language_detection' was called"
+      ],
+      "test_run_id": "trun_9001m507qgvhf3pszdme58tapbc0",
+      "turns": 1,
+      "scenario_id": "L01",
+      "type": "tool",
+      "reasons": [
+        "No tool with name 'language_detection' was called"
+      ],
+      "transcript": [
+        {
+          "role": "agent",
+          "message": "Il faut annuler au moins vingt-quatre heures avant votre rendez-vous pour que ce soit gratuit.  Moins de vingt-quatre heures avant, ou en cas d'absence sans avis,  il y a des frais de soixante-quinze dollars."
+        }
+      ],
+      "run_index": 1
+    }
+  ],
+  "pass": 0,
+  "fail": 1,
+  "total": 1,
+  "credits": {
+    "character_count_before": 91765,
+    "character_count_after": 91765,
+    "character_limit": 131000,
+    "delta": 0,
+    "test_credits_used": 38
+  },
+  "test_invocation_id": "suite_3701m507qgvef6k8017tw72x2b62",
+  "raw_invocation": {
+    "id": "suite_3701m507qgvef6k8017tw72x2b62",
+    "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+    "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+    "version_id": "agtvrsn_8301m507jzqqfnd9hn3b2a4xkj0f",
+    "ran_against_draft": false,
+    "created_at": 1792083215,
+    "folder_id": null,
+    "repeat_count": 1,
+    "cancelled": false,
+    "bucketing_status": null,
+    "result_groups": [],
+    "test_runs": [
+      {
+        "test_run_id": "trun_9001m507qgvhf3pszdme58tapbc0",
+        "test_info": {
+          "from_conversation_metadata": null,
+          "dynamic_variables": {},
+          "chat_history": [
+            {
+              "role": "agent",
+              "agent_metadata": null,
+              "message": "Bonjour, service à la clientèle de Groupe Auto Laval, ici Léa. Comment puis-je vous aider? … For English, just say so.",
+              "multivoice_message": null,
+              "tool_calls": [],
+              "tool_results": [],
+              "feedback": null,
+              "llm_override": null,
+              "producing_llm": null,
+              "time_in_call_secs": 0,
+              "conversation_turn_metrics": null,
+              "rag_retrieval_info": null,
+              "llm_usage": null,
+              "interrupted": false,
+              "ignored_as_backchannel": false,
+              "platform_event": null,
+              "original_message": null,
+              "reasoning": [],
+              "source_medium": null,
+              "source_event_id": null,
+              "used_static_kb_document_ids": [],
+              "analysis": null,
+              "user_identifier": null,
+              "id": null,
+              "compaction": null,
+              "triggered_guardrails": []
+            },
+            {
+              "role": "user",
+              "agent_metadata": null,
+              "message": "If I can't make it, how much notice do you need?",
+              "multivoice_message": null,
+              "tool_calls": [],
+              "tool_results": [],
+              "feedback": null,
+              "llm_override": null,
+              "producing_llm": null,
+              "time_in_call_secs": 7,
+              "conversation_turn_metrics": null,
+              "rag_retrieval_info": null,
+              "llm_usage": null,
+              "interrupted": false,
+              "ignored_as_backchannel": false,
+              "platform_event": null,
+              "original_message": null,
+              "reasoning": [],
+              "source_medium": null,
+              "source_event_id": null,
+              "used_static_kb_document_ids": [],
+              "analysis": null,
+              "user_identifier": null,
+              "id": null,
+              "compaction": null,
+              "triggered_guardrails": []
+            }
+          ],
+          "conversation_initiation_source": null,
+          "environment": null,
+          "type": "tool",
+          "tool_call_parameters": {
+            "parameters": [],
+            "referenced_tool": {
+              "id": "language_detection",
+              "type": "system"
+            },
+            "verify_absence": false,
+            "workflow_node_transition": null
+          },
+          "check_any_tool_matches": true
+        },
+        "test_invocation_id": "suite_3701m507qgvef6k8017tw72x2b62",
+        "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+        "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+        "version_id": "agtvrsn_8301m507jzqqfnd9hn3b2a4xkj0f",
+        "ran_against_draft": false,
+        "workflow_node_id": null,
+        "status": "failed",
+        "agent_responses": [
+          {
+            "role": "agent",
+            "agent_metadata": null,
+            "message": "Il faut annuler au moins vingt-quatre heures avant votre rendez-vous pour que ce soit gratuit.  Moins de vingt-quatre heures avant, ou en cas d'absence sans avis,  il y a des frais de soixante-quinze dollars.",
+            "multivoice_message": null,
+            "tool_calls": [],
+            "tool_results": [],
+            "feedback": null,
+            "llm_override": null,
+            "producing_llm": null,
+            "time_in_call_secs": 0,
+            "conversation_turn_metrics": null,
+            "rag_retrieval_info": {
+              "chunks": [
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "8FeZLwm4rkuK0oHRNXbw",
+                  "vector_distance": 0.1751636266708374
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "ikUn3MjktIYJIoFN9QUU",
+                  "vector_distance": 0.1881166696548462
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "rek61mLI3WZEwvEkjEII",
+                  "vector_distance": 0.2001715898513794
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "exC5raaV0HHbnk2Mpk1o",
+                  "vector_distance": 0.20174497365951538
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "EL4yXNh3zgO1MpSR1Ion",
+                  "vector_distance": 0.20440757274627686
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "hzfPgohG9JrUVbK5Tn0W",
+                  "vector_distance": 0.21258258819580078
+                }
+              ],
+              "embedding_model": "e5_mistral_7b_instruct",
+              "retrieval_query": "How much notice do I need to give if I can't make my appointment?",
+              "rag_latency_secs": 0.17663607699796557,
+              "used_chunk_ids": []
+            },
+            "llm_usage": null,
+            "interrupted": false,
+            "ignored_as_backchannel": false,
+            "platform_event": null,
+            "original_message": null,
+            "reasoning": [
+              {
+                "summary": null,
+                "provider_redact": false
+              }
+            ],
+            "source_medium": null,
+            "source_event_id": 2,
+            "used_static_kb_document_ids": [],
+            "analysis": null,
+            "user_identifier": null,
+            "id": null,
+            "compaction": null,
+            "triggered_guardrails": []
+          }
+        ],
+        "test_id": "test_4701m507qffxeg1vzf1k785kw3hw",
+        "test_name": "L01 Tool call — language_detection on an English opener (cancellation notice)",
+        "condition_result": {
+          "result": "failure",
+          "rationale": {
+            "messages": [
+              "No tool with name 'language_detection' was called"
+            ],
+            "summary": "No tool with correct name called"
+          }
+        },
+        "last_updated_at_unix": 1792083216,
+        "metadata": {
+          "workspace_id": "3868ed6f12414532ac6a6997818e7c89",
+          "test_name": "L01 Tool call — language_detection on an English opener (cancellation notice)",
+          "ran_by_user_email": "redacted@example.com",
+          "test_type": "tool_call"
+        },
+        "root_folder_id": null,
+        "root_folder_name": null,
+        "environment": null,
+        "credits_used": 38,
+        "charging": {
+          "dev_discount": false,
+          "is_burst": false,
+          "tier": null,
+          "llm_usage": {
+            "irreversible_generation": {
+              "model_usage": {
+                "gemini-3.5-flash-lite": {
+                  "input": {
+                    "tokens": 11840,
+                    "price": 0.0039072
+                  },
+                  "input_cache_read": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "input_cache_write": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "output_total": {
+                    "tokens": 53,
+                    "price": 0.00014575
+                  }
+                }
+              },
+              "detailed_model_usage": [
+                {
+                  "config": {
+                    "model": "gemini-3.5-flash-lite",
+                    "service_tier": "standard"
+                  },
+                  "usage": {
+                    "input": {
+                      "tokens": 11840,
+                      "price": 0.0039072
+                    },
+                    "input_cache_read": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "input_cache_write": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "output_total": {
+                      "tokens": 53,
+                      "price": 0.00014575
+                    }
+                  }
+                }
+              ]
+            },
+            "initiated_generation": {
+              "model_usage": {
+                "gemini-3.5-flash-lite": {
+                  "input": {
+                    "tokens": 11840,
+                    "price": 0.0039072
+                  },
+                  "input_cache_read": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "input_cache_write": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "output_total": {
+                    "tokens": 53,
+                    "price": 0.00014575
+                  }
+                }
+              },
+              "detailed_model_usage": [
+                {
+                  "config": {
+                    "model": "gemini-3.5-flash-lite",
+                    "service_tier": "standard"
+                  },
+                  "usage": {
+                    "input": {
+                      "tokens": 11840,
+                      "price": 0.0039072
+                    },
+                    "input_cache_read": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "input_cache_write": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "output_total": {
+                      "tokens": 53,
+                      "price": 0.00014575
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "llm_price": 0.0040529500000000005,
+          "llm_charge": 22,
+          "call_charge": 16,
+          "platform_charge": 16,
+          "platform_usage": {
+            "category_usage": {
+              "text_message": {
+                "credits": 16,
+                "price": 0.003,
+                "quantity": 1.0
+              }
+            }
+          },
+          "platform_price": 0.003,
+          "free_minutes_consumed": 0.0,
+          "free_llm_dollars_consumed": 0.0,
+          "tts_usage": null,
+          "asr_usage": null,
+          "analysis": null
+        }
+      }
+    ]
+  }
+}

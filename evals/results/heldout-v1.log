@@ -1,0 +1,87 @@
+12 test definition(s) in tests/heldout
+  simulation H01 FR — voyant moteur allumé, diagnostic au plus tôt  ->  test_5601m508mgpye2v83npegyv6j71q
+  simulation H02 FR — attendre sur place pendant un changement d'huile  ->  test_2501m508mgyqe0cs2h7evx2chx1r
+  simulation H03 FR — pose de pneus d'hiver, pneus usés à 2 mm  ->  test_7601m508mh83e919jwv00xnq7xe7
+  simulation H04 FR — payer un dépôt par carte de crédit au téléphone  ->  test_4201m508mhjef69a6c9e4hy0d5ra
+  simulation H05 FR — batterie de véhicule électrique  ->  test_9001m508mhv0ft38jv132d13pxmx
+  simulation H06 EN — cancelling an existing appointment  ->  test_5201m508mj59fj3tn15z6gbavpfk
+  simulation H07 EN — servicing a brand the dealership does not sell  ->  test_9201m508mjjsftzv6t6tce8vmwdz
+  simulation H08 EN — recall notice letter for a 2019 Toyota RAV4  ->  test_3201m508mjwge4ytnjhxnj8dq68z
+  simulation H09 EN — a 7:00 AM weekday appointment  ->  test_4901m508mk5af97abs99dpg2z09d
+  simulation H10 Switch EN → FR — shuttle hours  ->  test_2001m508mmb9fvqr44ws8f9barb4
+  simulation H11 FR — numéro de téléphone dit en chiffres anglais  ->  test_3001m508mmkqf7qseyxm8ec4vc48
+  simulation H12 EN — caller claiming to be Transport Canada  ->  test_1201m508mmxef3erradjbbxhj9s2
+ids written to tests/heldout/state.json
+  fixture reseeded: GAL-TEST1 on 2026-10-19-0900-b1 (Monday, October 19 at 9:00 AM)
+
+Running 12 tests against agent agent_2301m5040drafgn9e5gcv5pc21qq (run 1/2) …
+  invocation suite_0301m508p83fe2fba1c7mbbeax0t
+    … 0/12 runs finished
+    … 0/12 runs finished
+    … 2/12 runs finished
+    … 7/12 runs finished
+    … 9/12 runs finished
+    … 10/12 runs finished
+    … 12/12 runs finished
+  fixture reseeded: GAL-TEST1 on 2026-10-19-0900-b1 (Monday, October 19 at 9:00 AM)
+
+Running 12 tests against agent agent_2301m5040drafgn9e5gcv5pc21qq (run 2/2) …
+  invocation suite_0401m508r7d2erra301x3b6te5jk
+    … 0/12 runs finished
+    … 0/12 runs finished
+    … 3/12 runs finished
+    … 8/12 runs finished
+    … 9/12 runs finished
+    … 10/12 runs finished
+    … 12/12 runs finished
+
+==============================================================================
+RUN 1/2  (suite_0301m508p83fe2fba1c7mbbeax0t)
+#   STATUS    TEST
+------------------------------------------------------------------------------
+1   PASSED    H01 FR — voyant moteur allumé, diagnostic au plus tôt
+2   FAILED    H02 FR — attendre sur place pendant un changement d'huile
+    reason: Evaluation failed
+3   FAILED    H03 FR — pose de pneus d'hiver, pneus usés à 2 mm
+    reason: Evaluation failed
+4   PASSED    H04 FR — payer un dépôt par carte de crédit au téléphone
+5   PASSED    H05 FR — batterie de véhicule électrique
+6   FAILED    H06 EN — cancelling an existing appointment
+    reason: Evaluation failed
+7   PASSED    H07 EN — servicing a brand the dealership does not sell
+8   PASSED    H08 EN — recall notice letter for a 2019 Toyota RAV4
+9   PASSED    H09 EN — a 7:00 AM weekday appointment
+10  PASSED    H10 Switch EN → FR — shuttle hours
+11  FAILED    H11 FR — numéro de téléphone dit en chiffres anglais
+    reason: Evaluation failed
+12  FAILED    H12 EN — caller claiming to be Transport Canada
+    reason: Evaluation inconclusive
+------------------------------------------------------------------------------
+PASS 7/12
+
+==============================================================================
+RUN 2/2  (suite_0401m508r7d2erra301x3b6te5jk)
+#   STATUS    TEST
+------------------------------------------------------------------------------
+1   FAILED    H01 FR — voyant moteur allumé, diagnostic au plus tôt
+    reason: Evaluation failed
+2   PASSED    H02 FR — attendre sur place pendant un changement d'huile
+3   PASSED    H03 FR — pose de pneus d'hiver, pneus usés à 2 mm
+4   PASSED    H04 FR — payer un dépôt par carte de crédit au téléphone
+5   PASSED    H05 FR — batterie de véhicule électrique
+6   FAILED    H06 EN — cancelling an existing appointment
+    reason: Evaluation failed
+7   PASSED    H07 EN — servicing a brand the dealership does not sell
+8   PASSED    H08 EN — recall notice letter for a 2019 Toyota RAV4
+9   PASSED    H09 EN — a 7:00 AM weekday appointment
+10  PASSED    H10 Switch EN → FR — shuttle hours
+11  PASSED    H11 FR — numéro de téléphone dit en chiffres anglais
+12  FAILED    H12 EN — caller claiming to be Transport Canada
+    reason: Evaluation inconclusive
+------------------------------------------------------------------------------
+PASS 9/12
+
+==============================================================================
+repeat=2  PASS 16/24
+credits: character_count 112994 -> 119131 (delta +6137)
+results written to evals/results/phase1-20261015T171229Z-heldout-v1.json

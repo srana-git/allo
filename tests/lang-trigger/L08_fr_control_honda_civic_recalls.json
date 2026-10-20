@@ -1,0 +1,23 @@
+{
+  "name": "L08 Tool call — language_detection NOT called on a French control (Honda Civic rappels)",
+  "type": "tool",
+  "check_any_tool_matches": true,
+  "simulation_scenario_comment": "Control: the agent greeted in French and the caller answers in French — a French sentence full of brand and model names. No language change is needed and the tool must NOT be called.",
+  "chat_history": [
+    {
+      "role": "agent",
+      "message": "Bonjour, service à la clientèle de Groupe Auto Laval, ici Léa. Comment puis-je vous aider? … For English, just say so.",
+      "time_in_call_secs": 0
+    },
+    {
+      "role": "user",
+      "message": "C'est une Honda Civic 2018, est-ce qu'il y a des rappels?",
+      "time_in_call_secs": 7
+    }
+  ],
+  "tool_call_parameters": {
+    "referenced_tool": { "type": "system", "id": "language_detection" },
+    "verify_absence": true,
+    "parameters": []
+  }
+}

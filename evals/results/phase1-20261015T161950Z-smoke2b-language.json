@@ -1,0 +1,50 @@
+{
+  "file": "evals/results/phase1-20261015T161950Z-smoke2b.json",
+  "label": "smoke2b",
+  "repeat": 2,
+  "rules": {
+    "min_words": 3,
+    "default_language_before_first_user_turn": "fr",
+    "detector": "lingua-language-detector, French vs English only"
+  },
+  "overall": {
+    "scored": 8,
+    "passed": 8,
+    "fidelity": 1.0
+  },
+  "per_scenario": {
+    "S01": {
+      "scenario": "S01 Switch FR → EN au début du 2e tour",
+      "group": "S",
+      "scored": 8,
+      "passed": 8,
+      "fidelity": 1.0
+    }
+  },
+  "per_group": {
+    "S": {
+      "scored": 8,
+      "passed": 8,
+      "fidelity": 1.0
+    }
+  },
+  "switch_after": {
+    "S01": {
+      "scenario": "S01 Switch FR → EN au début du 2e tour",
+      "first_switch_turn": null,
+      "scored": 0,
+      "passed": 0,
+      "fidelity": null
+    }
+  },
+  "switch_after_overall": {
+    "scenarios": [
+      "S01"
+    ],
+    "scored": 0,
+    "passed": 0,
+    "fidelity": null
+  },
+  "failures": [],
+  "skipped": []
+}

@@ -1,0 +1,12 @@
+.env
+.dev.vars
+node_modules/
+.wrangler/
+evals/results/raw/
+__pycache__/
+.venv/
+*.pyc
+.uv/
+
+# harness scratch files (spec text is kept as SPEC-phase1.md)
+.ds-spec-*

@@ -1,0 +1,10 @@
+{
+  "L01 Tool call — language_detection on an English opener (cancellation notice)": "test_4701m507qffxeg1vzf1k785kw3hw",
+  "L02 Tool call — language_detection on an English opener (shuttle)": "test_1901m507rcq9fssahwvd8t9newtf",
+  "L03 Tool call — language_detection on an English opener (Amex)": "test_3601m507rcxyf7b9fpxnrzckwxv9",
+  "L04 Tool call — language_detection on an English opener (brake job price)": "test_5401m507rd8pembrv6va1byr04yz",
+  "L05 Tool call — language_detection on an English opener (service manager, move)": "test_4101m507rdg4fjrbyzndjk7taa1e",
+  "L06 Tool call — language_detection on an English opener (recalls, Ford Escape)": "test_2501m507rdqye6qas0rjrk6rgkj4",
+  "L07 Tool call — language_detection NOT called on a French control (navette)": "test_3001m507re1fejgtgr0y0brab46g",
+  "L08 Tool call — language_detection NOT called on a French control (Honda Civic rappels)": "test_3601m507re93eajt9swq5tb39xx9"
+}

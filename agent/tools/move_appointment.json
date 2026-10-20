@@ -1,0 +1,38 @@
+{
+  "type": "webhook",
+  "name": "move_appointment",
+  "description": "Step two of a move. WRITE OPERATION, and it takes no details — only the token from a prepare_booking call that carried booking_ref_to_move, and confirmed. Never call it before the caller has heard the readback_fr or readback_en that prepare_booking returned, read out verbatim, and answered it with a clear yes. Set confirmed to true only then; set it to false if you have not read the read-back yet — the call is rejected with error \"not_confirmed\". If the token is missing, already used, or was minted for a new booking instead of a move, the call is rejected with error \"needs_prepare\" and you must call prepare_booking again. If more than ten minutes passed, the call is rejected with error \"token_expired\" and you must call prepare_booking again. The phone number on the booking is checked by prepare_booking: error \"phone_mismatch\" means the number does not match, and you must not try other numbers.",
+  "response_timeout_secs": 20,
+  "api_schema": {
+    "url": "{{WORKER_URL}}/tools/move_appointment",
+    "method": "POST",
+    "content_type": "application/json",
+    "request_headers": {
+      "X-Allo-Secret": {
+        "secret_id": "{{SECRET_ID}}"
+      }
+    },
+    "request_body_schema": {
+      "type": "object",
+      "description": "Arguments for move_appointment",
+      "required": [
+        "token",
+        "confirmed"
+      ],
+      "properties": {
+        "token": {
+          "type": "string",
+          "description": "The token returned by the prepare_booking call (with booking_ref_to_move) whose read-back the caller just agreed to. Do not change or re-use one."
+        },
+        "confirmed": {
+          "type": "boolean",
+          "description": "True only after the caller has heard the prepare_booking read-back for the new time, read out verbatim, and said yes to it. False otherwise."
+        },
+        "conversation_id": {
+          "type": "string",
+          "dynamic_variable": "system__conversation_id"
+        }
+      }
+    }
+  }
+}

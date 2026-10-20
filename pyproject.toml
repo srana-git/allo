@@ -1,0 +1,17 @@
+[project]
+name = "allo"
+version = "0.1.0"
+description = "Québec French / English phone agent on ElevenLabs — Phase 1"
+requires-python = ">=3.11"
+dependencies = [
+    "httpx>=0.27",
+    "lingua-language-detector>=2.1.1",
+]
+
+[tool.uv]
+package = false
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]

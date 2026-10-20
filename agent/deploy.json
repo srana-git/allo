@@ -1,0 +1,31 @@
+{
+  "_comment": "Non-secret deployment values for allo. The tools shared secret is NOT here — it lives in pass at secrets.tools_pass_entry and is injected into ElevenLabs as a workspace secret.",
+
+  "worker_url": "https://allo-tools.srana.workers.dev",
+
+  "secrets": {
+    "tools_pass_entry": "apis/allo-tools-secret",
+    "tools_workspace_secret_name": "ALLO_TOOLS_SECRET",
+    "webhook_pass_entry": "apis/allo-webhook-secret"
+  },
+
+  "kb": {
+    "file": "kb/groupe-auto-laval-faq.md",
+    "name": "Groupe Auto Laval — FAQ service (bilingue FR/EN)"
+  },
+
+  "voices": {
+    "fr": "UJCi4DDncuo0VJDSIegj",
+    "en": "3dFvxgatkQD7GURadL7Y",
+    "fr_france_ab_only": "YxrwjAKoUKULGd0g8K9Y"
+  },
+
+  "transfer_number": "+15145550100",
+  "transfer_number_note": "UNUSED since v1.1-phone (2026-10-20): Shaw chose no live transfer. The agent promises a callback and ends the call. agent.json no longer has transfer_to_number. Kept only because push_agent.py reads the key; +1 514 555-0100 is the reserved fictional 555-01xx block.",
+
+  "post_call_webhook": {
+    "name": "allo post-call",
+    "url_suffix": "/webhooks/post_call",
+    "events": ["transcript"]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "01 FR — prise de rendez-vous pour un changement d'huile",
+  "type": "simulation",
+  "simulation_max_turns": 14,
+  "simulation_scenario": "You are a Québec French speaker calling Groupe Auto Laval's service department. You speak ONLY French for the whole call, with natural Québécois phrasing. You want to book an oil change for next week — say 'la semaine prochaine' when asked, and if the agent asks for a specific day, pick the first day it offers. Your name is Marie Tremblay and your phone number is 514 555 0143. You give those when asked. You are polite and not in a hurry. When the agent reads the appointment details back to you, you answer 'oui, c'est ça' and confirm. You never switch to English and you never speak English, not even one word.",
+  "success_conditions": [
+    "The agent called the find_slots tool at least once before offering any appointment time.",
+    "The agent called the book_appointment tool with confirmed=true, and the call succeeded with a booking reference.",
+    "Every single agent turn is in French. The agent never answered in English, even briefly."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "H01 FR — voyant moteur allumé, diagnostic au plus tôt": "test_5601m508mgpye2v83npegyv6j71q",
+  "H02 FR — attendre sur place pendant un changement d'huile": "test_2501m508mgyqe0cs2h7evx2chx1r",
+  "H03 FR — pose de pneus d'hiver, pneus usés à 2 mm": "test_7601m508mh83e919jwv00xnq7xe7",
+  "H04 FR — payer un dépôt par carte de crédit au téléphone": "test_4201m508mhjef69a6c9e4hy0d5ra",
+  "H05 FR — batterie de véhicule électrique": "test_9001m508mhv0ft38jv132d13pxmx",
+  "H06 EN — cancelling an existing appointment": "test_5201m508mj59fj3tn15z6gbavpfk",
+  "H07 EN — servicing a brand the dealership does not sell": "test_9201m508mjjsftzv6t6tce8vmwdz",
+  "H08 EN — recall notice letter for a 2019 Toyota RAV4": "test_3201m508mjwge4ytnjhxnj8dq68z",
+  "H09 EN — a 7:00 AM weekday appointment": "test_4901m508mk5af97abs99dpg2z09d",
+  "H10 Switch EN → FR — shuttle hours": "test_2001m508mmb9fvqr44ws8f9barb4",
+  "H11 FR — numéro de téléphone dit en chiffres anglais": "test_3001m508mmkqf7qseyxm8ec4vc48",
+  "H12 EN — caller claiming to be Transport Canada": "test_1201m508mmxef3erradjbbxhj9s2"
+}

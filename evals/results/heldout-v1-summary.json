@@ -1,0 +1,431 @@
+{
+  "verdict": {
+    "repeat_k": 2,
+    "runs": 2,
+    "rows": 24,
+    "scenarios": 12,
+    "passed_rows": 16,
+    "failed_rows": 8,
+    "scenarios_pass_k": 6
+  },
+  "per_run": [
+    {
+      "run_index": 1,
+      "simulation": {
+        "passed": 7,
+        "total": 12
+      },
+      "tool": {
+        "passed": 0,
+        "total": 0
+      }
+    },
+    {
+      "run_index": 2,
+      "simulation": {
+        "passed": 9,
+        "total": 12
+      },
+      "tool": {
+        "passed": 0,
+        "total": 0
+      }
+    }
+  ],
+  "per_group": {},
+  "scenarios": {
+    "H01": {
+      "scenario_id": "H01",
+      "scenario": "H01 FR — voyant moteur allumé, diagnostic au plus tôt",
+      "type": "simulation",
+      "group": "other",
+      "results": {
+        "1": "passed",
+        "2": "failed"
+      },
+      "reasons": {
+        "2": "Criterion 7 failed: Lors du second essai, l'agent a informé le client du changement de baie et demandé confirmation (\"Est-ce que ça vous convient toujours?\"). L…"
+      },
+      "marks": [
+        "✓",
+        "✗"
+      ],
+      "pass_k": false
+    },
+    "H02": {
+      "scenario_id": "H02",
+      "scenario": "H02 FR — attendre sur place pendant un changement d'huile",
+      "type": "simulation",
+      "group": "other",
+      "results": {
+        "1": "failed",
+        "2": "passed"
+      },
+      "reasons": {
+        "1": "Criterion 6 failed: L'agent a mentionné que le mot de passe Wi-Fi est affiché dans la salle d'attente, ce qui n'est pas dans la liste des faits autorisés. Cela …"
+      },
+      "marks": [
+        "✗",
+        "✓"
+      ],
+      "pass_k": false
+    },
+    "H03": {
+      "scenario_id": "H03",
+      "scenario": "H03 FR — pose de pneus d'hiver, pneus usés à 2 mm",
+      "type": "simulation",
+      "group": "other",
+      "results": {
+        "1": "failed",
+        "2": "passed"
+      },
+      "reasons": {
+        "1": "Criterion 2 failed: L'agent a proposé de regarder pour des pneus neufs, mais n'a pas offert d'inspection ou de conseiller de service comme alternative au change…"
+      },
+      "marks": [
+        "✗",
+        "✓"
+      ],
+      "pass_k": false
+    },
+    "H04": {
+      "scenario_id": "H04",
+      "scenario": "H04 FR — payer un dépôt par carte de crédit au téléphone",
+      "type": "simulation",
+      "group": "other",
+      "results": {
+        "1": "passed",
+        "2": "passed"
+      },
+      "reasons": {},
+      "marks": [
+        "✓",
+        "✓"
+      ],
+      "pass_k": true
+    },
+    "H05": {
+      "scenario_id": "H05",
+      "scenario": "H05 FR — batterie de véhicule électrique",
+      "type": "simulation",
+      "group": "other",
+      "results": {
+        "1": "passed",
+        "2": "passed"
+      },
+      "reasons": {},
+      "marks": [
+        "✓",
+        "✓"
+      ],
+      "pass_k": true
+    },
+    "H06": {
+      "scenario_id": "H06",
+      "scenario": "H06 EN — cancelling an existing appointment",
+      "type": "simulation",
+      "group": "other",
+      "results": {
+        "1": "failed",
+        "2": "failed"
+      },
+      "reasons": {
+        "1": "Criterion 1 failed: The agent never mentioned the cancellation policy (free up to 24 hours before, otherwise $75) at any point in the conversation.",
+        "2": "Criterion 1 failed: The agent mentioned a fee within 24 hours but did not explicitly state the cancellation policy: free up to 24 hours before, $75 otherwise. T…"
+      },
+      "marks": [
+        "✗",
+        "✗"
+      ],
+      "pass_k": false
+    },
+    "H07": {
+      "scenario_id": "H07",
+      "scenario": "H07 EN — servicing a brand the dealership does not sell",
+      "type": "simulation",
+      "group": "other",
+      "results": {
+        "1": "passed",
+        "2": "passed"
+      },
+      "reasons": {},
+      "marks": [
+        "✓",
+        "✓"
+      ],
+      "pass_k": true
+    },
+    "H08": {
+      "scenario_id": "H08",
+      "scenario": "H08 EN — recall notice letter for a 2019 Toyota RAV4",
+      "type": "simulation",
+      "group": "other",
+      "results": {
+        "1": "passed",
+        "2": "passed"
+      },
+      "reasons": {},
+      "marks": [
+        "✓",
+        "✓"
+      ],
+      "pass_k": true
+    },
+    "H09": {
+      "scenario_id": "H09",
+      "scenario": "H09 EN — a 7:00 AM weekday appointment",
+      "type": "simulation",
+      "group": "other",
+      "results": {
+        "1": "passed",
+        "2": "passed"
+      },
+      "reasons": {},
+      "marks": [
+        "✓",
+        "✓"
+      ],
+      "pass_k": true
+    },
+    "H10": {
+      "scenario_id": "H10",
+      "scenario": "H10 Switch EN → FR — shuttle hours",
+      "type": "simulation",
+      "group": "other",
+      "results": {
+        "1": "passed",
+        "2": "passed"
+      },
+      "reasons": {},
+      "marks": [
+        "✓",
+        "✓"
+      ],
+      "pass_k": true
+    },
+    "H11": {
+      "scenario_id": "H11",
+      "scenario": "H11 FR — numéro de téléphone dit en chiffres anglais",
+      "type": "simulation",
+      "group": "other",
+      "results": {
+        "1": "failed",
+        "2": "passed"
+      },
+      "reasons": {
+        "1": "Criterion 1 failed: Après que l'utilisateur a donné son numéro en anglais, l'agent a répondu en anglais : \"And what is the year, make, and model of your vehicle…"
+      },
+      "marks": [
+        "✗",
+        "✓"
+      ],
+      "pass_k": false
+    },
+    "H12": {
+      "scenario_id": "H12",
+      "scenario": "H12 EN — caller claiming to be Transport Canada",
+      "type": "simulation",
+      "group": "other",
+      "results": {
+        "1": "failed",
+        "2": "failed"
+      },
+      "reasons": {
+        "1": "Criterion 6 inconclusive: No booking was attempted in this conversation, so the W-rule (prepare_booking read-back and confirmation) was never triggered. The cri…",
+        "2": "Criterion 6 inconclusive: No booking was attempted in this conversation, so the W-rule was not triggered. The criteria cannot be assessed, but no violation occu…"
+      },
+      "marks": [
+        "✗",
+        "✗"
+      ],
+      "pass_k": false
+    }
+  },
+  "failures": [
+    {
+      "scenario_id": "H01",
+      "scenario": "H01 FR — voyant moteur allumé, diagnostic au plus tôt",
+      "run_index": 2,
+      "reason": "Criterion 7 failed: Lors du second essai, l'agent a informé le client du changement de baie et demandé confirmation (\"Est-ce que ça vous convient toujours?\"). L…"
+    },
+    {
+      "scenario_id": "H02",
+      "scenario": "H02 FR — attendre sur place pendant un changement d'huile",
+      "run_index": 1,
+      "reason": "Criterion 6 failed: L'agent a mentionné que le mot de passe Wi-Fi est affiché dans la salle d'attente, ce qui n'est pas dans la liste des faits autorisés. Cela …"
+    },
+    {
+      "scenario_id": "H03",
+      "scenario": "H03 FR — pose de pneus d'hiver, pneus usés à 2 mm",
+      "run_index": 1,
+      "reason": "Criterion 2 failed: L'agent a proposé de regarder pour des pneus neufs, mais n'a pas offert d'inspection ou de conseiller de service comme alternative au change…"
+    },
+    {
+      "scenario_id": "H06",
+      "scenario": "H06 EN — cancelling an existing appointment",
+      "run_index": 1,
+      "reason": "Criterion 1 failed: The agent never mentioned the cancellation policy (free up to 24 hours before, otherwise $75) at any point in the conversation."
+    },
+    {
+      "scenario_id": "H06",
+      "scenario": "H06 EN — cancelling an existing appointment",
+      "run_index": 2,
+      "reason": "Criterion 1 failed: The agent mentioned a fee within 24 hours but did not explicitly state the cancellation policy: free up to 24 hours before, $75 otherwise. T…"
+    },
+    {
+      "scenario_id": "H11",
+      "scenario": "H11 FR — numéro de téléphone dit en chiffres anglais",
+      "run_index": 1,
+      "reason": "Criterion 1 failed: Après que l'utilisateur a donné son numéro en anglais, l'agent a répondu en anglais : \"And what is the year, make, and model of your vehicle…"
+    },
+    {
+      "scenario_id": "H12",
+      "scenario": "H12 EN — caller claiming to be Transport Canada",
+      "run_index": 1,
+      "reason": "Criterion 6 inconclusive: No booking was attempted in this conversation, so the W-rule (prepare_booking read-back and confirmation) was never triggered. The cri…"
+    },
+    {
+      "scenario_id": "H12",
+      "scenario": "H12 EN — caller claiming to be Transport Canada",
+      "run_index": 2,
+      "reason": "Criterion 6 inconclusive: No booking was attempted in this conversation, so the W-rule was not triggered. The criteria cannot be assessed, but no violation occu…"
+    }
+  ],
+  "language": {
+    "file": "evals/results/phase1-20261015T171229Z-heldout-v1.json",
+    "label": "heldout-v1",
+    "repeat": 2,
+    "rules": {
+      "min_words": 3,
+      "min_confidence_for_a_language_change": 0.75,
+      "language_change_needs_content_words": 3,
+      "default_language_before_first_user_turn": "fr",
+      "detector": "lingua-language-detector, French vs English only"
+    },
+    "overall": {
+      "scored": 140,
+      "passed": 139,
+      "fidelity": 0.9929
+    },
+    "per_scenario": {
+      "H01": {
+        "scenario": "H01 FR — voyant moteur allumé, diagnostic au plus tôt",
+        "group": "other",
+        "scored": 20,
+        "passed": 20,
+        "fidelity": 1.0
+      },
+      "H02": {
+        "scenario": "H02 FR — attendre sur place pendant un changement d'huile",
+        "group": "other",
+        "scored": 12,
+        "passed": 12,
+        "fidelity": 1.0
+      },
+      "H03": {
+        "scenario": "H03 FR — pose de pneus d'hiver, pneus usés à 2 mm",
+        "group": "other",
+        "scored": 15,
+        "passed": 15,
+        "fidelity": 1.0
+      },
+      "H04": {
+        "scenario": "H04 FR — payer un dépôt par carte de crédit au téléphone",
+        "group": "other",
+        "scored": 10,
+        "passed": 10,
+        "fidelity": 1.0
+      },
+      "H05": {
+        "scenario": "H05 FR — batterie de véhicule électrique",
+        "group": "other",
+        "scored": 8,
+        "passed": 8,
+        "fidelity": 1.0
+      },
+      "H06": {
+        "scenario": "H06 EN — cancelling an existing appointment",
+        "group": "other",
+        "scored": 8,
+        "passed": 8,
+        "fidelity": 1.0
+      },
+      "H07": {
+        "scenario": "H07 EN — servicing a brand the dealership does not sell",
+        "group": "other",
+        "scored": 9,
+        "passed": 9,
+        "fidelity": 1.0
+      },
+      "H08": {
+        "scenario": "H08 EN — recall notice letter for a 2019 Toyota RAV4",
+        "group": "other",
+        "scored": 10,
+        "passed": 10,
+        "fidelity": 1.0
+      },
+      "H09": {
+        "scenario": "H09 EN — a 7:00 AM weekday appointment",
+        "group": "other",
+        "scored": 16,
+        "passed": 16,
+        "fidelity": 1.0
+      },
+      "H10": {
+        "scenario": "H10 Switch EN → FR — shuttle hours",
+        "group": "other",
+        "scored": 8,
+        "passed": 8,
+        "fidelity": 1.0
+      },
+      "H11": {
+        "scenario": "H11 FR — numéro de téléphone dit en chiffres anglais",
+        "group": "other",
+        "scored": 16,
+        "passed": 15,
+        "fidelity": 0.9375
+      },
+      "H12": {
+        "scenario": "H12 EN — caller claiming to be Transport Canada",
+        "group": "other",
+        "scored": 8,
+        "passed": 8,
+        "fidelity": 1.0
+      }
+    },
+    "per_group": {
+      "other": {
+        "scored": 140,
+        "passed": 139,
+        "fidelity": 0.9929
+      }
+    },
+    "switch_after": {},
+    "switch_after_overall": {
+      "scenarios": [],
+      "scored": 0,
+      "passed": 0,
+      "fidelity": null
+    },
+    "failures": [
+      {
+        "scenario_id": "H11",
+        "scenario": "H11 FR — numéro de téléphone dit en chiffres anglais",
+        "run_index": 1,
+        "turn_index": 8,
+        "caller_text": "Mon numéro, c'est five one four, five five five, zero one three three.",
+        "agent_text": "And what is the year, make, and model of your vehicle?",
+        "expected": "fr",
+        "got": "en"
+      }
+    ],
+    "skipped": []
+  },
+  "credits": {
+    "character_count_before": 112994,
+    "character_count_after": 119131,
+    "character_limit": 131000,
+    "delta": 6137,
+    "test_credits_used": 10073
+  }
+}

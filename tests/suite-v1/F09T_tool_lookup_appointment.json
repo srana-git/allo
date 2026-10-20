@@ -1,0 +1,32 @@
+{
+  "name": "F09T Tool call — lookup_appointment reçoit GAL-TEST1 et 5145550199",
+  "type": "tool",
+  "check_any_tool_matches": true,
+  "simulation_scenario_comment": "A tool-call unit test: the caller gives the seeded booking reference and the phone number on the booking, and the LLM must pass both to lookup_appointment exactly as the Worker stores them.",
+  "chat_history": [
+    {
+      "role": "user",
+      "message": "Bonjour, j'ai un rendez-vous avec vous et j'aimerais le déplacer. Ma référence, c'est G-A-L, tiret, T-E-S-T-1, et le numéro sur le rendez-vous, c'est cinq-un-quatre, cinq-cinq-cinq, zéro-un-neuf-neuf.",
+      "time_in_call_secs": 0
+    },
+    {
+      "role": "agent",
+      "message": "Bonjour! Un instant, je vérifie votre rendez-vous dans le système.",
+      "time_in_call_secs": 8
+    }
+  ],
+  "tool_call_parameters": {
+    "referenced_tool": { "type": "webhook", "id": "{{TOOL_ID:lookup_appointment}}" },
+    "verify_absence": false,
+    "parameters": [
+      {
+        "path": "body.booking_ref",
+        "eval": { "type": "exact", "expected_value": "GAL-TEST1" }
+      },
+      {
+        "path": "body.phone",
+        "eval": { "type": "exact", "expected_value": "5145550199" }
+      }
+    ]
+  }
+}

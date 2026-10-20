@@ -1,0 +1,52 @@
+{
+  "type": "webhook",
+  "name": "find_slots",
+  "description": "List the next five free service appointment slots on or after a date, optionally filtered by the service the caller wants. Returns each slot with an ISO timestamp and two ready-to-speak human strings, start_local_fr (\"jeudi 16 octobre à 9 h 00\") and start_local_en (\"Thursday, October 16 at 9:00 AM\"). Read the string that matches the caller's current language. Call this before offering any appointment time — never offer a day or time the tool did not return.",
+  "response_timeout_secs": 20,
+  "api_schema": {
+    "url": "{{WORKER_URL}}/tools/find_slots",
+    "method": "POST",
+    "content_type": "application/json",
+    "request_headers": {
+      "X-Allo-Secret": {
+        "secret_id": "{{SECRET_ID}}"
+      }
+    },
+    "request_body_schema": {
+      "type": "object",
+      "description": "Arguments for find_slots",
+      "required": [
+        "date_from"
+      ],
+      "properties": {
+        "date_from": {
+          "type": "string",
+          "description": "Earliest date to search from, in YYYY-MM-DD format. For \"aujourd'hui\" use today's date; for \"la semaine prochaine\" use next Monday's date."
+        },
+        "service_type": {
+          "type": "string",
+          "description": "The service the caller wants. Omit only when the caller has not said what the appointment is for.",
+          "enum": [
+            "oil_change",
+            "tires",
+            "recall_repair",
+            "diagnostic",
+            "maintenance"
+          ]
+        },
+        "lang": {
+          "type": "string",
+          "description": "Language for the ready-to-speak time string. Use the caller's current language.",
+          "enum": [
+            "fr",
+            "en"
+          ]
+        },
+        "conversation_id": {
+          "type": "string",
+          "dynamic_variable": "system__conversation_id"
+        }
+      }
+    }
+  }
+}

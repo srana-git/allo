@@ -1,0 +1,38 @@
+{
+  "type": "webhook",
+  "name": "book_appointment",
+  "description": "Step two of a booking. WRITE OPERATION, and it takes no details — only the token from prepare_booking and confirmed. Never call it before the caller has heard the readback_fr or readback_en that prepare_booking returned, read out verbatim, and answered it with a clear yes. Set confirmed to true only then; set it to false if you have not read the read-back yet — the call is rejected with error \"not_confirmed\". If the token is missing, already used, or minted for a move instead of a booking, the call is rejected with error \"needs_prepare\" and you must call prepare_booking again. If more than ten minutes passed since prepare_booking, the call is rejected with error \"token_expired\" and you must call prepare_booking again. Any change to a detail means a new prepare_booking call — you cannot pass a new detail to this tool. Returns a booking reference in the form GAL-XXXXX which you must read back to the caller character for character, in groups, with the dash named — exactly as this tool returned it, never paraphrased, never regenerated, and never taken from an example in your instructions.",
+  "response_timeout_secs": 20,
+  "api_schema": {
+    "url": "{{WORKER_URL}}/tools/book_appointment",
+    "method": "POST",
+    "content_type": "application/json",
+    "request_headers": {
+      "X-Allo-Secret": {
+        "secret_id": "{{SECRET_ID}}"
+      }
+    },
+    "request_body_schema": {
+      "type": "object",
+      "description": "Arguments for book_appointment",
+      "required": [
+        "token",
+        "confirmed"
+      ],
+      "properties": {
+        "token": {
+          "type": "string",
+          "description": "The token returned by the prepare_booking call whose read-back the caller just agreed to. It carries every detail; do not change or re-use one."
+        },
+        "confirmed": {
+          "type": "boolean",
+          "description": "True only after the caller has heard the prepare_booking read-back, read out verbatim, and said yes to it. False otherwise."
+        },
+        "conversation_id": {
+          "type": "string",
+          "dynamic_variable": "system__conversation_id"
+        }
+      }
+    }
+  }
+}

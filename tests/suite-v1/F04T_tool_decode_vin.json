@@ -1,0 +1,28 @@
+{
+  "name": "F04T Tool call — decode_vin reçoit le NIV épelé en français",
+  "type": "tool",
+  "check_any_tool_matches": true,
+  "simulation_scenario_comment": "A tool-call unit test: the caller spells the VIN with French letter names, and the LLM must call decode_vin with the VIN exactly as spelled, uppercase and without spaces.",
+  "chat_history": [
+    {
+      "role": "user",
+      "message": "Bonjour, je voudrais savoir c'est quoi comme véhicule. Mon numéro de série, c'est deux, H, G, F, C, deux, F, cinq, neuf, J, H, zéro zéro zéro zéro zéro zéro.",
+      "time_in_call_secs": 0
+    },
+    {
+      "role": "agent",
+      "message": "Bonjour! Un instant, je vérifie ça tout de suite.",
+      "time_in_call_secs": 9
+    }
+  ],
+  "tool_call_parameters": {
+    "referenced_tool": { "type": "webhook", "id": "{{TOOL_ID:decode_vin}}" },
+    "verify_absence": false,
+    "parameters": [
+      {
+        "path": "body.vin",
+        "eval": { "type": "exact", "expected_value": "2HGFC2F59JH000000" }
+      }
+    ]
+  }
+}

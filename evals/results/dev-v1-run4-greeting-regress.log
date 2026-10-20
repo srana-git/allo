@@ -1,0 +1,30 @@
+3 test definition(s) in tests/suite-v1
+  simulation E04 EN — shuttle service  ->  test_2201m505a30hfavby4k5hh7xesa1
+  simulation F01 FR — changement d'huile, prise de rendez-vous simple  ->  test_5401m505a59gek5bp44ydyc5jgs5
+  simulation S02 Switch EN → FR  ->  test_6901m505aaqcepgvytzevqg9asbh
+ids written to tests/suite-v1/state.json
+  fixture reseeded: GAL-TEST1 on 2026-10-19-0900-b1 (Monday, October 19 at 9:00 AM)
+
+Running 3 tests against agent agent_2301m5040drafgn9e5gcv5pc21qq (run 1/1) …
+  invocation suite_6801m508j4h6e95sn7jsyghadk91
+    … 0/3 runs finished
+    … 0/3 runs finished
+    … 1/3 runs finished
+    … 2/3 runs finished
+    … 3/3 runs finished
+
+==============================================================================
+RUN 1/1  (suite_6801m508j4h6e95sn7jsyghadk91)
+#   STATUS    TEST
+------------------------------------------------------------------------------
+1   PASSED    E04 EN — shuttle service
+2   PASSED    F01 FR — changement d'huile, prise de rendez-vous simple
+3   FAILED    S02 Switch EN → FR
+    reason: Evaluation failed
+------------------------------------------------------------------------------
+PASS 2/3
+
+==============================================================================
+repeat=1  PASS 2/3
+credits: character_count 110483 -> 111584 (delta +1101)
+results written to evals/results/phase1-20261015T170850Z-dev-v1-run4-greeting-regress.json

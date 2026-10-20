@@ -1,0 +1,52 @@
+{
+  "type": "webhook",
+  "name": "check_recalls",
+  "description": "Look up open safety recalls for a vehicle in the Transport Canada recall database, by make, model and model year. This is the ONLY source of recall information you may use — never describe a recall the caller mentions unless this tool returned it. Returns the total count plus up to five most recent recalls, each with a recall number, date, affected component and a summary. Set lang to the language the caller is speaking right now so the component and summary come back in that language.",
+  "response_timeout_secs": 25,
+  "api_schema": {
+    "url": "{{WORKER_URL}}/tools/check_recalls",
+    "method": "POST",
+    "content_type": "application/json",
+    "request_headers": {
+      "X-Allo-Secret": {
+        "secret_id": "{{SECRET_ID}}"
+      }
+    },
+    "request_body_schema": {
+      "type": "object",
+      "description": "Arguments for check_recalls",
+      "required": [
+        "make",
+        "model",
+        "year",
+        "lang"
+      ],
+      "properties": {
+        "make": {
+          "type": "string",
+          "description": "Vehicle make, e.g. HONDA, TOYOTA, FORD. Uppercase where possible."
+        },
+        "model": {
+          "type": "string",
+          "description": "Vehicle model, e.g. CIVIC, COROLLA, F-150. Uppercase where possible."
+        },
+        "year": {
+          "type": "string",
+          "description": "Four-digit model year, e.g. \"2018\"."
+        },
+        "lang": {
+          "type": "string",
+          "description": "Language of the recall text to return. Use \"fr\" when the caller is speaking French, \"en\" when they are speaking English.",
+          "enum": [
+            "fr",
+            "en"
+          ]
+        },
+        "conversation_id": {
+          "type": "string",
+          "dynamic_variable": "system__conversation_id"
+        }
+      }
+    }
+  }
+}

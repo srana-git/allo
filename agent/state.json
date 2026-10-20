@@ -1,0 +1,18 @@
+{
+  "kb_document_id": "pzMvcz4O2CLryKCx6nOA",
+  "kb_document_name": "Groupe Auto Laval — FAQ service (bilingue FR/EN)",
+  "tool_ids": {
+    "book_appointment": "tool_9001m503zfbkebjaw6yjt69txrxr",
+    "check_recalls": "tool_4601m503zg45e1kvwtzn977zbepa",
+    "decode_vin": "tool_1401m503zgepfsmb2bt1gvn071wt",
+    "find_slots": "tool_6401m503zgsaevj8qk6y42qvn3sb",
+    "lookup_appointment": "tool_6501m503zh55e1g9gtafxdynxa6q",
+    "move_appointment": "tool_9801m503zhhcf57smd4ybe9bppm4",
+    "prepare_booking": "tool_2301m507jxpkfz3vy3h8yrr1rar3"
+  },
+  "post_call_webhook_id": "dcc9f6cf051e47b2879ff7ee283d9780",
+  "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+  "agent_name": "allo — Groupe Auto Laval (service)",
+  "llm": "gemini-3.5-flash-lite",
+  "tts_model": "eleven_flash_v2_5"
+}

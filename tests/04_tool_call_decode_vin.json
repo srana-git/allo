@@ -1,0 +1,28 @@
+{
+  "name": "04 Tool call — decode_vin reçoit le NIV exact",
+  "type": "tool",
+  "check_any_tool_matches": true,
+  "simulation_scenario_comment": "A tool-call unit test: the LLM sees this chat history and must call decode_vin with the VIN exactly as the caller gave it.",
+  "chat_history": [
+    {
+      "role": "user",
+      "message": "Bonjour, je voudrais savoir c'est quoi comme véhicule. Mon numéro de série, c'est 2HGFC2F59JH000000.",
+      "time_in_call_secs": 0
+    },
+    {
+      "role": "agent",
+      "message": "Bonjour! Un instant, je vérifie ça tout de suite.",
+      "time_in_call_secs": 8
+    }
+  ],
+  "tool_call_parameters": {
+    "referenced_tool": { "type": "webhook", "id": "{{TOOL_ID:decode_vin}}" },
+    "verify_absence": false,
+    "parameters": [
+      {
+        "path": "body.vin",
+        "eval": { "type": "exact", "expected_value": "2HGFC2F59JH000000" }
+      }
+    ]
+  }
+}

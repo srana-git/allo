@@ -1,0 +1,1139 @@
+{
+  "timestamp": "20261015T161158Z",
+  "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+  "test_invocation_id": "suite_0601m505apdkfnvv6nyg0njhc7ph",
+  "suite": "tests/suite-v1",
+  "only": "F05*",
+  "label": "smoke2a",
+  "pass": 1,
+  "fail": 0,
+  "total": 1,
+  "rows": [
+    {
+      "test_id": "test_5501m505a6syfbyt7g14tj9k2jpv",
+      "test_name": "F05 FR — heures d'ouverture du samedi",
+      "status": "passed",
+      "result": "success",
+      "reason": "Evaluation succeeded",
+      "messages": [
+        "Criterion 1 passed: L'agent a clairement indiqué : \"Nous sommes ouverts le samedi de huit heures à quatorze heures\", ce qui correspond à 8h à 14h.",
+        "Criterion 2 passed: L'agent a explicitement dit : \"Le dimanche, nous sommes fermés.\"",
+        "Criterion 3 passed: L'appelant n'a pas demandé de rendez-vous et l'agent n'a pas proposé de plages horaires. Aucune pression n'a été exercée.",
+        "Criterion 4 passed: L'appelant a parlé en français tout au long de la conversation et l'agent a répondu en français à chaque tour. La langue est cohérente.",
+        "Criterion 5 passed: L'agent a fourni les heures d'ouverture du samedi et la fermeture du dimanche. Aucun outil n'a été appelé, mais ces informations sont plausibles selon un FAQ de concessionnaire standard. Aucun fait invérifiable n'a été énoncé.",
+        "The agent ended the conversation."
+      ],
+      "test_run_id": "trun_0301m505apdrf43rsase4tp0samj",
+      "turns": 11
+    }
+  ],
+  "raw_invocation": {
+    "id": "suite_0601m505apdkfnvv6nyg0njhc7ph",
+    "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+    "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+    "version_id": "agtvrsn_7801m504hfk7f2vb9yf45vr2ddae",
+    "ran_against_draft": false,
+    "created_at": 1792080697,
+    "folder_id": null,
+    "repeat_count": 1,
+    "cancelled": false,
+    "bucketing_status": null,
+    "result_groups": [],
+    "test_runs": [
+      {
+        "test_run_id": "trun_0301m505apdrf43rsase4tp0samj",
+        "test_info": {
+          "from_conversation_metadata": null,
+          "dynamic_variables": {},
+          "chat_history": [],
+          "conversation_initiation_source": null,
+          "environment": null,
+          "type": "simulation",
+          "success_condition": null,
+          "success_conditions": [
+            "The agent said the dealership is open on Saturday from 8 h à 14 h (8:00 AM to 2:00 PM).",
+            "The agent said the dealership is closed on Sunday.",
+            "The agent did not pressure the caller to book: after the caller declined, it did not keep offering appointment times.",
+            "G1 — Every agent turn is in the caller's current language (French while the caller speaks French, English while the caller speaks English).",
+            "G2 — The agent did not state any fact (recall, price, hour, policy, slot) that it did not get from a tool result or that is not a plausible reading of the dealer FAQ. Small talk does not count."
+          ],
+          "simulation_scenario": "You are a Québec French speaker calling Groupe Auto Laval's service department, and you speak ONLY French for the whole call. Open with exactly: « Vous êtes ouverts jusqu'à quelle heure le samedi? » After the agent answers, ask one follow-up: « Et le dimanche? » Then say « Parfait, merci beaucoup. » If the agent tries to book you an appointment, decline once, politely: « Non merci, c'est tout pour aujourd'hui. » You do not want an appointment in this call, and you are not upset.",
+          "simulation_max_turns": 12,
+          "simulation_environment": "production",
+          "tool_mock_config": {
+            "mocking_strategy": "none",
+            "fallback_strategy": "raise_error",
+            "mocked_tool_ids": []
+          },
+          "tool_mock_overrides": {},
+          "evaluation_model": null,
+          "simulated_user_model": null,
+          "is_auto_generated": false,
+          "auto_generation_metadata": null
+        },
+        "test_invocation_id": "suite_0601m505apdkfnvv6nyg0njhc7ph",
+        "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+        "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+        "version_id": "agtvrsn_7801m504hfk7f2vb9yf45vr2ddae",
+        "ran_against_draft": false,
+        "workflow_node_id": null,
+        "status": "passed",
+        "agent_responses": [
+          {
+            "role": "agent",
+            "agent_metadata": {
+              "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+              "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+              "workflow_node_id": null,
+              "version_id": null
+            },
+            "message": "Bonjour, service à la clientèle de Groupe Auto Laval, ici Léa. Comment puis-je vous aider? … For English, just say so.",
+            "multivoice_message": null,
+            "tool_calls": [],
+            "tool_results": [],
+            "feedback": null,
+            "llm_override": null,
+            "producing_llm": "gemini-3.5-flash-lite",
+            "time_in_call_secs": 10,
+            "conversation_turn_metrics": {
+              "metrics": {
+                "convai_ttf_response_since_user_message": {
+                  "elapsed_time": 0.002450239844620228
+                }
+              },
+              "convai_asr_provider": null,
+              "convai_tts_model": null,
+              "convai_tts_cascade": null,
+              "voice_id": null
+            },
+            "rag_retrieval_info": null,
+            "llm_usage": null,
+            "interrupted": false,
+            "ignored_as_backchannel": false,
+            "platform_event": null,
+            "original_message": null,
+            "reasoning": [],
+            "source_medium": null,
+            "source_event_id": 1,
+            "used_static_kb_document_ids": [],
+            "analysis": null,
+            "user_identifier": null,
+            "id": null,
+            "compaction": null,
+            "triggered_guardrails": []
+          },
+          {
+            "role": "user",
+            "agent_metadata": null,
+            "message": "Vous êtes ouverts jusqu'à quelle heure le samedi?",
+            "multivoice_message": null,
+            "tool_calls": [],
+            "tool_results": [],
+            "feedback": null,
+            "llm_override": null,
+            "producing_llm": null,
+            "time_in_call_secs": 10,
+            "conversation_turn_metrics": null,
+            "rag_retrieval_info": null,
+            "llm_usage": null,
+            "interrupted": false,
+            "ignored_as_backchannel": false,
+            "platform_event": null,
+            "original_message": null,
+            "reasoning": [],
+            "source_medium": "text",
+            "source_event_id": 2,
+            "used_static_kb_document_ids": [],
+            "analysis": null,
+            "user_identifier": null,
+            "id": null,
+            "compaction": null,
+            "triggered_guardrails": []
+          },
+          {
+            "role": "agent",
+            "agent_metadata": {
+              "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+              "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+              "workflow_node_id": null,
+              "version_id": null
+            },
+            "message": "Nous sommes ouverts le samedi de huit heures à quatorze heures. Est-ce que je peux vous aider avec autre chose?",
+            "multivoice_message": null,
+            "tool_calls": [],
+            "tool_results": [],
+            "feedback": null,
+            "llm_override": null,
+            "producing_llm": "gemini-3.5-flash-lite",
+            "time_in_call_secs": 10,
+            "conversation_turn_metrics": {
+              "metrics": {
+                "convai_llm_service_ttf_sentence": {
+                  "elapsed_time": 0.7803313569165766
+                },
+                "convai_llm_service_ttfb": {
+                  "elapsed_time": 0.6603059181943536
+                },
+                "convai_llm_service_tt_last_sentence": {
+                  "elapsed_time": 0.8253203467465937
+                },
+                "convai_ttf_response_since_user_message": {
+                  "elapsed_time": 1.203599566128105
+                }
+              },
+              "convai_asr_provider": null,
+              "convai_tts_model": null,
+              "convai_tts_cascade": null,
+              "voice_id": null
+            },
+            "rag_retrieval_info": {
+              "chunks": [
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "EL4yXNh3zgO1MpSR1Ion",
+                  "vector_distance": 0.21725213527679443
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "ikUn3MjktIYJIoFN9QUU",
+                  "vector_distance": 0.21932387351989746
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "rek61mLI3WZEwvEkjEII",
+                  "vector_distance": 0.2215946912765503
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "8FeZLwm4rkuK0oHRNXbw",
+                  "vector_distance": 0.22422122955322266
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "exC5raaV0HHbnk2Mpk1o",
+                  "vector_distance": 0.22845178842544556
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "hzfPgohG9JrUVbK5Tn0W",
+                  "vector_distance": 0.24473583698272705
+                }
+              ],
+              "embedding_model": "e5_mistral_7b_instruct",
+              "retrieval_query": "What is your closing time on Saturdays?",
+              "rag_latency_secs": 0.136320139747113,
+              "used_chunk_ids": []
+            },
+            "llm_usage": {
+              "model_usage": {
+                "gemini-3.5-flash-lite": {
+                  "input": {
+                    "tokens": 9746,
+                    "price": 0.0032161800000000003
+                  },
+                  "input_cache_read": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "input_cache_write": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "output_total": {
+                    "tokens": 27,
+                    "price": 7.425e-05
+                  }
+                }
+              },
+              "detailed_model_usage": [
+                {
+                  "config": {
+                    "model": "gemini-3.5-flash-lite",
+                    "service_tier": "standard"
+                  },
+                  "usage": {
+                    "input": {
+                      "tokens": 9746,
+                      "price": 0.0032161800000000003
+                    },
+                    "input_cache_read": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "input_cache_write": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "output_total": {
+                      "tokens": 27,
+                      "price": 7.425e-05
+                    }
+                  }
+                }
+              ]
+            },
+            "interrupted": false,
+            "ignored_as_backchannel": false,
+            "platform_event": null,
+            "original_message": null,
+            "reasoning": [
+              {
+                "summary": null,
+                "provider_redact": false
+              }
+            ],
+            "source_medium": null,
+            "source_event_id": 2,
+            "used_static_kb_document_ids": [],
+            "analysis": null,
+            "user_identifier": null,
+            "id": null,
+            "compaction": null,
+            "triggered_guardrails": []
+          },
+          {
+            "role": "user",
+            "agent_metadata": null,
+            "message": "Et le dimanche, vous êtes ouverts?",
+            "multivoice_message": null,
+            "tool_calls": [],
+            "tool_results": [],
+            "feedback": null,
+            "llm_override": null,
+            "producing_llm": null,
+            "time_in_call_secs": 10,
+            "conversation_turn_metrics": null,
+            "rag_retrieval_info": null,
+            "llm_usage": null,
+            "interrupted": false,
+            "ignored_as_backchannel": false,
+            "platform_event": null,
+            "original_message": null,
+            "reasoning": [],
+            "source_medium": "text",
+            "source_event_id": 3,
+            "used_static_kb_document_ids": [],
+            "analysis": null,
+            "user_identifier": null,
+            "id": null,
+            "compaction": null,
+            "triggered_guardrails": []
+          },
+          {
+            "role": "agent",
+            "agent_metadata": {
+              "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+              "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+              "workflow_node_id": null,
+              "version_id": null
+            },
+            "message": "Le dimanche, nous sommes fermés. Puis-je vous aider avec autre chose?",
+            "multivoice_message": null,
+            "tool_calls": [],
+            "tool_results": [],
+            "feedback": null,
+            "llm_override": null,
+            "producing_llm": "gemini-3.5-flash-lite",
+            "time_in_call_secs": 10,
+            "conversation_turn_metrics": {
+              "metrics": {
+                "convai_llm_service_ttf_sentence": {
+                  "elapsed_time": 0.6695888079702854
+                },
+                "convai_llm_service_ttfb": {
+                  "elapsed_time": 0.49814903922379017
+                },
+                "convai_llm_service_tt_last_sentence": {
+                  "elapsed_time": 0.6695771277882159
+                },
+                "convai_ttf_response_since_user_message": {
+                  "elapsed_time": 1.1078094858676195
+                }
+              },
+              "convai_asr_provider": null,
+              "convai_tts_model": null,
+              "convai_tts_cascade": null,
+              "voice_id": null
+            },
+            "rag_retrieval_info": {
+              "chunks": [
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "ikUn3MjktIYJIoFN9QUU",
+                  "vector_distance": 0.22506093978881836
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "EL4yXNh3zgO1MpSR1Ion",
+                  "vector_distance": 0.22653615474700928
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "8FeZLwm4rkuK0oHRNXbw",
+                  "vector_distance": 0.2270471453666687
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "exC5raaV0HHbnk2Mpk1o",
+                  "vector_distance": 0.22782135009765625
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "rek61mLI3WZEwvEkjEII",
+                  "vector_distance": 0.2339068055152893
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "hzfPgohG9JrUVbK5Tn0W",
+                  "vector_distance": 0.2378218173980713
+                }
+              ],
+              "embedding_model": "e5_mistral_7b_instruct",
+              "retrieval_query": "Et vous êtes ouverts le dimanche ?",
+              "rag_latency_secs": 0.14067380921915174,
+              "used_chunk_ids": []
+            },
+            "llm_usage": {
+              "model_usage": {
+                "gemini-3.5-flash-lite": {
+                  "input": {
+                    "tokens": 9782,
+                    "price": 0.00322806
+                  },
+                  "input_cache_read": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "input_cache_write": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "output_total": {
+                    "tokens": 17,
+                    "price": 4.675e-05
+                  }
+                }
+              },
+              "detailed_model_usage": [
+                {
+                  "config": {
+                    "model": "gemini-3.5-flash-lite",
+                    "service_tier": "standard"
+                  },
+                  "usage": {
+                    "input": {
+                      "tokens": 9782,
+                      "price": 0.00322806
+                    },
+                    "input_cache_read": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "input_cache_write": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "output_total": {
+                      "tokens": 17,
+                      "price": 4.675e-05
+                    }
+                  }
+                }
+              ]
+            },
+            "interrupted": false,
+            "ignored_as_backchannel": false,
+            "platform_event": null,
+            "original_message": null,
+            "reasoning": [
+              {
+                "summary": null,
+                "provider_redact": false
+              }
+            ],
+            "source_medium": null,
+            "source_event_id": 3,
+            "used_static_kb_document_ids": [],
+            "analysis": null,
+            "user_identifier": null,
+            "id": null,
+            "compaction": null,
+            "triggered_guardrails": []
+          },
+          {
+            "role": "user",
+            "agent_metadata": null,
+            "message": "Parfait, merci beaucoup.",
+            "multivoice_message": null,
+            "tool_calls": [],
+            "tool_results": [],
+            "feedback": null,
+            "llm_override": null,
+            "producing_llm": null,
+            "time_in_call_secs": 10,
+            "conversation_turn_metrics": null,
+            "rag_retrieval_info": null,
+            "llm_usage": null,
+            "interrupted": false,
+            "ignored_as_backchannel": false,
+            "platform_event": null,
+            "original_message": null,
+            "reasoning": [],
+            "source_medium": "text",
+            "source_event_id": 4,
+            "used_static_kb_document_ids": [],
+            "analysis": null,
+            "user_identifier": null,
+            "id": null,
+            "compaction": null,
+            "triggered_guardrails": []
+          },
+          {
+            "role": "agent",
+            "agent_metadata": {
+              "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+              "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+              "workflow_node_id": null,
+              "version_id": null
+            },
+            "message": "Ça me fait plaisir. Je vous souhaite une excellente journée.",
+            "multivoice_message": null,
+            "tool_calls": [],
+            "tool_results": [],
+            "feedback": null,
+            "llm_override": null,
+            "producing_llm": "gemini-3.5-flash-lite",
+            "time_in_call_secs": 10,
+            "conversation_turn_metrics": {
+              "metrics": {
+                "convai_llm_service_ttf_sentence": {
+                  "elapsed_time": 0.8183859968557954
+                },
+                "convai_llm_service_ttfb": {
+                  "elapsed_time": 0.7792534567415714
+                },
+                "convai_llm_service_tt_last_sentence": {
+                  "elapsed_time": 0.8666466469876468
+                },
+                "convai_ttf_response_since_user_message": {
+                  "elapsed_time": 1.035010945983231
+                }
+              },
+              "convai_asr_provider": null,
+              "convai_tts_model": null,
+              "convai_tts_cascade": null,
+              "voice_id": null
+            },
+            "rag_retrieval_info": {
+              "chunks": [
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "ikUn3MjktIYJIoFN9QUU",
+                  "vector_distance": 0.19829779863357544
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "EL4yXNh3zgO1MpSR1Ion",
+                  "vector_distance": 0.20192593336105347
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "rek61mLI3WZEwvEkjEII",
+                  "vector_distance": 0.20306026935577393
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "8FeZLwm4rkuK0oHRNXbw",
+                  "vector_distance": 0.20576632022857666
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "exC5raaV0HHbnk2Mpk1o",
+                  "vector_distance": 0.20750457048416138
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "hzfPgohG9JrUVbK5Tn0W",
+                  "vector_distance": 0.2159554362297058
+                }
+              ],
+              "embedding_model": "e5_mistral_7b_instruct",
+              "retrieval_query": "Quand êtes-vous ouverts le samedi et le dimanche?",
+              "rag_latency_secs": 0.1608119886368513,
+              "used_chunk_ids": []
+            },
+            "llm_usage": {
+              "model_usage": {
+                "gemini-3.5-flash-lite": {
+                  "input": {
+                    "tokens": 9805,
+                    "price": 0.00323565
+                  },
+                  "input_cache_read": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "input_cache_write": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "output_total": {
+                    "tokens": 12,
+                    "price": 3.3e-05
+                  }
+                }
+              },
+              "detailed_model_usage": [
+                {
+                  "config": {
+                    "model": "gemini-3.5-flash-lite",
+                    "service_tier": "standard"
+                  },
+                  "usage": {
+                    "input": {
+                      "tokens": 9805,
+                      "price": 0.00323565
+                    },
+                    "input_cache_read": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "input_cache_write": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "output_total": {
+                      "tokens": 12,
+                      "price": 3.3e-05
+                    }
+                  }
+                }
+              ]
+            },
+            "interrupted": false,
+            "ignored_as_backchannel": false,
+            "platform_event": null,
+            "original_message": null,
+            "reasoning": [
+              {
+                "summary": null,
+                "provider_redact": false
+              }
+            ],
+            "source_medium": null,
+            "source_event_id": 4,
+            "used_static_kb_document_ids": [],
+            "analysis": null,
+            "user_identifier": null,
+            "id": null,
+            "compaction": null,
+            "triggered_guardrails": []
+          },
+          {
+            "role": "user",
+            "agent_metadata": null,
+            "message": "Merci, bonne journée!",
+            "multivoice_message": null,
+            "tool_calls": [],
+            "tool_results": [],
+            "feedback": null,
+            "llm_override": null,
+            "producing_llm": null,
+            "time_in_call_secs": 10,
+            "conversation_turn_metrics": null,
+            "rag_retrieval_info": null,
+            "llm_usage": null,
+            "interrupted": false,
+            "ignored_as_backchannel": false,
+            "platform_event": null,
+            "original_message": null,
+            "reasoning": [],
+            "source_medium": "text",
+            "source_event_id": 5,
+            "used_static_kb_document_ids": [],
+            "analysis": null,
+            "user_identifier": null,
+            "id": null,
+            "compaction": null,
+            "triggered_guardrails": []
+          },
+          {
+            "role": "agent",
+            "agent_metadata": {
+              "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+              "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+              "workflow_node_id": null,
+              "version_id": null
+            },
+            "message": "Au revoir, bonne journée!",
+            "multivoice_message": null,
+            "tool_calls": [],
+            "tool_results": [],
+            "feedback": null,
+            "llm_override": null,
+            "producing_llm": "gemini-3.5-flash-lite",
+            "time_in_call_secs": 10,
+            "conversation_turn_metrics": {
+              "metrics": {
+                "convai_llm_service_ttfb": {
+                  "elapsed_time": 0.566065208055079
+                },
+                "convai_llm_tool_request_generation_latency": {
+                  "elapsed_time": 0.5665516979061067
+                },
+                "convai_ttf_response_since_user_message": {
+                  "elapsed_time": 0.7380714472383261
+                }
+              },
+              "convai_asr_provider": null,
+              "convai_tts_model": null,
+              "convai_tts_cascade": null,
+              "voice_id": null
+            },
+            "rag_retrieval_info": {
+              "chunks": [
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "ikUn3MjktIYJIoFN9QUU",
+                  "vector_distance": 0.19829779863357544
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "EL4yXNh3zgO1MpSR1Ion",
+                  "vector_distance": 0.20192593336105347
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "rek61mLI3WZEwvEkjEII",
+                  "vector_distance": 0.20306026935577393
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "8FeZLwm4rkuK0oHRNXbw",
+                  "vector_distance": 0.20576632022857666
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "exC5raaV0HHbnk2Mpk1o",
+                  "vector_distance": 0.20750457048416138
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "hzfPgohG9JrUVbK5Tn0W",
+                  "vector_distance": 0.2159554362297058
+                }
+              ],
+              "embedding_model": "e5_mistral_7b_instruct",
+              "retrieval_query": "Quand êtes-vous ouverts le samedi et le dimanche?",
+              "rag_latency_secs": 0.1631001988425851,
+              "used_chunk_ids": []
+            },
+            "llm_usage": null,
+            "interrupted": false,
+            "ignored_as_backchannel": false,
+            "platform_event": null,
+            "original_message": null,
+            "reasoning": [],
+            "source_medium": null,
+            "source_event_id": 5,
+            "used_static_kb_document_ids": [],
+            "analysis": null,
+            "user_identifier": null,
+            "id": null,
+            "compaction": null,
+            "triggered_guardrails": []
+          },
+          {
+            "role": "agent",
+            "agent_metadata": {
+              "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+              "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+              "workflow_node_id": null,
+              "version_id": null
+            },
+            "message": null,
+            "multivoice_message": null,
+            "tool_calls": [
+              {
+                "type": "system",
+                "request_id": "end_call_01b5c41350e04cf68bb1404028115509",
+                "tool_name": "end_call",
+                "tool_id": null,
+                "params_as_json": "{\"system__message_to_speak\": \"Au revoir, bonne journ\\u00e9e!\", \"reason\": \"The caller is saying goodbye and has no further questions.\"}",
+                "tool_has_been_called": true,
+                "tool_details": null
+              }
+            ],
+            "tool_results": [],
+            "feedback": null,
+            "llm_override": null,
+            "producing_llm": "gemini-3.5-flash-lite",
+            "time_in_call_secs": 10,
+            "conversation_turn_metrics": {
+              "metrics": {
+                "convai_llm_service_ttfb": {
+                  "elapsed_time": 0.566065208055079
+                },
+                "convai_llm_tool_request_generation_latency": {
+                  "elapsed_time": 0.5665516979061067
+                }
+              },
+              "convai_asr_provider": null,
+              "convai_tts_model": null,
+              "convai_tts_cascade": null,
+              "voice_id": null
+            },
+            "rag_retrieval_info": null,
+            "llm_usage": {
+              "model_usage": {
+                "gemini-3.5-flash-lite": {
+                  "input": {
+                    "tokens": 270,
+                    "price": 8.910000000000001e-05
+                  },
+                  "input_cache_read": {
+                    "tokens": 9552,
+                    "price": 0.000315216
+                  },
+                  "input_cache_write": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "output_total": {
+                    "tokens": 44,
+                    "price": 0.000121
+                  }
+                }
+              },
+              "detailed_model_usage": [
+                {
+                  "config": {
+                    "model": "gemini-3.5-flash-lite",
+                    "service_tier": "standard"
+                  },
+                  "usage": {
+                    "input": {
+                      "tokens": 270,
+                      "price": 8.910000000000001e-05
+                    },
+                    "input_cache_read": {
+                      "tokens": 9552,
+                      "price": 0.000315216
+                    },
+                    "input_cache_write": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "output_total": {
+                      "tokens": 44,
+                      "price": 0.000121
+                    }
+                  }
+                }
+              ]
+            },
+            "interrupted": false,
+            "ignored_as_backchannel": false,
+            "platform_event": null,
+            "original_message": null,
+            "reasoning": [],
+            "source_medium": null,
+            "source_event_id": 5,
+            "used_static_kb_document_ids": [],
+            "analysis": null,
+            "user_identifier": null,
+            "id": null,
+            "compaction": null,
+            "triggered_guardrails": []
+          },
+          {
+            "role": "agent",
+            "agent_metadata": {
+              "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+              "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+              "workflow_node_id": null,
+              "version_id": null
+            },
+            "message": null,
+            "multivoice_message": null,
+            "tool_calls": [],
+            "tool_results": [
+              {
+                "request_id": "end_call_01b5c41350e04cf68bb1404028115509",
+                "tool_name": "end_call",
+                "result_value": "{\"result_type\":\"end_call_success\",\"status\":\"success\",\"reason\":\"The caller is saying goodbye and has no further questions.\",\"message\":null}",
+                "is_error": false,
+                "is_blocked": false,
+                "tool_has_been_called": true,
+                "tool_latency_secs": 0.5007225587032735,
+                "error_type": "",
+                "raw_error_message": "",
+                "dynamic_variable_updates": [],
+                "type": "system",
+                "result": {
+                  "result_type": "end_call_success",
+                  "status": "success",
+                  "reason": "The caller is saying goodbye and has no further questions.",
+                  "message": null
+                }
+              }
+            ],
+            "feedback": null,
+            "llm_override": null,
+            "producing_llm": null,
+            "time_in_call_secs": 10,
+            "conversation_turn_metrics": null,
+            "rag_retrieval_info": null,
+            "llm_usage": null,
+            "interrupted": false,
+            "ignored_as_backchannel": false,
+            "platform_event": null,
+            "original_message": null,
+            "reasoning": [],
+            "source_medium": null,
+            "source_event_id": 5,
+            "used_static_kb_document_ids": [],
+            "analysis": null,
+            "user_identifier": null,
+            "id": null,
+            "compaction": null,
+            "triggered_guardrails": []
+          }
+        ],
+        "test_id": "test_5501m505a6syfbyt7g14tj9k2jpv",
+        "test_name": "F05 FR — heures d'ouverture du samedi",
+        "condition_result": {
+          "result": "success",
+          "rationale": {
+            "messages": [
+              "Criterion 1 passed: L'agent a clairement indiqué : \"Nous sommes ouverts le samedi de huit heures à quatorze heures\", ce qui correspond à 8h à 14h.",
+              "Criterion 2 passed: L'agent a explicitement dit : \"Le dimanche, nous sommes fermés.\"",
+              "Criterion 3 passed: L'appelant n'a pas demandé de rendez-vous et l'agent n'a pas proposé de plages horaires. Aucune pression n'a été exercée.",
+              "Criterion 4 passed: L'appelant a parlé en français tout au long de la conversation et l'agent a répondu en français à chaque tour. La langue est cohérente.",
+              "Criterion 5 passed: L'agent a fourni les heures d'ouverture du samedi et la fermeture du dimanche. Aucun outil n'a été appelé, mais ces informations sont plausibles selon un FAQ de concessionnaire standard. Aucun fait invérifiable n'a été énoncé.",
+              "The agent ended the conversation."
+            ],
+            "summary": "Evaluation succeeded"
+          }
+        },
+        "last_updated_at_unix": 1792080714,
+        "metadata": {
+          "workspace_id": "3868ed6f12414532ac6a6997818e7c89",
+          "test_name": "F05 FR — heures d'ouverture du samedi",
+          "ran_by_user_email": "redacted@example.com",
+          "test_type": "simulation"
+        },
+        "root_folder_id": null,
+        "root_folder_name": null,
+        "environment": "production",
+        "credits_used": 306,
+        "charging": {
+          "dev_discount": false,
+          "is_burst": false,
+          "tier": null,
+          "llm_usage": {
+            "irreversible_generation": {
+              "model_usage": {
+                "claude-sonnet-4-6": {
+                  "input": {
+                    "tokens": 3871,
+                    "price": 0.0127743
+                  },
+                  "input_cache_read": {
+                    "tokens": 3074,
+                    "price": 0.00101442
+                  },
+                  "input_cache_write": {
+                    "tokens": 1537,
+                    "price": 0.006340125
+                  },
+                  "output_total": {
+                    "tokens": 465,
+                    "price": 0.0076725000000000005
+                  }
+                },
+                "gemini-3.5-flash-lite": {
+                  "input": {
+                    "tokens": 29603,
+                    "price": 0.00976899
+                  },
+                  "input_cache_read": {
+                    "tokens": 9552,
+                    "price": 0.000315216
+                  },
+                  "input_cache_write": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "output_total": {
+                    "tokens": 100,
+                    "price": 0.000275
+                  }
+                }
+              },
+              "detailed_model_usage": [
+                {
+                  "config": {
+                    "model": "claude-sonnet-4-6",
+                    "service_tier": "standard"
+                  },
+                  "usage": {
+                    "input": {
+                      "tokens": 3871,
+                      "price": 0.0127743
+                    },
+                    "input_cache_read": {
+                      "tokens": 3074,
+                      "price": 0.00101442
+                    },
+                    "input_cache_write": {
+                      "tokens": 1537,
+                      "price": 0.006340125
+                    },
+                    "output_total": {
+                      "tokens": 465,
+                      "price": 0.0076725000000000005
+                    }
+                  }
+                },
+                {
+                  "config": {
+                    "model": "gemini-3.5-flash-lite",
+                    "service_tier": "standard"
+                  },
+                  "usage": {
+                    "input": {
+                      "tokens": 29603,
+                      "price": 0.00976899
+                    },
+                    "input_cache_read": {
+                      "tokens": 9552,
+                      "price": 0.000315216
+                    },
+                    "input_cache_write": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "output_total": {
+                      "tokens": 100,
+                      "price": 0.000275
+                    }
+                  }
+                }
+              ]
+            },
+            "initiated_generation": {
+              "model_usage": {
+                "claude-sonnet-4-6": {
+                  "input": {
+                    "tokens": 3871,
+                    "price": 0.0127743
+                  },
+                  "input_cache_read": {
+                    "tokens": 3074,
+                    "price": 0.00101442
+                  },
+                  "input_cache_write": {
+                    "tokens": 1537,
+                    "price": 0.006340125
+                  },
+                  "output_total": {
+                    "tokens": 465,
+                    "price": 0.0076725000000000005
+                  }
+                },
+                "gemini-3.5-flash-lite": {
+                  "input": {
+                    "tokens": 29603,
+                    "price": 0.00976899
+                  },
+                  "input_cache_read": {
+                    "tokens": 9552,
+                    "price": 0.000315216
+                  },
+                  "input_cache_write": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "output_total": {
+                    "tokens": 100,
+                    "price": 0.000275
+                  }
+                }
+              },
+              "detailed_model_usage": [
+                {
+                  "config": {
+                    "model": "claude-sonnet-4-6",
+                    "service_tier": "standard"
+                  },
+                  "usage": {
+                    "input": {
+                      "tokens": 3871,
+                      "price": 0.0127743
+                    },
+                    "input_cache_read": {
+                      "tokens": 3074,
+                      "price": 0.00101442
+                    },
+                    "input_cache_write": {
+                      "tokens": 1537,
+                      "price": 0.006340125
+                    },
+                    "output_total": {
+                      "tokens": 465,
+                      "price": 0.0076725000000000005
+                    }
+                  }
+                },
+                {
+                  "config": {
+                    "model": "gemini-3.5-flash-lite",
+                    "service_tier": "standard"
+                  },
+                  "usage": {
+                    "input": {
+                      "tokens": 29603,
+                      "price": 0.00976899
+                    },
+                    "input_cache_read": {
+                      "tokens": 9552,
+                      "price": 0.000315216
+                    },
+                    "input_cache_write": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "output_total": {
+                      "tokens": 100,
+                      "price": 0.000275
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "llm_price": 0.038160551,
+          "llm_charge": 210,
+          "call_charge": 96,
+          "platform_charge": 96,
+          "platform_usage": {
+            "category_usage": {
+              "text_message": {
+                "credits": 96,
+                "price": 0.018,
+                "quantity": 6.0
+              }
+            }
+          },
+          "platform_price": 0.018,
+          "free_minutes_consumed": 0.0,
+          "free_llm_dollars_consumed": 0.0,
+          "tts_usage": null,
+          "asr_usage": null,
+          "analysis": null
+        }
+      }
+    ]
+  }
+}

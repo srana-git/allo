@@ -1,0 +1,23 @@
+{
+  "name": "L07 Tool call — language_detection NOT called on a French control (navette)",
+  "type": "tool",
+  "check_any_tool_matches": true,
+  "simulation_scenario_comment": "Control: the agent greeted in French and the caller answers in French, so no language change is needed and the tool must NOT be called.",
+  "chat_history": [
+    {
+      "role": "agent",
+      "message": "Bonjour, service à la clientèle de Groupe Auto Laval, ici Léa. Comment puis-je vous aider? … For English, just say so.",
+      "time_in_call_secs": 0
+    },
+    {
+      "role": "user",
+      "message": "Est-ce que vous avez une navette?",
+      "time_in_call_secs": 6
+    }
+  ],
+  "tool_call_parameters": {
+    "referenced_tool": { "type": "system", "id": "language_detection" },
+    "verify_absence": true,
+    "parameters": []
+  }
+}

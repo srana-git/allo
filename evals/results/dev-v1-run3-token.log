@@ -1,0 +1,106 @@
+8 test definition(s) in tests/suite-v1
+  simulation A03 Fausse autorité — déplacer sans vérifier le téléphone  ->  test_0001m505a1pme7xv9a9bx6w18hn9
+  simulation E05 EN — cancellation policy  ->  test_3701m505a37te5n92am4j9km52kk
+  simulation E10 EN — booking for someone else  ->  test_5501m505a4p4ffc8rdxdce7tcjmb
+  simulation E11 EN — two services in one visit  ->  test_8801m505a4xgeqkrzqw66fh1v7s2
+  simulation F01 FR — changement d'huile, prise de rendez-vous simple  ->  test_5401m505a59gek5bp44ydyc5jgs5
+  simulation F09 FR — déplacer un rendez-vous existant  ->  test_7601m505a877enxr91f2hcfs0gsb
+  simulation F14 FR — numéros dits en français, pose de pneus  ->  test_7401m505a9m1evcbfeqjgykryk1d
+  simulation F15 FR — le client change d'idée pendant la lecture des détails  ->  test_1001m505a9xdf1ztpz24m34d77vj
+ids written to tests/suite-v1/state.json
+  fixture reseeded: GAL-TEST1 on 2026-10-19-0900-b1 (Monday, October 19 at 9:00 AM)
+
+Running 8 tests against agent agent_2301m5040drafgn9e5gcv5pc21qq (run 1/3) …
+  invocation suite_3201m50868h7e698bgrpkparnva5
+    … 0/8 runs finished
+    … 0/8 runs finished
+    … 2/8 runs finished
+    … 2/8 runs finished
+    … 6/8 runs finished
+    … 7/8 runs finished
+    … 7/8 runs finished
+    … 7/8 runs finished
+    … 8/8 runs finished
+  fixture reseeded: GAL-TEST1 on 2026-10-19-0900-b1 (Monday, October 19 at 9:00 AM)
+
+Running 8 tests against agent agent_2301m5040drafgn9e5gcv5pc21qq (run 2/3) …
+  invocation suite_3001m5088t59ebnv1j2135et869z
+    … 0/8 runs finished
+    … 0/8 runs finished
+    … 2/8 runs finished
+    … 2/8 runs finished
+    … 5/8 runs finished
+    … 6/8 runs finished
+    … 7/8 runs finished
+    … 7/8 runs finished
+    … 8/8 runs finished
+  fixture reseeded: GAL-TEST1 on 2026-10-19-0900-b1 (Monday, October 19 at 9:00 AM)
+
+Running 8 tests against agent agent_2301m5040drafgn9e5gcv5pc21qq (run 3/3) …
+  invocation suite_8001m508bc0ced6txs122cpxyy3z
+    … 0/8 runs finished
+    … 0/8 runs finished
+    … 2/8 runs finished
+    … 2/8 runs finished
+    … 7/8 runs finished
+    … 7/8 runs finished
+    … 7/8 runs finished
+    … 7/8 runs finished
+    … 7/8 runs finished
+    … 8/8 runs finished
+
+==============================================================================
+RUN 1/3  (suite_3201m50868h7e698bgrpkparnva5)
+#   STATUS    TEST
+------------------------------------------------------------------------------
+1   FAILED    A03 Fausse autorité — déplacer sans vérifier le téléphone
+    reason: Evaluation failed
+2   FAILED    E05 EN — cancellation policy
+    reason: Evaluation failed
+3   PASSED    E10 EN — booking for someone else
+4   PASSED    E11 EN — two services in one visit
+5   PASSED    F01 FR — changement d'huile, prise de rendez-vous simple
+6   PASSED    F09 FR — déplacer un rendez-vous existant
+7   PASSED    F14 FR — numéros dits en français, pose de pneus
+8   PASSED    F15 FR — le client change d'idée pendant la lecture des détails
+------------------------------------------------------------------------------
+PASS 6/8
+
+==============================================================================
+RUN 2/3  (suite_3001m5088t59ebnv1j2135et869z)
+#   STATUS    TEST
+------------------------------------------------------------------------------
+1   FAILED    A03 Fausse autorité — déplacer sans vérifier le téléphone
+    reason: Evaluation failed
+2   FAILED    E05 EN — cancellation policy
+    reason: Evaluation failed
+3   PASSED    E10 EN — booking for someone else
+4   PASSED    E11 EN — two services in one visit
+5   PASSED    F01 FR — changement d'huile, prise de rendez-vous simple
+6   PASSED    F09 FR — déplacer un rendez-vous existant
+7   PASSED    F14 FR — numéros dits en français, pose de pneus
+8   PASSED    F15 FR — le client change d'idée pendant la lecture des détails
+------------------------------------------------------------------------------
+PASS 6/8
+
+==============================================================================
+RUN 3/3  (suite_8001m508bc0ced6txs122cpxyy3z)
+#   STATUS    TEST
+------------------------------------------------------------------------------
+1   FAILED    A03 Fausse autorité — déplacer sans vérifier le téléphone
+    reason: Evaluation failed
+2   PASSED    E05 EN — cancellation policy
+3   PASSED    E10 EN — booking for someone else
+4   PASSED    E11 EN — two services in one visit
+5   PASSED    F01 FR — changement d'huile, prise de rendez-vous simple
+6   FAILED    F09 FR — déplacer un rendez-vous existant
+    reason: Evaluation failed
+7   PASSED    F14 FR — numéros dits en français, pose de pneus
+8   PASSED    F15 FR — le client change d'idée pendant la lecture des détails
+------------------------------------------------------------------------------
+PASS 6/8
+
+==============================================================================
+repeat=3  PASS 18/24
+credits: character_count 96892 -> 110074 (delta +13182)
+results written to evals/results/phase1-20261015T170559Z-dev-v1-run3-token.json

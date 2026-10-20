@@ -1,0 +1,23 @@
+{
+  "name": "L01 Tool call — language_detection on an English opener (cancellation notice)",
+  "type": "tool",
+  "check_any_tool_matches": true,
+  "simulation_scenario_comment": "The agent has just greeted in French. The caller answers in English. The LLM must call the language_detection system tool before answering, because the caller's language is not the language the agent is speaking.",
+  "chat_history": [
+    {
+      "role": "agent",
+      "message": "Bonjour, service à la clientèle de Groupe Auto Laval, ici Léa. Comment puis-je vous aider? … For English, just say so.",
+      "time_in_call_secs": 0
+    },
+    {
+      "role": "user",
+      "message": "If I can't make it, how much notice do you need?",
+      "time_in_call_secs": 7
+    }
+  ],
+  "tool_call_parameters": {
+    "referenced_tool": { "type": "system", "id": "language_detection" },
+    "verify_absence": false,
+    "parameters": []
+  }
+}

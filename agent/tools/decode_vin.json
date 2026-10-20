@@ -1,0 +1,33 @@
+{
+  "type": "webhook",
+  "name": "decode_vin",
+  "description": "Decode a 17-character Vehicle Identification Number into make, model, model year and country of assembly, using the NHTSA vPIC database. Use this when the caller gives a VIN and you need to know what the vehicle is. The tool uppercases the VIN and removes spaces and dashes before it validates, so send the characters the caller gave, in order. NEVER add, drop or change a character: count first, and if the caller gave fewer or more than 17 characters, say how many you heard and ask them to repeat instead of calling this tool. Requires exactly 17 characters and no letter I, O or Q. Returns {ok:false, error:\"invalid_vin\"} when the VIN is malformed.",
+  "response_timeout_secs": 20,
+  "api_schema": {
+    "url": "{{WORKER_URL}}/tools/decode_vin",
+    "method": "POST",
+    "content_type": "application/json",
+    "request_headers": {
+      "X-Allo-Secret": {
+        "secret_id": "{{SECRET_ID}}"
+      }
+    },
+    "request_body_schema": {
+      "type": "object",
+      "description": "Arguments for decode_vin",
+      "required": [
+        "vin"
+      ],
+      "properties": {
+        "vin": {
+          "type": "string",
+          "description": "The 17 characters exactly as the caller gave them, in order, with nothing added and nothing dropped. Uppercase, no spaces, no dashes. The tool normalizes case and strips spaces/dashes, but it never repairs a wrong length: 16 or 18 characters is a failure to fix at the caller, not here."
+        },
+        "conversation_id": {
+          "type": "string",
+          "dynamic_variable": "system__conversation_id"
+        }
+      }
+    }
+  }
+}

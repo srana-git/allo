@@ -1,0 +1,76 @@
+{
+  "file": "evals/results/phase1-20261015T170850Z-dev-v1-run4-greeting-regress.json",
+  "label": "dev-v1-run4-greeting-regress",
+  "repeat": 1,
+  "rules": {
+    "min_words": 3,
+    "min_confidence_for_a_language_change": 0.75,
+    "language_change_needs_content_words": 3,
+    "default_language_before_first_user_turn": "fr",
+    "detector": "lingua-language-detector, French vs English only"
+  },
+  "overall": {
+    "scored": 18,
+    "passed": 18,
+    "fidelity": 1.0
+  },
+  "per_scenario": {
+    "E04": {
+      "scenario": "E04 EN — shuttle service",
+      "group": "E",
+      "scored": 5,
+      "passed": 5,
+      "fidelity": 1.0
+    },
+    "F01": {
+      "scenario": "F01 FR — changement d'huile, prise de rendez-vous simple",
+      "group": "F",
+      "scored": 8,
+      "passed": 8,
+      "fidelity": 1.0
+    },
+    "S02": {
+      "scenario": "S02 Switch EN → FR",
+      "group": "S",
+      "scored": 5,
+      "passed": 5,
+      "fidelity": 1.0
+    }
+  },
+  "per_group": {
+    "E": {
+      "scored": 5,
+      "passed": 5,
+      "fidelity": 1.0
+    },
+    "F": {
+      "scored": 8,
+      "passed": 8,
+      "fidelity": 1.0
+    },
+    "S": {
+      "scored": 5,
+      "passed": 5,
+      "fidelity": 1.0
+    }
+  },
+  "switch_after": {
+    "S02": {
+      "scenario": "S02 Switch EN → FR",
+      "first_switch_turn": 3,
+      "scored": 3,
+      "passed": 3,
+      "fidelity": 1.0
+    }
+  },
+  "switch_after_overall": {
+    "scenarios": [
+      "S02"
+    ],
+    "scored": 3,
+    "passed": 3,
+    "fidelity": 1.0
+  },
+  "failures": [],
+  "skipped": []
+}

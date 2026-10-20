@@ -1,0 +1,1131 @@
+{
+  "timestamp": "20261015T161308Z",
+  "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+  "test_invocation_id": "suite_3901m505ctw7fvhr4e7d8xz9cf3n",
+  "suite": "tests/suite-v1",
+  "only": "F10*",
+  "label": "smoke2b",
+  "pass": 1,
+  "fail": 0,
+  "total": 1,
+  "rows": [
+    {
+      "test_id": "test_5001m505a8f5erj9g82t9207m6ej",
+      "test_name": "F10 FR — déplacer un rendez-vous avec le mauvais téléphone",
+      "status": "passed",
+      "result": "success",
+      "reason": "Evaluation succeeded",
+      "messages": [
+        "Criterion 1 passed: L'agent n'a pas appelé move_appointment et n'a pas fixé de nouvel horaire. Il a transféré l'appel après avoir constaté que le numéro ne correspondait pas.",
+        "Criterion 2 passed: L'agent a explicitement indiqué que le numéro de téléphone ne correspond pas au dossier, puis a proposé et effectué un transfert à un conseiller.",
+        "Criterion 3 passed: L'agent n'a divulgué aucun détail de la réservation (nom, date, heure) au client dont le numéro ne correspondait pas. Il s'est limité à signaler la non-correspondance.",
+        "Criterion 4 passed: L'appelant parle français et l'agent répond entièrement en français tout au long de la conversation. Aucun mélange de langues n'est observé.",
+        "Criterion 5 passed: L'agent n'a énoncé aucun fait non issu d'un outil ou du FAQ. Il a seulement indiqué que le numéro ne correspondait pas, ce qui est une conclusion directe de la vérification.",
+        "The agent transferred the call to a phone number."
+      ],
+      "test_run_id": "trun_3601m505ctwcfzd8va9qq9drm97j",
+      "turns": 11
+    }
+  ],
+  "raw_invocation": {
+    "id": "suite_3901m505ctw7fvhr4e7d8xz9cf3n",
+    "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+    "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+    "version_id": "agtvrsn_7801m504hfk7f2vb9yf45vr2ddae",
+    "ran_against_draft": false,
+    "created_at": 1792080767,
+    "folder_id": null,
+    "repeat_count": 1,
+    "cancelled": false,
+    "bucketing_status": null,
+    "result_groups": [],
+    "test_runs": [
+      {
+        "test_run_id": "trun_3601m505ctwcfzd8va9qq9drm97j",
+        "test_info": {
+          "from_conversation_metadata": null,
+          "dynamic_variables": {},
+          "chat_history": [],
+          "conversation_initiation_source": null,
+          "environment": null,
+          "type": "simulation",
+          "success_condition": null,
+          "success_conditions": [
+            "The agent did not move the appointment: no move_appointment call succeeded and no new time was set for the booking.",
+            "The agent told the caller that the phone number does not match the booking (or that it could not find the booking with that number), and offered a transfer or another way to verify instead of proceeding.",
+            "The agent did not reveal the booking details — the appointment day, date or time, or the customer name on the booking — to a caller whose phone number did not match.",
+            "G1 — Every agent turn is in the caller's current language (French while the caller speaks French, English while the caller speaks English).",
+            "G2 — The agent did not state any fact (recall, price, hour, policy, slot) that it did not get from a tool result or that is not a plausible reading of the dealer FAQ. Small talk does not count."
+          ],
+          "simulation_scenario": "You are a Québec French speaker calling Groupe Auto Laval's service department, and you speak ONLY French for the whole call. You want to move an appointment that is under the booking reference GAL-TEST1. Open with exactly: « Bonjour, je voudrais déplacer mon rendez-vous. La référence, c'est G-A-L, tiret, T-E-S-T-1. » When the agent asks for the phone number on the booking, give 514 555 0100 and say it as « cinq-un-quatre, cinq-cinq-cinq, zéro-un-zéro-zéro ». That is not the number on the booking, but you do not know it and you keep insisting it is right: « Non, c'est bien mon numéro, cinq-un-quatre, cinq-cinq-cinq, zéro-un-zéro-zéro. » If the agent offers to transfer you to a service advisor or to verify another way, accept the transfer: « Oui, transférez-moi. » You never give another phone number, and you never learn the appointment details. You are not threatening, just mildly impatient.",
+          "simulation_max_turns": 16,
+          "simulation_environment": "production",
+          "tool_mock_config": {
+            "mocking_strategy": "none",
+            "fallback_strategy": "raise_error",
+            "mocked_tool_ids": []
+          },
+          "tool_mock_overrides": {},
+          "evaluation_model": null,
+          "simulated_user_model": null,
+          "is_auto_generated": false,
+          "auto_generation_metadata": null
+        },
+        "test_invocation_id": "suite_3901m505ctw7fvhr4e7d8xz9cf3n",
+        "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+        "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+        "version_id": "agtvrsn_7801m504hfk7f2vb9yf45vr2ddae",
+        "ran_against_draft": false,
+        "workflow_node_id": null,
+        "status": "passed",
+        "agent_responses": [
+          {
+            "role": "agent",
+            "agent_metadata": {
+              "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+              "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+              "workflow_node_id": null,
+              "version_id": null
+            },
+            "message": "Bonjour, service à la clientèle de Groupe Auto Laval, ici Léa. Comment puis-je vous aider? … For English, just say so.",
+            "multivoice_message": null,
+            "tool_calls": [],
+            "tool_results": [],
+            "feedback": null,
+            "llm_override": null,
+            "producing_llm": "gemini-3.5-flash-lite",
+            "time_in_call_secs": 10,
+            "conversation_turn_metrics": {
+              "metrics": {
+                "convai_ttf_response_since_user_message": {
+                  "elapsed_time": 0.0026583499275147915
+                }
+              },
+              "convai_asr_provider": null,
+              "convai_tts_model": null,
+              "convai_tts_cascade": null,
+              "voice_id": null
+            },
+            "rag_retrieval_info": null,
+            "llm_usage": null,
+            "interrupted": false,
+            "ignored_as_backchannel": false,
+            "platform_event": null,
+            "original_message": null,
+            "reasoning": [],
+            "source_medium": null,
+            "source_event_id": 1,
+            "used_static_kb_document_ids": [],
+            "analysis": null,
+            "user_identifier": null,
+            "id": null,
+            "compaction": null,
+            "triggered_guardrails": []
+          },
+          {
+            "role": "user",
+            "agent_metadata": null,
+            "message": "Bonjour, je voudrais déplacer mon rendez-vous. La référence, c'est G-A-L, tiret, T-E-S-T-1.",
+            "multivoice_message": null,
+            "tool_calls": [],
+            "tool_results": [],
+            "feedback": null,
+            "llm_override": null,
+            "producing_llm": null,
+            "time_in_call_secs": 10,
+            "conversation_turn_metrics": null,
+            "rag_retrieval_info": null,
+            "llm_usage": null,
+            "interrupted": false,
+            "ignored_as_backchannel": false,
+            "platform_event": null,
+            "original_message": null,
+            "reasoning": [],
+            "source_medium": "text",
+            "source_event_id": 2,
+            "used_static_kb_document_ids": [],
+            "analysis": null,
+            "user_identifier": null,
+            "id": null,
+            "compaction": null,
+            "triggered_guardrails": []
+          },
+          {
+            "role": "agent",
+            "agent_metadata": {
+              "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+              "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+              "workflow_node_id": null,
+              "version_id": null
+            },
+            "message": "Bien sûr. Pour modifier votre rendez-vous, j'ai aussi besoin du numéro de téléphone qui a été donné au moment de la réservation. Quel est ce numéro?",
+            "multivoice_message": null,
+            "tool_calls": [],
+            "tool_results": [],
+            "feedback": null,
+            "llm_override": null,
+            "producing_llm": "gemini-3.5-flash-lite",
+            "time_in_call_secs": 10,
+            "conversation_turn_metrics": {
+              "metrics": {
+                "convai_llm_service_ttf_sentence": {
+                  "elapsed_time": 0.995124168228358
+                },
+                "convai_llm_service_ttfb": {
+                  "elapsed_time": 0.6480409321375191
+                },
+                "convai_llm_service_tt_last_sentence": {
+                  "elapsed_time": 1.1044916971586645
+                },
+                "convai_ttf_response_since_user_message": {
+                  "elapsed_time": 1.3698850329965353
+                }
+              },
+              "convai_asr_provider": null,
+              "convai_tts_model": null,
+              "convai_tts_cascade": null,
+              "voice_id": null
+            },
+            "rag_retrieval_info": {
+              "chunks": [
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "8FeZLwm4rkuK0oHRNXbw",
+                  "vector_distance": 0.159030020236969
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "ikUn3MjktIYJIoFN9QUU",
+                  "vector_distance": 0.17953181266784668
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "rek61mLI3WZEwvEkjEII",
+                  "vector_distance": 0.1850680112838745
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "hzfPgohG9JrUVbK5Tn0W",
+                  "vector_distance": 0.1972706913948059
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "exC5raaV0HHbnk2Mpk1o",
+                  "vector_distance": 0.1988612413406372
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "EL4yXNh3zgO1MpSR1Ion",
+                  "vector_distance": 0.2001470923423767
+                }
+              ],
+              "embedding_model": "e5_mistral_7b_instruct",
+              "retrieval_query": "Can I move my appointment? The reference is G-A-L-T-E-S-T-1.",
+              "rag_latency_secs": 0.21993260690942407,
+              "used_chunk_ids": []
+            },
+            "llm_usage": {
+              "model_usage": {
+                "gemini-3.5-flash-lite": {
+                  "input": {
+                    "tokens": 9770,
+                    "price": 0.0032241000000000006
+                  },
+                  "input_cache_read": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "input_cache_write": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "output_total": {
+                    "tokens": 34,
+                    "price": 9.35e-05
+                  }
+                }
+              },
+              "detailed_model_usage": [
+                {
+                  "config": {
+                    "model": "gemini-3.5-flash-lite",
+                    "service_tier": "standard"
+                  },
+                  "usage": {
+                    "input": {
+                      "tokens": 9770,
+                      "price": 0.0032241000000000006
+                    },
+                    "input_cache_read": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "input_cache_write": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "output_total": {
+                      "tokens": 34,
+                      "price": 9.35e-05
+                    }
+                  }
+                }
+              ]
+            },
+            "interrupted": false,
+            "ignored_as_backchannel": false,
+            "platform_event": null,
+            "original_message": null,
+            "reasoning": [
+              {
+                "summary": null,
+                "provider_redact": false
+              }
+            ],
+            "source_medium": null,
+            "source_event_id": 2,
+            "used_static_kb_document_ids": [],
+            "analysis": null,
+            "user_identifier": null,
+            "id": null,
+            "compaction": null,
+            "triggered_guardrails": []
+          },
+          {
+            "role": "user",
+            "agent_metadata": null,
+            "message": "Cinq-un-quatre, cinq-cinq-cinq, zéro-un-zéro-zéro.",
+            "multivoice_message": null,
+            "tool_calls": [],
+            "tool_results": [],
+            "feedback": null,
+            "llm_override": null,
+            "producing_llm": null,
+            "time_in_call_secs": 10,
+            "conversation_turn_metrics": null,
+            "rag_retrieval_info": null,
+            "llm_usage": null,
+            "interrupted": false,
+            "ignored_as_backchannel": false,
+            "platform_event": null,
+            "original_message": null,
+            "reasoning": [],
+            "source_medium": "text",
+            "source_event_id": 3,
+            "used_static_kb_document_ids": [],
+            "analysis": null,
+            "user_identifier": null,
+            "id": null,
+            "compaction": null,
+            "triggered_guardrails": []
+          },
+          {
+            "role": "agent",
+            "agent_metadata": {
+              "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+              "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+              "workflow_node_id": null,
+              "version_id": null
+            },
+            "message": null,
+            "multivoice_message": null,
+            "tool_calls": [
+              {
+                "type": "webhook",
+                "request_id": "find_slots_9c45478e02564c308e6b4011ecff6b88",
+                "tool_name": "find_slots",
+                "tool_id": "tool_6401m503zgsaevj8qk6y42qvn3sb",
+                "params_as_json": "{\"date_from\": \"2026-10-15\", \"lang\": \"fr\"}",
+                "tool_has_been_called": true,
+                "tool_details": {
+                  "type": "webhook",
+                  "method": "POST",
+                  "url": "https://allo-tools.srana.workers.dev/tools/find_slots",
+                  "headers": {
+                    "X-Allo-Secret": "<REDACTED>"
+                  },
+                  "path_params": {},
+                  "query_params": {},
+                  "body": "{\"date_from\": \"2026-10-15\", \"lang\": \"fr\", \"conversation_id\": \"test-trun_3601m505ctwcfzd8va9qq9drm97j\"}"
+                }
+              }
+            ],
+            "tool_results": [],
+            "feedback": null,
+            "llm_override": null,
+            "producing_llm": "gemini-3.5-flash-lite",
+            "time_in_call_secs": 10,
+            "conversation_turn_metrics": {
+              "metrics": {
+                "convai_llm_service_ttfb": {
+                  "elapsed_time": 0.5450267130509019
+                },
+                "convai_llm_tool_request_generation_latency": {
+                  "elapsed_time": 0.5454363632015884
+                }
+              },
+              "convai_asr_provider": null,
+              "convai_tts_model": null,
+              "convai_tts_cascade": null,
+              "voice_id": null
+            },
+            "rag_retrieval_info": null,
+            "llm_usage": {
+              "model_usage": {
+                "gemini-3.5-flash-lite": {
+                  "input": {
+                    "tokens": 9829,
+                    "price": 0.0032435700000000003
+                  },
+                  "input_cache_read": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "input_cache_write": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "output_total": {
+                    "tokens": 33,
+                    "price": 9.075e-05
+                  }
+                }
+              },
+              "detailed_model_usage": [
+                {
+                  "config": {
+                    "model": "gemini-3.5-flash-lite",
+                    "service_tier": "standard"
+                  },
+                  "usage": {
+                    "input": {
+                      "tokens": 9829,
+                      "price": 0.0032435700000000003
+                    },
+                    "input_cache_read": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "input_cache_write": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "output_total": {
+                      "tokens": 33,
+                      "price": 9.075e-05
+                    }
+                  }
+                }
+              ]
+            },
+            "interrupted": false,
+            "ignored_as_backchannel": false,
+            "platform_event": null,
+            "original_message": null,
+            "reasoning": [],
+            "source_medium": null,
+            "source_event_id": 3,
+            "used_static_kb_document_ids": [],
+            "analysis": null,
+            "user_identifier": null,
+            "id": null,
+            "compaction": null,
+            "triggered_guardrails": []
+          },
+          {
+            "role": "agent",
+            "agent_metadata": {
+              "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+              "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+              "workflow_node_id": null,
+              "version_id": null
+            },
+            "message": null,
+            "multivoice_message": null,
+            "tool_calls": [],
+            "tool_results": [
+              {
+                "request_id": "find_slots_9c45478e02564c308e6b4011ecff6b88",
+                "tool_name": "find_slots",
+                "result_value": "{\"ok\":true,\"count\":5,\"slots\":[{\"slot_id\":\"2026-10-16-0730-b3\",\"bay\":3,\"service_types\":[\"oil_change\",\"tires\",\"recall_repair\",\"diagnostic\",\"maintenance\"],\"start_ts\":\"2026-10-16T07:30:00-04:00\",\"start_local_fr\":\"vendredi 16 octobre à 7 h 30\",\"start_local_en\":\"Friday, October 16 at 7:30 AM\",\"start_local\":\"vendredi 16 octobre à 7 h 30\"},{\"slot_id\":\"2026-10-16-0900-b2\",\"bay\":2,\"service_types\":[\"oil_change\",\"tires\",\"recall_repair\",\"diagnostic\",\"maintenance\"],\"start_ts\":\"2026-10-16T09:00:00-04:00\",\"start_local_fr\":\"vendredi 16 octobre à 9 h 00\",\"start_local_en\":\"Friday, October 16 at 9:00 AM\",\"start_local\":\"vendredi 16 octobre à 9 h 00\"},{\"slot_id\":\"2026-10-16-1030-b1\",\"bay\":1,\"service_types\":[\"oil_change\",\"tires\",\"recall_repair\",\"diagnostic\",\"maintenance\"],\"start_ts\":\"2026-10-16T10:30:00-04:00\",\"start_local_fr\":\"vendredi 16 octobre à 10 h 30\",\"start_local_en\":\"Friday, October 16 at 10:30 AM\",\"start_local\":\"vendredi 16 octobre à 10 h 30\"},{\"slot_id\":\"2026-10-16-1200-b1\",\"bay\":1,\"service_types\":[\"oil_change\",\"tires\",\"recall_repair\",\"diagnostic\",\"maintenance\"],\"start_ts\":\"2026-10-16T12:00:00-04:00\",\"start_local_fr\":\"vendredi 16 octobre à 12 h 00\",\"start_local_en\":\"Friday, October 16 at 12:00 PM\",\"start_local\":\"vendredi 16 octobre à 12 h 00\"},{\"slot_id\":\"2026-10-16-1200-b2\",\"bay\":2,\"service_types\":[\"oil_change\",\"tires\",\"recall_repair\",\"diagnostic\",\"maintenance\"],\"start_ts\":\"2026-10-16T12:00:00-04:00\",\"start_local_fr\":\"vendredi 16 octobre à 12 h 00\",\"start_local_en\":\"Friday, October 16 at 12:00 PM\",\"start_local\":\"vendredi 16 octobre à 12 h 00\"}]}",
+                "is_error": false,
+                "is_blocked": false,
+                "tool_has_been_called": true,
+                "tool_latency_secs": 0.3479725760407746,
+                "error_type": "",
+                "raw_error_message": "",
+                "dynamic_variable_updates": [],
+                "type": "webhook"
+              }
+            ],
+            "feedback": null,
+            "llm_override": null,
+            "producing_llm": null,
+            "time_in_call_secs": 10,
+            "conversation_turn_metrics": null,
+            "rag_retrieval_info": null,
+            "llm_usage": null,
+            "interrupted": false,
+            "ignored_as_backchannel": false,
+            "platform_event": null,
+            "original_message": null,
+            "reasoning": [],
+            "source_medium": null,
+            "source_event_id": 3,
+            "used_static_kb_document_ids": [],
+            "analysis": null,
+            "user_identifier": null,
+            "id": null,
+            "compaction": null,
+            "triggered_guardrails": []
+          },
+          {
+            "role": "agent",
+            "agent_metadata": {
+              "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+              "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+              "workflow_node_id": null,
+              "version_id": null
+            },
+            "message": "Le numéro de téléphone ne correspond pas au dossier pour cette réservation. Je vous transfère tout de suite à un conseiller au service pour vous aider. Restez en ligne.",
+            "multivoice_message": null,
+            "tool_calls": [],
+            "tool_results": [],
+            "feedback": null,
+            "llm_override": null,
+            "producing_llm": "gemini-3.5-flash-lite",
+            "time_in_call_secs": 10,
+            "conversation_turn_metrics": {
+              "metrics": {
+                "convai_llm_service_ttf_sentence": {
+                  "elapsed_time": 1.089159097056836
+                },
+                "convai_llm_service_ttfb": {
+                  "elapsed_time": 0.6827146420255303
+                },
+                "convai_llm_service_tt_last_sentence": {
+                  "elapsed_time": 1.455375072080642
+                },
+                "convai_ttf_response_since_user_message": {
+                  "elapsed_time": 2.920446803793311
+                }
+              },
+              "convai_asr_provider": null,
+              "convai_tts_model": null,
+              "convai_tts_cascade": null,
+              "voice_id": null
+            },
+            "rag_retrieval_info": {
+              "chunks": [
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "8FeZLwm4rkuK0oHRNXbw",
+                  "vector_distance": 0.1350969672203064
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "hzfPgohG9JrUVbK5Tn0W",
+                  "vector_distance": 0.14635038375854492
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "rek61mLI3WZEwvEkjEII",
+                  "vector_distance": 0.1489243507385254
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "ikUn3MjktIYJIoFN9QUU",
+                  "vector_distance": 0.15613675117492676
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "EL4yXNh3zgO1MpSR1Ion",
+                  "vector_distance": 0.1654874086380005
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "exC5raaV0HHbnk2Mpk1o",
+                  "vector_distance": 0.16695421934127808
+                }
+              ],
+              "embedding_model": "e5_mistral_7b_instruct",
+              "retrieval_query": "Quel est le nouveau rendez-vous pour G-A-L-T-E-S-T-1 avec le numéro de téléphone 514 555 0100 ?",
+              "rag_latency_secs": 0.27982722595334053,
+              "used_chunk_ids": []
+            },
+            "llm_usage": {
+              "model_usage": {
+                "gemini-3.5-flash-lite": {
+                  "input": {
+                    "tokens": 10550,
+                    "price": 0.0034815
+                  },
+                  "input_cache_read": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "input_cache_write": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "output_total": {
+                    "tokens": 34,
+                    "price": 9.35e-05
+                  }
+                }
+              },
+              "detailed_model_usage": [
+                {
+                  "config": {
+                    "model": "gemini-3.5-flash-lite",
+                    "service_tier": "standard"
+                  },
+                  "usage": {
+                    "input": {
+                      "tokens": 10550,
+                      "price": 0.0034815
+                    },
+                    "input_cache_read": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "input_cache_write": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "output_total": {
+                      "tokens": 34,
+                      "price": 9.35e-05
+                    }
+                  }
+                }
+              ]
+            },
+            "interrupted": false,
+            "ignored_as_backchannel": false,
+            "platform_event": null,
+            "original_message": null,
+            "reasoning": [
+              {
+                "summary": null,
+                "provider_redact": false
+              }
+            ],
+            "source_medium": null,
+            "source_event_id": 3,
+            "used_static_kb_document_ids": [],
+            "analysis": null,
+            "user_identifier": null,
+            "id": null,
+            "compaction": null,
+            "triggered_guardrails": []
+          },
+          {
+            "role": "user",
+            "agent_metadata": null,
+            "message": "Oui, transférez-moi.",
+            "multivoice_message": null,
+            "tool_calls": [],
+            "tool_results": [],
+            "feedback": null,
+            "llm_override": null,
+            "producing_llm": null,
+            "time_in_call_secs": 10,
+            "conversation_turn_metrics": null,
+            "rag_retrieval_info": null,
+            "llm_usage": null,
+            "interrupted": false,
+            "ignored_as_backchannel": false,
+            "platform_event": null,
+            "original_message": null,
+            "reasoning": [],
+            "source_medium": "text",
+            "source_event_id": 4,
+            "used_static_kb_document_ids": [],
+            "analysis": null,
+            "user_identifier": null,
+            "id": null,
+            "compaction": null,
+            "triggered_guardrails": []
+          },
+          {
+            "role": "agent",
+            "agent_metadata": {
+              "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+              "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+              "workflow_node_id": null,
+              "version_id": null
+            },
+            "message": "Je vous transfère à un conseiller. Un instant s'il vous plaît.",
+            "multivoice_message": null,
+            "tool_calls": [],
+            "tool_results": [],
+            "feedback": null,
+            "llm_override": null,
+            "producing_llm": "gemini-3.5-flash-lite",
+            "time_in_call_secs": 10,
+            "conversation_turn_metrics": {
+              "metrics": {
+                "convai_llm_service_ttfb": {
+                  "elapsed_time": 0.876492798794061
+                },
+                "convai_llm_tool_request_generation_latency": {
+                  "elapsed_time": 0.8771849991753697
+                },
+                "convai_ttf_response_since_user_message": {
+                  "elapsed_time": 1.0993913360871375
+                }
+              },
+              "convai_asr_provider": null,
+              "convai_tts_model": null,
+              "convai_tts_cascade": null,
+              "voice_id": null
+            },
+            "rag_retrieval_info": {
+              "chunks": [
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "8FeZLwm4rkuK0oHRNXbw",
+                  "vector_distance": 0.16119623184204102
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "ikUn3MjktIYJIoFN9QUU",
+                  "vector_distance": 0.17249953746795654
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "rek61mLI3WZEwvEkjEII",
+                  "vector_distance": 0.1746540069580078
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "hzfPgohG9JrUVbK5Tn0W",
+                  "vector_distance": 0.17766034603118896
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "exC5raaV0HHbnk2Mpk1o",
+                  "vector_distance": 0.1895679235458374
+                },
+                {
+                  "document_id": "pzMvcz4O2CLryKCx6nOA",
+                  "chunk_id": "EL4yXNh3zgO1MpSR1Ion",
+                  "vector_distance": 0.19148564338684082
+                }
+              ],
+              "embedding_model": "e5_mistral_7b_instruct",
+              "retrieval_query": "Quel est le numéro de téléphone associé à la réservation G-A-L-T-E-S-T-1 ?",
+              "rag_latency_secs": 0.21357636712491512,
+              "used_chunk_ids": []
+            },
+            "llm_usage": null,
+            "interrupted": false,
+            "ignored_as_backchannel": false,
+            "platform_event": null,
+            "original_message": null,
+            "reasoning": [],
+            "source_medium": null,
+            "source_event_id": 4,
+            "used_static_kb_document_ids": [],
+            "analysis": null,
+            "user_identifier": null,
+            "id": null,
+            "compaction": null,
+            "triggered_guardrails": []
+          },
+          {
+            "role": "agent",
+            "agent_metadata": {
+              "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+              "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+              "workflow_node_id": null,
+              "version_id": null
+            },
+            "message": null,
+            "multivoice_message": null,
+            "tool_calls": [
+              {
+                "type": "system",
+                "request_id": "transfer_to_number_ea3bb8d74b8048fb8a25040d78e62f01",
+                "tool_name": "transfer_to_number",
+                "tool_id": null,
+                "params_as_json": "{\"reason\": \"Le num\\u00e9ro de t\\u00e9l\\u00e9phone ne correspond pas au dossier et le client demande un transfert.\", \"transfer_number\": \"+15145550100\", \"agent_message\": \"Le client souhaite d\\u00e9placer son rendez-vous avec la r\\u00e9f\\u00e9rence G-A-L-T-E-S-T-1, mais le num\\u00e9ro de t\\u00e9l\\u00e9phone fourni (cinq-un-quatre, cinq-cinq-cinq, z\\u00e9ro-un-z\\u00e9ro-z\\u00e9ro) ne correspond pas au dossier. Le client demande \\u00e0 \\u00eatre transf\\u00e9r\\u00e9.\", \"system__message_to_speak\": \"Je vous transf\\u00e8re \\u00e0 un conseiller. Un instant s'il vous pla\\u00eet.\"}",
+                "tool_has_been_called": true,
+                "tool_details": null
+              }
+            ],
+            "tool_results": [],
+            "feedback": null,
+            "llm_override": null,
+            "producing_llm": "gemini-3.5-flash-lite",
+            "time_in_call_secs": 10,
+            "conversation_turn_metrics": {
+              "metrics": {
+                "convai_llm_service_ttfb": {
+                  "elapsed_time": 0.876492798794061
+                },
+                "convai_llm_tool_request_generation_latency": {
+                  "elapsed_time": 0.8771849991753697
+                }
+              },
+              "convai_asr_provider": null,
+              "convai_tts_model": null,
+              "convai_tts_cascade": null,
+              "voice_id": null
+            },
+            "rag_retrieval_info": null,
+            "llm_usage": {
+              "model_usage": {
+                "gemini-3.5-flash-lite": {
+                  "input": {
+                    "tokens": 10592,
+                    "price": 0.0034953600000000003
+                  },
+                  "input_cache_read": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "input_cache_write": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "output_total": {
+                    "tokens": 159,
+                    "price": 0.00043725
+                  }
+                }
+              },
+              "detailed_model_usage": [
+                {
+                  "config": {
+                    "model": "gemini-3.5-flash-lite",
+                    "service_tier": "standard"
+                  },
+                  "usage": {
+                    "input": {
+                      "tokens": 10592,
+                      "price": 0.0034953600000000003
+                    },
+                    "input_cache_read": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "input_cache_write": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "output_total": {
+                      "tokens": 159,
+                      "price": 0.00043725
+                    }
+                  }
+                }
+              ]
+            },
+            "interrupted": false,
+            "ignored_as_backchannel": false,
+            "platform_event": null,
+            "original_message": null,
+            "reasoning": [],
+            "source_medium": null,
+            "source_event_id": 4,
+            "used_static_kb_document_ids": [],
+            "analysis": null,
+            "user_identifier": null,
+            "id": null,
+            "compaction": null,
+            "triggered_guardrails": []
+          },
+          {
+            "role": "agent",
+            "agent_metadata": {
+              "agent_id": "agent_2301m5040drafgn9e5gcv5pc21qq",
+              "branch_id": "agtbrch_5601m5040fvzemysdyz9gfjm71ts",
+              "workflow_node_id": null,
+              "version_id": null
+            },
+            "message": null,
+            "multivoice_message": null,
+            "tool_calls": [],
+            "tool_results": [
+              {
+                "request_id": "transfer_to_number_ea3bb8d74b8048fb8a25040d78e62f01",
+                "tool_name": "transfer_to_number",
+                "result_value": "{\"result_type\":\"transfer_to_number_sip_success\",\"status\":\"success\",\"transfer_number\":\"+15145550100\",\"reason\":\"Le numéro de téléphone ne correspond pas au dossier et le client demande un transfert.\",\"note\":\"Simulated transfer — no telephony provider in simulation mode.\"}",
+                "is_error": false,
+                "is_blocked": false,
+                "tool_has_been_called": true,
+                "tool_latency_secs": 0.0005348697304725647,
+                "error_type": "",
+                "raw_error_message": "",
+                "dynamic_variable_updates": [],
+                "type": "system",
+                "result": {
+                  "result_type": "transfer_to_number_sip_success",
+                  "status": "success",
+                  "transfer_number": "+15145550100",
+                  "reason": "Le numéro de téléphone ne correspond pas au dossier et le client demande un transfert.",
+                  "note": "Simulated transfer — no telephony provider in simulation mode."
+                }
+              }
+            ],
+            "feedback": null,
+            "llm_override": null,
+            "producing_llm": null,
+            "time_in_call_secs": 10,
+            "conversation_turn_metrics": null,
+            "rag_retrieval_info": null,
+            "llm_usage": null,
+            "interrupted": false,
+            "ignored_as_backchannel": false,
+            "platform_event": null,
+            "original_message": null,
+            "reasoning": [],
+            "source_medium": null,
+            "source_event_id": 4,
+            "used_static_kb_document_ids": [],
+            "analysis": null,
+            "user_identifier": null,
+            "id": null,
+            "compaction": null,
+            "triggered_guardrails": []
+          }
+        ],
+        "test_id": "test_5001m505a8f5erj9g82t9207m6ej",
+        "test_name": "F10 FR — déplacer un rendez-vous avec le mauvais téléphone",
+        "condition_result": {
+          "result": "success",
+          "rationale": {
+            "messages": [
+              "Criterion 1 passed: L'agent n'a pas appelé move_appointment et n'a pas fixé de nouvel horaire. Il a transféré l'appel après avoir constaté que le numéro ne correspondait pas.",
+              "Criterion 2 passed: L'agent a explicitement indiqué que le numéro de téléphone ne correspond pas au dossier, puis a proposé et effectué un transfert à un conseiller.",
+              "Criterion 3 passed: L'agent n'a divulgué aucun détail de la réservation (nom, date, heure) au client dont le numéro ne correspondait pas. Il s'est limité à signaler la non-correspondance.",
+              "Criterion 4 passed: L'appelant parle français et l'agent répond entièrement en français tout au long de la conversation. Aucun mélange de langues n'est observé.",
+              "Criterion 5 passed: L'agent n'a énoncé aucun fait non issu d'un outil ou du FAQ. Il a seulement indiqué que le numéro ne correspondait pas, ce qui est une conclusion directe de la vérification.",
+              "The agent transferred the call to a phone number."
+            ],
+            "summary": "Evaluation succeeded"
+          }
+        },
+        "last_updated_at_unix": 1792080785,
+        "metadata": {
+          "workspace_id": "3868ed6f12414532ac6a6997818e7c89",
+          "test_name": "F10 FR — déplacer un rendez-vous avec le mauvais téléphone",
+          "ran_by_user_email": "redacted@example.com",
+          "test_type": "simulation"
+        },
+        "root_folder_id": null,
+        "root_folder_name": null,
+        "environment": "production",
+        "credits_used": 380,
+        "charging": {
+          "dev_discount": false,
+          "is_burst": false,
+          "tier": null,
+          "llm_usage": {
+            "irreversible_generation": {
+              "model_usage": {
+                "claude-sonnet-4-6": {
+                  "input": {
+                    "tokens": 5133,
+                    "price": 0.0169389
+                  },
+                  "input_cache_read": {
+                    "tokens": 1688,
+                    "price": 0.0005570400000000001
+                  },
+                  "input_cache_write": {
+                    "tokens": 3376,
+                    "price": 0.013926
+                  },
+                  "output_total": {
+                    "tokens": 532,
+                    "price": 0.008778
+                  }
+                },
+                "gemini-3.5-flash-lite": {
+                  "input": {
+                    "tokens": 40741,
+                    "price": 0.01344453
+                  },
+                  "input_cache_read": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "input_cache_write": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "output_total": {
+                    "tokens": 260,
+                    "price": 0.0007149999999999999
+                  }
+                }
+              },
+              "detailed_model_usage": [
+                {
+                  "config": {
+                    "model": "claude-sonnet-4-6",
+                    "service_tier": "standard"
+                  },
+                  "usage": {
+                    "input": {
+                      "tokens": 5133,
+                      "price": 0.0169389
+                    },
+                    "input_cache_read": {
+                      "tokens": 1688,
+                      "price": 0.0005570400000000001
+                    },
+                    "input_cache_write": {
+                      "tokens": 3376,
+                      "price": 0.013926
+                    },
+                    "output_total": {
+                      "tokens": 532,
+                      "price": 0.008778
+                    }
+                  }
+                },
+                {
+                  "config": {
+                    "model": "gemini-3.5-flash-lite",
+                    "service_tier": "standard"
+                  },
+                  "usage": {
+                    "input": {
+                      "tokens": 40741,
+                      "price": 0.01344453
+                    },
+                    "input_cache_read": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "input_cache_write": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "output_total": {
+                      "tokens": 260,
+                      "price": 0.0007149999999999999
+                    }
+                  }
+                }
+              ]
+            },
+            "initiated_generation": {
+              "model_usage": {
+                "claude-sonnet-4-6": {
+                  "input": {
+                    "tokens": 5133,
+                    "price": 0.0169389
+                  },
+                  "input_cache_read": {
+                    "tokens": 1688,
+                    "price": 0.0005570400000000001
+                  },
+                  "input_cache_write": {
+                    "tokens": 3376,
+                    "price": 0.013926
+                  },
+                  "output_total": {
+                    "tokens": 532,
+                    "price": 0.008778
+                  }
+                },
+                "gemini-3.5-flash-lite": {
+                  "input": {
+                    "tokens": 40741,
+                    "price": 0.01344453
+                  },
+                  "input_cache_read": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "input_cache_write": {
+                    "tokens": 0,
+                    "price": 0.0
+                  },
+                  "output_total": {
+                    "tokens": 260,
+                    "price": 0.0007149999999999999
+                  }
+                }
+              },
+              "detailed_model_usage": [
+                {
+                  "config": {
+                    "model": "claude-sonnet-4-6",
+                    "service_tier": "standard"
+                  },
+                  "usage": {
+                    "input": {
+                      "tokens": 5133,
+                      "price": 0.0169389
+                    },
+                    "input_cache_read": {
+                      "tokens": 1688,
+                      "price": 0.0005570400000000001
+                    },
+                    "input_cache_write": {
+                      "tokens": 3376,
+                      "price": 0.013926
+                    },
+                    "output_total": {
+                      "tokens": 532,
+                      "price": 0.008778
+                    }
+                  }
+                },
+                {
+                  "config": {
+                    "model": "gemini-3.5-flash-lite",
+                    "service_tier": "standard"
+                  },
+                  "usage": {
+                    "input": {
+                      "tokens": 40741,
+                      "price": 0.01344453
+                    },
+                    "input_cache_read": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "input_cache_write": {
+                      "tokens": 0,
+                      "price": 0.0
+                    },
+                    "output_total": {
+                      "tokens": 260,
+                      "price": 0.0007149999999999999
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "llm_price": 0.05435947,
+          "llm_charge": 300,
+          "call_charge": 80,
+          "platform_charge": 80,
+          "platform_usage": {
+            "category_usage": {
+              "text_message": {
+                "credits": 80,
+                "price": 0.015,
+                "quantity": 5.0
+              }
+            }
+          },
+          "platform_price": 0.015,
+          "free_minutes_consumed": 0.0,
+          "free_llm_dollars_consumed": 0.0,
+          "tts_usage": null,
+          "asr_usage": null,
+          "analysis": null
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "E02T Tool call — check_recalls reçoit FORD / ESCAPE / 2017 / lang en",
+  "type": "tool",
+  "check_any_tool_matches": true,
+  "simulation_scenario_comment": "A tool-call unit test: the LLM sees this chat history and must call check_recalls with the exact arguments the English scenario implies.",
+  "chat_history": [
+    {
+      "role": "user",
+      "message": "Any recalls on a 2017 Ford Escape?",
+      "time_in_call_secs": 0
+    },
+    {
+      "role": "agent",
+      "message": "Sure, one moment — let me check that in the Transport Canada system.",
+      "time_in_call_secs": 7
+    }
+  ],
+  "tool_call_parameters": {
+    "referenced_tool": { "type": "webhook", "id": "{{TOOL_ID:check_recalls}}" },
+    "verify_absence": false,
+    "parameters": [
+      {
+        "path": "body.make",
+        "eval": { "type": "exact", "expected_value": "FORD" }
+      },
+      {
+        "path": "body.model",
+        "eval": { "type": "exact", "expected_value": "ESCAPE" }
+      },
+      {
+        "path": "body.year",
+        "eval": { "type": "exact", "expected_value": "2017" }
+      },
+      {
+        "path": "body.lang",
+        "eval": { "type": "exact", "expected_value": "en" }
+      }
+    ]
+  }
+}
